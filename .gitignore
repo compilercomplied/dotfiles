@@ -1,0 +1,20 @@
+
+# Ignore everything
+*
+
+# Don't ignore these files
+
+# bash
+!.bash_aliases
+!.bashrc
+# git
+!.gitignore
+!.gitconfig
+# nvim
+!.config/nvim/init.vim
+!.config/nvim/buildvim.sh
+!.config/nvim/resources
+!.config/nvim/sources
+!.config/nvim/templates
+# emacs
+!.emacs.d/init.el

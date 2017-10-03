@@ -1,0 +1,18 @@
+[user]
+	email = git.gdario@example.com
+    name = gdario
+
+[alias]
+
+    # Lists aliases matching a regular expression.
+    alias = "!f() { git config --get-regexp "^alias.${1}$" ; }; f"
+
+    # Pretty prints git log with a custom format.
+    work = log --pretty=format:\"%Cred%h%Cgreen%x09%<(10)%an%Creset%x09%ad%Cblue%x09%s\"
+
+    # Commits and pushes in one command, with input as commit message.
+    # Usage: git cpush "commit message goes here"
+    cpush = "!f() { git commit -m \"$@\" && git push; }; f"
+
+    # Commits and pushes in one command, leaving a dull commit message.
+    fuck = "!f() { git commit -m "lazy push" && git push; }; f"

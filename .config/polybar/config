@@ -59,7 +59,7 @@ font-4 = unifont:size=6:heavy:fontformat=truetype;-2
 
 modules-left = xwindow
 modules-center = i3 
-modules-right = date redshift
+modules-right = mpd date volume redshift
 ;modules-right = date redshift updates
 
 tray-position = right
@@ -96,7 +96,7 @@ font-3 = ${bar/topbar.font-3}
 
 ;modules-left = random mcpp stop ppause mcpn mpd
 modules-left = filesystem
-modules-center = 
+modules-center =  mpd
 modules-right = volume cpu memory
 
 border-top-size = 1
@@ -164,9 +164,10 @@ ws-icon-0 = 10;
 type = internal/mpd
 
 format-padding = 2
-format-online = %{F#268bd2} <label-song> %{F-} <bar-progress> <label-time>
+;format-online = %{F#268bd2} <label-song> %{F-} <bar-progress> <label-time>
+format-online = %{F#268bd2} <label-song> %{F-} <label-time>
 
-label-song-maxlen = 30
+label-song-maxlen = 40
 label-song = %artist% - %title%
 label-offline = mpd is offline
 label-song-ellipsis = true
@@ -206,9 +207,10 @@ ramp-volume-2 = 
 label-volume = %percentage%
 label-volume-foreground = ${root.foreground}
 
-format-volume = <label-volume> <ramp-volume> <bar-volume>
+;format-volume = <label-volume> <ramp-volume> <bar-volume>
+format-volume = <label-volume> <ramp-volume>
 
-bar-volume-width = 20
+bar-volume-width = 10
 bar-volume-foreground-0 = ${colors.violet}
 bar-volume-foreground-1 = ${colors.blue}
 bar-volume-foreground-2 = ${colors.cyan}

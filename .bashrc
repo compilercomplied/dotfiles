@@ -156,7 +156,7 @@ function extract {
             
             case "$1" in
             *.tar.bz2)   tar xvjf ../"$1"    ;;
-            *.tar.gz)    tar xvzf ../"$1"    ;;
+            *.tar.gz)    tar xzf ../"$1"    ;;
             *.tar.xz)    tar xvJf ../"$1"    ;;
             *.lzma)      unlzma ../"$1"      ;;
             *.bz2)       bunzip2 ../"$1"     ;;

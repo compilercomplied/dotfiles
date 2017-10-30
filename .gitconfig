@@ -15,4 +15,4 @@
     cpush = "!f() { git commit -m \"$@\" && git push; }; f"
 
     # Commits and pushes in one command, leaving a dull commit message.
-    fuck = "!f() { git commit -m "lazy push" && git push; }; f"
+    fuck = "!f() { git commit -m "lazy push" && git push origin master; }; f"

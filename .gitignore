@@ -3,7 +3,6 @@
 *
 
 # Don't ignore these files
-
 # bash
 !.bash_aliases
 !.bashrc
@@ -18,3 +17,16 @@
 !.config/nvim/templates
 # emacs
 !.emacs.d/init.el
+# i3
+!.config/i3/config
+!.config/i3/launchpoly.sh
+!.config/polybar/config
+!.config/dunstrc
+!.config/compton.conf
+# st
+!.config/st/config.h
+# redshift
+!.config/redshift.conf
+# newsbeuter
+!.config/newsbeuter
+

@@ -123,21 +123,34 @@ pin-workspaces = true
 wrapping-scroll = false
 format = <label-state> <label-mode>
 
+ws-icon-[0-9]+ = icon
+ws-icon-1 = 
+ws-icon-2 = 
+ws-icon-3 = 
+ws-icon-4 = 
+ws-icon-5 = 
+ws-icon-6 = 
+ws-icon-7 = 
+ws-icon-8 = 
+ws-icon-9 = 
+ws-icon-0 = 
+;ws-icon-default = ♟
+
 label-mode-padding = 2
 label-mode-foreground = ${colors.blue}
 label-mode-background = ${colors.background-alt}
 
-label-focused =   
+label-focused = %name%
 label-focused-background = ${colors.background-alt}
 label-focused-foreground = ${colors.blue} 
 label-focused-underline= ${colors.blue}
 label-focused-padding = 2
 
-label-unfocused = 
-label-unfocused-unerline = ${colors.yellow}
+label-unfocused = %name%
+label-unfocused-underline = ${colors.yellow}
 label-unfocused-padding = 2 
 
-label-urgent = 
+;label-urgent = %name%
 label-urgent-foreground = ${colors.red}
 label-urgent-padding = 2
 
@@ -146,18 +159,6 @@ label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
-ws-icon-[0-9]+ = label;icon
-ws-icon-1 = 1;
-ws-icon-2 = 2;
-ws-icon-3 = 3;
-ws-icon-4 = 4;
-ws-icon-5 = 5;
-ws-icon-6 = 6;
-ws-icon-7 = 7;
-ws-icon-8 = 8;
-ws-icon-9 = 9;
-ws-icon-0 = 10;
-;ws-icon-default = ♟
 
 
 [module/mpd]

@@ -27,7 +27,7 @@ margin-top = 5
 margin-bottom = 5
 
 [bar/topbar]
-;monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 23
 offset-x = 0
@@ -62,8 +62,8 @@ modules-center = i3
 modules-right = mpd date volume redshift
 ;modules-right = date redshift updates
 
-tray-position = right
-tray-padding = 2
+;tray-position = right
+;tray-padding = 2
 ;tray-transparent = true
 tray-background = ${colors.background}
 
@@ -72,6 +72,48 @@ tray-background = ${colors.background}
 ;override-redirect = true
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
+
+[bar/topbar-left]
+monitor = ${env:MONITOR:DVI-I-1}
+bottom = false
+width = ${bar/topbar.width}
+height = ${bar/topbar.height}
+
+border-bottom-size = ${bar/topbar.border-bottom-size}
+border-bottom-color = ${bar/topbar.border-bottom-color}
+
+overline-size = 2
+overline-color = #f00
+underline-size = 2
+underline-color = #00f
+
+tray-position = right
+tray-padding = 2
+;tray-transparent = true
+tray-background = ${colors.background}
+
+wm-restack = i3
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+background = ${bar/topbar.background}
+foreground = ${bar/topbar.foreground}
+dim-value = ${bar/topbar.dim-value}
+
+spacing = ${bar/topbar.spacing}
+padding_right = ${bar/topbar.padding_right}
+module_margin_left = ${bar/topbar.module_margin_left}
+module_margin_right = ${bar/topbar.module_margin_right}
+
+font-0 = ${bar/topbar.font-0}
+font-1 = ${bar/topbar.font-1}
+font-2 = ${bar/topbar.font-2}
+font-3 = ${bar/topbar.font-3}
+
+modules-left = xwindow
+modules-center = i3
+modules-right = memory cpu
 
 
 [bar/bottombar]

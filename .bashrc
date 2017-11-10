@@ -126,7 +126,7 @@ POWERLINE_CONFIG_COMMAND=/usr/local/bin/powerline-config
 . /usr/local/lib/python3.5/dist-packages/powerline/bindings/bash/powerline.sh
 
 # python virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+export WORKON_HOME=~/code/.virtualenvs
 
 ########
 

@@ -1,0 +1,53 @@
+// Place your settings in this file to overwrite the default settings
+{
+
+    // Editor settings
+    "editor.cursorStyle": "line",
+    "editor.rulers": [80, 120],
+    "editor.wordWrap":"wordWrapColumn",
+    "editor.wordWrapColumn": 80,
+
+    "[markdown]":  {
+        "editor.wordWrap": "wordWrapColumn"
+    },
+
+
+    // Venvs
+    "python.venvPath": "/home/gdario/code/.virtualenvs/",
+
+
+    // Terminal
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "terminal.integrated.shellArgs.linux": ["/home/gdario/.config/./vscode.sh"],
+
+
+    // Visual settings
+    "window.menuBarVisibility": "toggle",
+    "window.zoomLevel": 0,
+    "workbench.activityBar.visible": true,
+    "workbench.colorTheme": "Solarized Light",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.welcome.enabled": false,
+
+
+    // Fonts
+    "editor.fontFamily": "'DejaVu Sans Mono for Powerline', Droid Sans Mono for Powerline'",
+    "terminal.integrated.fontFamily": "'DejaVu Sans Mono for Powerline'",
+
+
+    // Vim emulation
+    "editor.cursorBlinking": "solid",
+    "vim.autoindent": true,
+    "vim.disableAnnoyingNeovimMessage": true,
+    "vim.enableNeovim": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.showcmd": true,
+    "vim.useSolidBlockCursor": true,
+    "vim.useSystemClipboard": true,
+    ],
+}

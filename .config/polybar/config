@@ -250,6 +250,8 @@ ramp-volume-2 = 
 label-volume = %percentage%
 label-volume-foreground = ${root.foreground}
 
+label-underline = ${colors.orange}
+
 ;format-volume = <label-volume> <ramp-volume> <bar-volume>
 format-volume = <label-volume> <ramp-volume>
 

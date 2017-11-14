@@ -184,3 +184,4 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 
 export PATH=$PATH:/opt/gradle-4.1/bin
+export XDG_CURRENT_DESKTOP=kde 

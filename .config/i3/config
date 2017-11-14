@@ -422,8 +422,8 @@ exec --no-startup-id i3-msg 'workspace $tag2; exec firefox-trunk'
 
 
 # quick terminal
-#exec --no-startup-id yakuake
-exec --no-startup-id sleep 5; st -t droppy -g 238x40 #-e tmux -f ~/.config/tmux/tmux.conf new-session -s droppy
-for_window [title="droppy"] floating enable
-for_window [title="droppy"] move scratchpad; [title="droppy"] scratchpad show; move position 0px 24px; move scratchpad
-bindsym $mod+t [title="droppy"] scratchpad show
+exec --no-startup-id konsole -p tabtitle="dropdown" --profile dropdown
+#exec --no-startup-id sleep 5; st -t dropdown -g 238x40 #-e tmux -f ~/.config/tmux/tmux.conf new-session -s dropdown
+for_window [title="dropdown"] floating enable
+for_window [title="dropdown"] move scratchpad; [title="dropdown"] scratchpad show; move position 0px 24px; move scratchpad
+bindsym $mod+t [title="dropdown"] scratchpad show

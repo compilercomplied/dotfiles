@@ -113,7 +113,7 @@ font-3 = ${bar/topbar.font-3}
 
 modules-left = xwindow
 modules-center = i3
-modules-right = memory cpu
+modules-right = date memory cpu
 
 
 [bar/bottombar]

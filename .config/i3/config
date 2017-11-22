@@ -115,7 +115,7 @@ for_window [window_role="About"] floating enable
 for_window [class="(?i)plasma-desktop"] floating enable 
 for_window [class="(?i)klipper"] floating enable 
 
-assign [class="Firefox-trunk"] $tag2
+assign [class="Firefox"] $tag2
 #assign [class="Telegram"] $tag5
 #assign [class="discord"] $tag5
 #assign [name="irc"] $tag4
@@ -317,7 +317,7 @@ bindsym $mod+n mode "focused"
 mode "focused" {
 
                 # hardcoded focus keybindings
-                bindsym b [class="(?i)firefox-trunk"] focus
+                bindsym b [class="(?i)firefox"] focus
                 bindsym w [class="(?i)terminal" title="weechat"] focus
                 bindsym m [class="(?i)thunderbird"] focus
 
@@ -418,7 +418,7 @@ exec --no-startup-id i3-msg 'workspace $tag3; exect konsol'
 #exec --no-startup-id i3-msg 'workspace $tag3; exec st -t terminal'
 
 #exec sleep 2;
-exec --no-startup-id i3-msg 'workspace $tag2; exec firefox-trunk'
+exec --no-startup-id i3-msg 'workspace $tag2; exec firefox'
 
 
 # quick terminal

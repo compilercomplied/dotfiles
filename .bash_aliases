@@ -2,7 +2,7 @@
 alias ssh-aws='ssh -i .ssh/aws-keys.pem ubuntu@ec2-54-194-76-80.eu-west-1.compute.amazonaws.com'
 
 # Apps
-alias vim=nvim
+#alias vim=nvim
 alias urxvt=rxvt-unicode
 alias ncm='ncmpcpp -c ~/.ncmpcpp/bindings -c ~/.ncmpcpp/config'
 alias tmux='tmux -f ~/.config/tmux/tmux.conf'

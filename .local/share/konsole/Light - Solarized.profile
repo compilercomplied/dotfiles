@@ -1,6 +1,9 @@
 [Appearance]
+AntiAliasFonts=true
+BoldIntense=true
 ColorScheme=SolarizedLight
-Font=DejaVu Sans Mono for Powerline,10,-1,0,50,0,0,0,0,0
+Font=DejaVu Sans Mono for Powerline,11,-1,0,50,0,0,0,0,0
+UseFontLineChararacters=true
 
 [General]
 Name=Light - Solarized

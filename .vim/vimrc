@@ -2,6 +2,7 @@
 " \ Plugin Manager \
 " \ ************** \
 
+" Auto install Plug if not installed. Runs PlugInstall afterwards.
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
                 \https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -12,20 +13,25 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 
 " ### General purpose ###
-" aligning plugin
-Plug 'junegunn/vim-easy-align'
-" status bar
-Plug 'vim-airline/vim-airline'
+Plug 'junegunn/vim-easy-align'          " Aligning
+Plug 'vim-airline/vim-airline'          " Status bar
+Plug 'tpope/vim-fugitive'               " Git wrapper
+"Plug 'scrooloose/syntastic'             " Syntax checking
+Plug 'tpope/vim-sensible'               " Sane defaults
+Plug 'xolox/vim-easytags'               " Gen ctags
+Plug 'xolox/vim-misc'                   " Dependency
+Plug 'majutsushi/tagbar'                " Browse ctags
+Plug 'junegunn/fzf.vim'                 " Fuzzy find
 
 " ### Python ###
-" Code completion
-Plug 'davidhalter/jedi-vim'
-" folding
-Plug 'tmhedberg/SimpylFold'
-" PEP8 indentation
-Plug 'vim-scripts/indentpython.vim'
-" virtualenvs
-Plug 'jmcantrell/vim-virtualenv'
+Plug 'davidhalter/jedi-vim'             " Code completion
+Plug 'tmhedberg/SimpylFold'             " Folding
+"Plug 'vim-scripts/indentpython.vim'     " PEP8 indents
+Plug 'jmcantrell/vim-virtualenv'        " Virtual envs
+
+" ### Web ###
+Plug 'mattn/emmet-vim'                  " https://emmet.io like
+"Plug 'elzr/vim-json'                    " Better JSON
 
 " ### Themes ###
 Plug 'vim-airline/vim-airline-themes'
@@ -40,13 +46,15 @@ call plug#end()
 " \ General functionality \
 " \ ********************* \
 
-" Vim needs a POSIX-Compliant shell. Fish and zsh are not.
-if $SHELL =~ 'bin/fish'
+" Vim needs a POSIX-Compliant shell. Fish is not.
+if $SHELL =~ 'bin/fish' || $SHELL =~ 'bin/zsh'
     set shell=/usr/bin/bash
 endif
 
 
 filetype plugin indent on
+set guifont=DejaVu\ Sans\ Mono:h20
+
 set encoding=utf-8              " keep the encoding as high as possible in $MYVIMRC
 set modeline                    " modeline
 set tabstop=4                   " show existing tab with 4 spaces width
@@ -67,6 +75,7 @@ set fileformat=unix             " gives <EOL> of current buffer
 set foldmethod=indent           " indent= lines with equal indent create a fold
 set foldlevel=99                " folds with a higher level will be closed
 set colorcolumn=95              " color column
+set tags=~/code/.tags           " ctags dir
 
 highlight ColorColumn
             \ ctermbg=0
@@ -88,11 +97,8 @@ nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 " \ ******** \
 " \ Mappings \
 " \ ******** \
-
 " GENERAL BINDS
-
 let mapleader = ","
-
 " tmux will send xterm-style keys when its xterm-keys option is on
 if &term =~ '^screen'
 	execute "set <xUp>=\e[1;*A"
@@ -104,13 +110,17 @@ set t_ku=OA
 set t_kd=OB
 set t_kr=OC
 set t_kl=OD
-
+" source $MYVIMRC reloads the saved $MYVIMRC
+:nmap <Leader>s :source $MYVIMRC
+" opens $MYVIMRC for editing
+:nmap <Leader>v :tabedit $MYVIMRC
+" shift+tab for inverse tab
+nnoremap <S-Tab> <<
+inoremap <S-Tab> <C-d>
 
 " ALL MODES
-
 " Accessibility
 noremap :W :w
-
 " maps F2 to netrw in vertical split
 function! ToggleVExplorer()
   if exists("t:expl_buf_num")
@@ -130,11 +140,11 @@ function! ToggleVExplorer()
       let t:expl_buf_num = bufnr("%")
   endif
 endfunction
-nmap <F2> :call ToggleVExplorer()<cr> 
-
+nmap <F2> :call ToggleVExplorer()<cr>
+" maps F3 to tagbar
+nmap <F3> :TagbarToggle<CR>
 
 " INSERT MODE
-
 " Bracket and parenthesis handling
 " automatically adds closing brackets
 inoremap ( ()<Esc>i
@@ -146,9 +156,7 @@ inoremap ' ''<Esc>i
 inoremap jk <esc>
 inoremap kj <esc>
 
-
 " VISUAL MODE
-
 " _( map to close within brackets/quotes selected text
 vnoremap _[ <Esc>`>a]<Esc>`<i[<Esc>
 vnoremap _{ <Esc>`>a}<Esc>`<i{<Esc>
@@ -159,10 +167,21 @@ vnoremap _' <Esc>`>a'<Esc>`<i'<Esc>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-" shift+tab for inverse tab
-nnoremap <S-Tab> <<
-inoremap <S-Tab> <C-d>
+" PLUGINS
+" FZF
+imap <c-x><c-o> <plug>(fzf-complete-line)
+map <leader>b :Buffers<cr>
+map <leader>f :Files<cr>
+map <leader>g :GFiles<cr>
+map <leader>t :Tags<cr>
 
+
+" \ ************* \
+" \ Plugin Config \
+" \ ************* \
+
+"Jedi-vim
+"let g:jedi#auto_initialization = 0          " lazy loading
 
 
 " \ ****************** \

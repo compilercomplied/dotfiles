@@ -118,30 +118,10 @@ fi
 
 export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64/
 
-# powerline
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-POWERLINE_CONFIG_COMMAND=/usr/local/bin/powerline-config
-. /usr/local/lib/python3.5/dist-packages/powerline/bindings/bash/powerline.sh
-
 # python virtualenvs
 export WORKON_HOME=~/code/.virtualenvs
 
 ########
-
-function spacemacs() {
-
-    if [ -z "$1" ]; then
-        tmux -f /home/gdario/.config/tmux/tmux.conf new-session -s spacemacs emacs -nw
-
-    else
-        cd $1
-        tmux -f /home/gdario/.config/tmux/tmux.conf new-session -s spacemacs emacs -nw
-
-    fi
-}
-
 function extract {
 
     if [ -z "$1" ]; then
@@ -185,3 +165,7 @@ export EDITOR="$VISUAL"
 
 export PATH=$PATH:/opt/gradle-4.1/bin
 export XDG_CURRENT_DESKTOP=kde 
+
+GIT_PROMPT_ONLY_IN_REPO=1
+GIT_PROMPT_THEME=Solarized
+source ~/.bash-git-prompt/gitprompt.sh

@@ -169,3 +169,5 @@ export XDG_CURRENT_DESKTOP=kde
 GIT_PROMPT_ONLY_IN_REPO=1
 GIT_PROMPT_THEME=Solarized
 source ~/.bash-git-prompt/gitprompt.sh
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

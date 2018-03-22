@@ -22,6 +22,7 @@ Plug 'xolox/vim-easytags'               " Gen ctags
 Plug 'xolox/vim-misc'                   " Dependency
 Plug 'majutsushi/tagbar'                " Browse ctags
 Plug 'junegunn/fzf.vim'                 " Fuzzy find
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " ### Python ###
 Plug 'davidhalter/jedi-vim'             " Code completion
@@ -71,9 +72,9 @@ set splitbelow                  " split below
 set splitright                  " split to the right
 set mouse=a                     " allow mouse
 set fileformat=unix             " gives <EOL> of current buffer 
-"set textwidth=85                " line's 'max char count
+"set textwidth=95                " line's 'max char count
 set foldmethod=indent           " indent= lines with equal indent create a fold
-set foldlevel=99                " folds with a higher level will be closed
+set foldlevel=95                " folds with a higher level will be closed
 set colorcolumn=95              " color column
 set tags=~/code/.tags           " ctags dir
 

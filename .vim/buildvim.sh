@@ -8,7 +8,7 @@ p2=$(ls /usr/lib/python2.7/ | grep ^config)
 p3=$(ls /usr/lib/python3.5/ | grep ^config)
 
 # Needed python-dev && python3-dev
-
+# enable-gui and with-x flags are the ones that give support for xterm clipboard option
 ./configure --with-features=huge \
             --enable-luainterp=yes \
             --enable-perlinterp=yes \
@@ -17,7 +17,10 @@ p3=$(ls /usr/lib/python3.5/ | grep ^config)
             --enable-pythoninterp=yes \
             --with-python-config-dir=/usr/lib/python2.7/$p2 \
             --enable-rubyinterp=yes \
-            --enable-multibyte
+            --enable-multibyte \
+            --enable-gui \
+            --with-x
+            
 
 
 make VIMRUNTIMEDIR=/usr/local/share/vim/vim80/

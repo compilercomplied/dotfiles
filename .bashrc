@@ -116,8 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64/
-
 # python virtualenvs
 export WORKON_HOME=~/code/.virtualenvs
 
@@ -163,11 +161,6 @@ function extract {
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-export PATH=$PATH:/opt/gradle-4.1/bin
 export XDG_CURRENT_DESKTOP=kde 
-
-GIT_PROMPT_ONLY_IN_REPO=1
-GIT_PROMPT_THEME=Solarized
-source ~/.bash-git-prompt/gitprompt.sh
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

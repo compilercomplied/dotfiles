@@ -14,13 +14,13 @@ call plug#begin('~/.vim/plugged')
 
 " ### General purpose ###
 Plug 'junegunn/vim-easy-align'          " Aligning
-Plug 'vim-airline/vim-airline'          " Status bar
+"Plug 'vim-airline/vim-airline'          " Status bar
 Plug 'tpope/vim-fugitive'               " Git wrapper
 "Plug 'scrooloose/syntastic'             " Syntax checking
 Plug 'tpope/vim-sensible'               " Sane defaults
 Plug 'xolox/vim-easytags'               " Gen ctags
 Plug 'xolox/vim-misc'                   " Dependency
-Plug 'majutsushi/tagbar'                " Browse ctags
+Plug 'majutsushi/tagbar'                " Browse ctag
 Plug 'junegunn/fzf.vim'                 " Fuzzy find
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
@@ -35,9 +35,9 @@ Plug 'mattn/emmet-vim'                  " https://emmet.io like
 "Plug 'elzr/vim-json'                    " Better JSON
 
 " ### Themes ###
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
-Plug 'altercation/vim-colors-solarized'
+"Plug 'altercation/vim-colors-solarized'
 
 " Initialize plugin system
 call plug#end()
@@ -248,7 +248,7 @@ nmap <F2> :call ToggleVExplorer()<cr>
 
 set t_Co=256
 set laststatus=2
-colorscheme solarized 
+"colorscheme solarized 
 set background=light
 let g:airline_powerline_fonts = 1
 

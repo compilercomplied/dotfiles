@@ -6,7 +6,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:DroidSansMonoForPowerline Nerd Font 8
+font pango:DejaVuSansMono 10
 
 ###############
 # Keybindings #
@@ -46,8 +46,9 @@ bindsym $mod+Return exec konsole
 #bindsym $mod+Return exec urxvtc
 
 # launchers 
-bindsym $mod+d exec --no-startup-id rofi -show drun
-bindsym $mod+Shift+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id dmenu_run
+#bindsym $mod+d exec --no-startup-id rofi -show drun
+#bindsym $mod+Shift+d exec --no-startup-id rofi -show run
 #bindsym $mod+Ctrl+d exec bash ~/Scripts/rofidirs.sh
 
 
@@ -101,7 +102,7 @@ set $bckgrn	#fdf6e3
 ##############
 
 # General
-font pango: Electrolize 8
+font pango: DejaVuSansMono 10
 new_window pixel 4
 hide_edge_borders none
 
@@ -184,27 +185,27 @@ bindsym $mod+z workspace back_and_forth
 bindsym $mod+Shift+z move container to workspace back_and_forth; workspace back_and_forth
 
 # name the workspaces
-#set $tag1 "I"
-#set $tag2 "II"
-#set $tag3 "III"
-#set $tag4 "IV"
-#set $tag5 "V"
-#set $tag6 "VI"
-#set $tag7 "VII"
-#set $tag8 "VIII"
-#set $tag9 "IV"
-#set $tag0 "X"
+set $tag1 "I"
+set $tag2 "II"
+set $tag3 "III"
+set $tag4 "IV"
+set $tag5 "V"
+set $tag6 "VI"
+set $tag7 "VII"
+set $tag8 "VIII"
+set $tag9 "IV"
+set $tag0 "X"
 
-set $tag1 "1: "
-set $tag2 "2: "
-set $tag3 "3: "
-set $tag4 "4: "
-set $tag5 "5: "
-set $tag6 "6: "
-set $tag7 "7: "
-set $tag8 "8: "
-set $tag9 "9: "
-set $tag0 "10: "
+#set $tag1 "1: "
+#set $tag2 "2: "
+#set $tag3 "3: "
+#set $tag4 "4: "
+#set $tag5 "5: "
+#set $tag6 "6: "
+#set $tag7 "7: "
+#set $tag8 "8: "
+#set $tag9 "9: "
+#set $tag0 "10: "
 
 
 # switch to workspace
@@ -257,43 +258,43 @@ mode $sysmenu {
     bindsym Escape    mode "default"
 }
 
-set $mode_gaps Gaps: [o]uter, [i]nner
-set $mode_gaps_outer Outer Gaps: Shift changes globally
-set $mode_gaps_inner Inner Gaps: Shift changes globally
-set $mode_gaps_default
-bindsym $mod+Shift+g mode "$mode_gaps"
-mode "$mode_gaps" {
-        bindsym o      mode "$mode_gaps_outer"
-        bindsym i      mode "$mode_gaps_inner"
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
-
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
-        bindsym 0     gaps outer current set 0
-
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
+#set $mode_gaps Gaps: [o]uter, [i]nner
+#set $mode_gaps_outer Outer Gaps: Shift changes globally
+#set $mode_gaps_inner Inner Gaps: Shift changes globally
+#set $mode_gaps_default
+#bindsym $mod+Shift+g mode "$mode_gaps"
+#mode "$mode_gaps" {
+#        bindsym o      mode "$mode_gaps_outer"
+#        bindsym i      mode "$mode_gaps_inner"
+#        bindsym Return mode "default"
+#        bindsym Escape mode "default"
+#}
+#
+#mode "$mode_gaps_inner" {
+#        bindsym plus  gaps inner current plus 5
+#        bindsym minus gaps inner current minus 5
+#        bindsym 0     gaps inner current set 0
+#
+#        bindsym Shift+plus  gaps inner all plus 5
+#        bindsym Shift+minus gaps inner all minus 5
+#        bindsym Shift+0     gaps inner all set 0
+#
+#        bindsym Return mode "default"
+#        bindsym Escape mode "default"
+#}
+#
+#mode "$mode_gaps_outer" {
+#        bindsym plus  gaps outer current plus 5
+#        bindsym minus gaps outer current minus 5
+#        bindsym 0     gaps outer current set 0
+#
+#        bindsym Shift+plus  gaps outer all plus 5
+#        bindsym Shift+minus gaps outer all minus 5
+#        bindsym Shift+0     gaps outer all set 0
+#
+#        bindsym Return mode "default"
+#        bindsym Escape mode "default"
+#}
 
 set $resize resize
 bindsym $mod+r mode $resize
@@ -349,25 +350,25 @@ mode "focused" {
 #######
 # Bar #
 #######
-exec --no-startup-id $HOME/.config/i3/launchpoly.sh
-#bar {
-#	colors {
-#		background $bckgrn
-#        statusline $clrtxt
-#	    separator  #666666
-#
-#		# Type              border  bckgrnd font
-#		focused_workspace   $bckgrn $bckgrn $mainco
-#	    active_workspace    $bckgrn $bckgrn #a89984
-#	    inactive_workspace  $bckgrn $bckgrn #a89984
-#	    urgent_workspace    $bckgrn $bckgrn $colora
-#	}
-#	font pango:Electrolize, DroidSansMonoForPowerline Nerd Font 10
-#	strip_workspace_numbers yes
-#	position top
-#    status_command i3status --config ~/.config/i3/i3status.conf
-#	workspace_buttons yes
-#}
+#exec --no-startup-id $HOME/.config/i3/launchpoly.sh
+bar {
+	colors {
+		background $bckgrn
+        statusline $clrtxt
+	    separator  #666666
+
+		# Type              border  bckgrnd font
+		focused_workspace   $bckgrn $bckgrn $mainco
+	    active_workspace    $bckgrn $bckgrn #a89984
+	    inactive_workspace  $bckgrn $bckgrn #a89984
+	    urgent_workspace    $bckgrn $bckgrn $colora
+	}
+	font pango:DejaVuSansMono 10
+	strip_workspace_numbers yes
+	position top
+    status_command i3status --config ~/.config/i3/i3status.conf
+	workspace_buttons yes
+}
 
 
 
@@ -375,9 +376,9 @@ exec --no-startup-id $HOME/.config/i3/launchpoly.sh
 # gaps #
 ########
 
-gaps inner 8
-gaps outer 10 
-smart_borders on
+#gaps inner 8
+#gaps outer 10 
+#smart_borders on
 
 
 
@@ -387,11 +388,10 @@ smart_borders on
 
 exec compton --config ~/.config/compton.conf
 exec --no-startup-id redshift -c ~/.config/redshift.conf
-#exec --no-startup-id thunderbird
-exec xrdb ~/.config/themes/Xres/default
+#exec xrdb ~/.config/themes/Xres/default
 exec --no-startup-id udiskie
-exec --no-startup-id /opt/urserver/urserver-start
-exec --no-startup-id kdeconnect-cli -l
+#exec --no-startup-id /opt/urserver/urserver-start
+#exec --no-startup-id kdeconnect-cli -l
 
 # Notifications
 exec killall -q notify-osd
@@ -399,8 +399,9 @@ exec --no-startup-id dunst -config ~/.config/dunstrc
 exec --no-startup-id mpd
 
 # Add wallpaper & conky
-exec --no-startup-id feh --bg-fill \
-~/.config/wallpapers/light-solarized.png
+exec --no-startup-id xsetroot -solid "#eee8d5"
+#exec --no-startup-id feh --bg-fill \
+#~/.config/wallpapers/light-solarized.png
 
 # Setting up workspaces
 #exec --no-startup-id sleep 5;
@@ -411,19 +412,20 @@ exec --no-startup-id feh --bg-fill \
 #exec --no-startup-id i3-msg 'workspace $tag4; exec st -t irc'
 
 exec sleep 2;
-exec --no-startup-id i3-msg 'workspace $tag3; exect konsol'
+#exec --no-startup-id i3-msg 'workspace $tag3; exec konsole'
 #exec --no-startup-id i3-msg 'workspace $tag3; append_layout ~/.config/i3/workspaces/work3.json'
 #exec --no-startup-id i3-msg 'workspace $tag3; exec st -t musicplayer -e ncmpcpp'
 #exec --no-startup-id i3-msg 'workspace $tag3; exec st -t filebrowser -e ranger'
 #exec --no-startup-id i3-msg 'workspace $tag3; exec st -t terminal'
 
 #exec sleep 2;
-exec --no-startup-id i3-msg 'workspace $tag2; exec firefox'
+#exec --no-startup-id i3-msg 'workspace $tag2; exec firefox'
 
 
 # quick terminal
-exec --no-startup-id konsole -p tabtitle="dropdown" --profile dropdown
+#exec --no-startup-id konsole -p tabtitle="dropdown" --profile dropdown
+# Old attempt to launch a named tmux session alongside
 #exec --no-startup-id sleep 5; st -t dropdown -g 238x40 #-e tmux -f ~/.config/tmux/tmux.conf new-session -s dropdown
-for_window [title="dropdown"] floating enable
-for_window [title="dropdown"] move scratchpad; [title="dropdown"] scratchpad show; move position 0px 24px; move scratchpad
-bindsym $mod+t [title="dropdown"] scratchpad show
+#for_window [title="dropdown"] floating enable
+#for_window [title="dropdown"] move scratchpad; [title="dropdown"] scratchpad show; move position 0px 24px; move scratchpad
+#bindsym $mod+t [title="dropdown"] scratchpad show

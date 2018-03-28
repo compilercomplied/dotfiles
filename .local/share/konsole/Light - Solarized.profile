@@ -2,7 +2,7 @@
 AntiAliasFonts=true
 BoldIntense=true
 ColorScheme=SolarizedLight
-Font=DejaVu Sans Mono for Powerline,11,-1,0,50,0,0,0,0,0
+Font=DejaVu Sans Mono,12,-1,5,50,0,0,0,0,0,Book
 UseFontLineChararacters=true
 
 [General]

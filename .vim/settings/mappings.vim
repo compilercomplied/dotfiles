@@ -22,6 +22,8 @@ nmap <C-Tab> a<C-t><Esc>
 nmap <C-S-Tab> a<C-d><Esc>
 imap <C-Tab> <C-t>
 imap <C-S-Tab> <C-d>
+" overload undo
+inoremap <C-U> <C-G>u<C-U>
 
 " \ ************ \
 " \ Accesibility \
@@ -37,9 +39,10 @@ nmap <leader>L :call MoveToNextTab()<CR>
 nmap <leader>H :call MoveToPrevTab()<CR>
 " Split line, the move to beginning of new line
 map <leader>n i<Enter><Esc>
-" Increase/decrease split size by a factor of 1.5/0.67
-nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
-nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+" Show unwanted spaces
+nnoremap <F12> :ShowSpaces 1<CR>
+" Remove unwanted spaces
+nnoremap <S-F12> m`:TrimSpaces<CR>``
 
 " INSERT MODE
 " Bracket and parenthesis handling
@@ -63,6 +66,8 @@ vnoremap _' <Esc>`>a'<Esc>`<i'<Esc>
 " use J K to move around selected block
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+" Remove unwanted spaces on selection
+vnoremap <S-F12> :TrimSpaces<CR>
 
 " \ ******* \
 " \ Plugins \

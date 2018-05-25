@@ -12,33 +12,38 @@ endif
 call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 
-" ### General purpose ###
-Plug 'junegunn/vim-easy-align'          " Aligning
-"Plug 'vim-airline/vim-airline'          " Status bar
-Plug 'tpope/vim-fugitive'               " Git wrapper
-"Plug 'scrooloose/syntastic'             " Syntax checking
+" ----- Editing ------------------------------------------------------------------------------
 Plug 'tpope/vim-surround'               " Surrounds edit. Good for HTML/XML editing.
 Plug 'tpope/vim-commentary'             " Comments+text objects.
-Plug 'tpope/vim-sensible'               " Sane defaults
+Plug 'junegunn/vim-easy-align'          " Aligning
+
+" ----- Code navigation ----------------------------------------------------------------------
 Plug 'xolox/vim-easytags'               " Gen ctags
-Plug 'xolox/vim-misc'                   " Dependency
+Plug 'xolox/vim-misc'                   " Dependency to easy-tags
 Plug 'majutsushi/tagbar'                " Browse ctag
+Plug 'w0rp/ale'                         " Linting
+
+" ----- File navigation ----------------------------------------------------------------------
 Plug 'junegunn/fzf.vim'                 " Fuzzy find
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
-" ### Python ###
+" ----- Functionality wrappers ---------------------------------------------------------------
+Plug 'tpope/vim-fugitive'               " Git wrapper
+
+" ----- Languages ----------------------------------------------------------------------------
+"  Python
 Plug 'davidhalter/jedi-vim'             " Code completion
 Plug 'tmhedberg/SimpylFold'             " Folding
-"Plug 'vim-scripts/indentpython.vim'     " PEP8 indents
 Plug 'jmcantrell/vim-virtualenv'        " Virtual envs
-Plug 'nvie/vim-flake8'                  " Flake8 support (syntax checker/linting)
 
-" ### Web ###
+" Web
 Plug 'mattn/emmet-vim'                  " https://emmet.io like
-"Plug 'elzr/vim-json'                    " Better JSON
+Plug 'elzr/vim-json'                    " Better JSON
 
-" ### Themes ###
-"Plug 'vim-airline/vim-airline-themes'
+" Markdown
+Plug 'gabrielelana/vim-markdown'        " Better markdown
+
+" ----- Appearance ---------------------------------------------------------------------------
 Plug 'morhetz/gruvbox'
 Plug 'altercation/vim-colors-solarized'
 
@@ -50,51 +55,86 @@ call plug#end()
 " \ General functionality \
 " \ ********************* \
 
+" ----- Environment --------------------------------------------------------------------------
+set encoding=utf-8              " keep the encoding as high as possible in $MYVIMRC
+filetype plugin indent on       " :help :filetype-overview
+set tags=~/code/.tags           " ctags dir
+set fileformat=unix             " gives <EOL> of current buffer
+
 " Vim needs a POSIX-Compliant shell. Fish is not.
 if $SHELL =~ 'bin/fish' || $SHELL =~ 'bin/zsh'
     set shell=/usr/bin/bash
 endif
 
 
-filetype plugin indent on
-set guifont=DejaVu\ Sans\ Mono:h20
+" ----- Input --------------------------------------------------------------------------------
+set mouse=                      " Mouse can be enabled for different modes.
 
-set encoding=utf-8              " keep the encoding as high as possible in $MYVIMRC
-set modeline                    " modeline
+
+" ----- Editor -------------------------------------------------------------------------------
+syntax enable                   " syntax highlight
+
 set tabstop=4                   " show existing tab with 4 spaces width
-set softtabstop=4               " number of spaces tab counts for while editing 
+set softtabstop=4               " number of spaces tab counts for while editing
 set shiftwidth=4                " when indenting with '>', use 4 spaces width
 set expandtab                   " on pressing tab, insert 4 spaces
 set autoindent                  " copy indent from current line
-syntax enable                   " syntax highlight
+
 set number                      " show line numbers
 set relativenumber              " use relative line numbers
-let g:pymode_python = 'python3' " python 3 as default
-set backspace=indent,eol,start  " backspace behavior in normal mode
-set splitbelow                  " split below
-set splitright                  " split to the right
-set mouse=a                     " allow mouse
-set fileformat=unix             " gives <EOL> of current buffer 
-"set textwidth=95                " line's 'max char count
+
+set textwidth=0                 " line's 'max char count
 set foldmethod=indent           " indent= lines with equal indent create a fold
 set foldlevel=95                " folds with a higher level will be closed
 set colorcolumn=95              " color column
-set tags=~/code/.tags           " ctags dir
+set backspace=indent,eol,start  " backspace behavior in normal mode
+
+set splitbelow                  " split below
+set splitright                  " split to the right
+
+set modeline                    " modeline
+set laststatus=2                " if set to `2`, statusline is always displayed
 
 highlight ColorColumn
             \ ctermbg=0
             \ guibg=lightgrey   " adds color column of line, width set with `set colorcolumn`
 
 
-" \ ****************** \
-" \ Appearance-related \
-" \ ****************** \
+" ----- Accesibility -------------------------------------------------------------------------
+set ruler                       " show cursor position
+set wildmenu                    " tab-completion for command-line
+set scrolloff=1                 " minimal number of screen lines to keep above & below cursor
+set sidescrolloff=5             " minimal number of screen columns to keep to left and right
+set display+=lastline           " :help 'display'
+set formatoptions+=j            " delete comment character when joining commented lines
+set autoread                    " reload files changed externally
+set autowrite                   " :w automatically when a bunch of stuff happens
+
+
+set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+
+
+" ----- Languages ----------------------------------------------------------------------------
+let g:pymode_python = 'python3' " python 3 as default
+
+
+" ----- Performance --------------------------------------------------------------------------
+set synmaxcol=200               " Don't highlight anything longer than 200 chars
+let did_install_default_menus=1 " Don't load gvim menu stuff
+"let loaded_matchparen=1         " Don't hightlight matching parents
+
+
+" \ ********** \
+" \ Appearance \
+" \ ********** \
+
 set t_Co=256
-set laststatus=2
-colorscheme solarized 
+colorscheme solarized
+set background=dark
+
+" Solarized options
 let g:solarized_termcolors=16
 let g:solarized_termtrans=1
-set background=dark
 
 
 " \ ********************* \
@@ -113,6 +153,7 @@ autocmd BufNewFile,BufRead *.py     source ~/.vim/sources/py.vim
 autocmd BufNewFile,BufRead *.cpp    source ~/.vim/sources/cpp.vim
 autocmd BufNewFile,BufRead *.c      source ~/.vim/sources/c.vim
 autocmd BufNewFile,BufRead *.tex    source ~/.vim/sources/tex.vim
+autocmd BufNewFile,BufRead *.md     source ~/.vim/sources/md.vim
 
 
 "  ********* \

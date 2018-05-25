@@ -68,6 +68,9 @@ function! ToggleVExplorer()
   endif
 endfunction
 
+" \ **************** \
+" \ Overload folding \
+" \ **************** \
 function! NeatFoldText() "{{{2
   let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
   let lines_count = v:foldend - v:foldstart + 1
@@ -80,3 +83,28 @@ function! NeatFoldText() "{{{2
 endfunction
 set foldtext=NeatFoldText()
 "}}}2
+
+" \ *********************** \
+" \ Display unwanted spaces \
+" \ *********************** \
+function! ShowSpaces(...)
+  let @/='\v(\s+$)|( +\ze\t)'
+  let oldhlsearch=&hlsearch
+  if !a:0
+    let &hlsearch=!&hlsearch
+  else
+    let &hlsearch=a:1
+  end
+  return oldhlsearch
+endfunction
+command! -bar -nargs=? ShowSpaces call ShowSpaces(<args>)
+
+" \ ********************** \
+" \ Remove unwanted spaces \
+" \ ********************** \
+function! TrimSpaces() range
+  let oldhlsearch=ShowSpaces(1)
+  execute a:firstline.",".a:lastline."substitute ///gec"
+  let &hlsearch=oldhlsearch
+endfunction
+command! -bar -nargs=0 -range=% TrimSpaces <line1>,<line2>call TrimSpaces()

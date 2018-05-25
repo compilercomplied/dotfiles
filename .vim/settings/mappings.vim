@@ -1,6 +1,6 @@
-" \ ************* \
+" \ ************************************************************************************************** \
 " \ General Binds \
-" \ ************* \
+" \ ************************************************************************************************** \
 let mapleader = ","
 " tmux will send xterm-style keys when its xterm-keys option is on
 if &term =~ '^screen'
@@ -25,11 +25,15 @@ imap <C-S-Tab> <C-d>
 " overload undo
 inoremap <C-U> <C-G>u<C-U>
 
-" \ ************ \
+" \ ************************************************************************************************** \
 " \ Accesibility \
-" \ ************ \
+" \ ************************************************************************************************** \
 " Fat finger's save
 noremap :W :w
+" don't skip lines that overflow when moving using JK
+noremap j gj
+noremap k gk
+
 " maps F2 to netrw
 nmap <F2> :call ToggleVExplorer()<cr>
 " maps F3 to tagbar
@@ -69,9 +73,9 @@ vnoremap K :m '<-2<CR>gv=gv
 " Remove unwanted spaces on selection
 vnoremap <S-F12> :TrimSpaces<CR>
 
-" \ ******* \
+" \ ************************************************************************************************** \
 " \ Plugins \
-" \ ******* \
+" \ ************************************************************************************************** \
 " FZF
 imap <c-x><c-o> <plug>(fzf-complete-line)
 map <leader>B :Buffers<cr>

@@ -1,6 +1,6 @@
-" \ ***************** \
+" \ ************************************************************************************************** \
 " \ Move between tabs \
-" \ ***************** \
+" \ ************************************************************************************************** \
 function! MoveToPrevTab()
   "there is only one window
   if tabpagenr('$') == 1 && winnr('$') == 1
@@ -45,9 +45,9 @@ function! MoveToNextTab()
   exe "b".l:cur_buf
 endfunc
 
-" \ ************ \
+" \ ************************************************************************************************** \
 " \ Toggle netrw \
-" \ ************ \
+" \ ************************************************************************************************** \
 function! ToggleVExplorer()
   if exists("t:expl_buf_num")
       let expl_win_num = bufwinnr(t:expl_buf_num)
@@ -68,10 +68,10 @@ function! ToggleVExplorer()
   endif
 endfunction
 
-" \ **************** \
+" \ ************************************************************************************************** \
 " \ Overload folding \
-" \ **************** \
-function! NeatFoldText() "{{{2
+" \ ************************************************************************************************** \
+function! NeatFoldText() 
   let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
   let lines_count = v:foldend - v:foldstart + 1
   let lines_count_text = '| ' . printf("%10s", lines_count . ' lines') . ' |'
@@ -82,11 +82,10 @@ function! NeatFoldText() "{{{2
   return foldtextstart . repeat(foldchar, winwidth(0)-foldtextlength) . foldtextend
 endfunction
 set foldtext=NeatFoldText()
-"}}}2
 
-" \ *********************** \
+" \ ************************************************************************************************** \
 " \ Display unwanted spaces \
-" \ *********************** \
+" \ ************************************************************************************************** \
 function! ShowSpaces(...)
   let @/='\v(\s+$)|( +\ze\t)'
   let oldhlsearch=&hlsearch
@@ -99,12 +98,25 @@ function! ShowSpaces(...)
 endfunction
 command! -bar -nargs=? ShowSpaces call ShowSpaces(<args>)
 
-" \ ********************** \
+" \ ************************************************************************************************** \
 " \ Remove unwanted spaces \
-" \ ********************** \
+" \ ************************************************************************************************** \
 function! TrimSpaces() range
   let oldhlsearch=ShowSpaces(1)
   execute a:firstline.",".a:lastline."substitute ///gec"
   let &hlsearch=oldhlsearch
 endfunction
 command! -bar -nargs=0 -range=% TrimSpaces <line1>,<line2>call TrimSpaces()
+
+" \ ************************************************************************************************** \
+" \ Toggle relative numbering \
+" \ ************************************************************************************************** \
+function! ToggleRelNumber()
+    if (&relativenumber == 1)
+        set norelativenumber
+        set number
+    else
+        set relativenumber
+    endif
+endfunction
+command! -bar ToggleNumber call ToggleRelNumber()

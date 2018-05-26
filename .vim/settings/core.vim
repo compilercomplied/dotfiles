@@ -1,58 +1,6 @@
-" \ **************************************************************************************** \
-" \ Plugin Manager \
-" \ **************************************************************************************** \
-
-" Auto install Plug if not installed. Runs PlugInstall afterwards.
-if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-                \https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-call plug#begin('~/.vim/plugged')
-" Make sure you use single quotes
-
-" ----- Editing ------------------------------------------------------------------------------
-Plug 'tpope/vim-surround'               " Surrounds edit. Good for HTML/XML editing.
-Plug 'tpope/vim-commentary'             " Comments+text objects.
-Plug 'junegunn/vim-easy-align'          " Aligning
-
-" ----- Code navigation ----------------------------------------------------------------------
-Plug 'xolox/vim-easytags'               " Gen ctags
-Plug 'xolox/vim-misc'                   " Dependency to easy-tags
-Plug 'majutsushi/tagbar'                " Browse ctag
-Plug 'w0rp/ale'                         " Linting
-
-" ----- File navigation ----------------------------------------------------------------------
-Plug 'junegunn/fzf.vim'                 " Fuzzy find
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
-" ----- Functionality wrappers ---------------------------------------------------------------
-Plug 'tpope/vim-fugitive'               " Git wrapper
-
-" ----- Languages ----------------------------------------------------------------------------
-"  Python
-Plug 'davidhalter/jedi-vim'             " Code completion
-Plug 'tmhedberg/SimpylFold'             " Folding
-Plug 'jmcantrell/vim-virtualenv'        " Virtual envs
-
-" Web
-Plug 'mattn/emmet-vim'                  " https://emmet.io like
-Plug 'elzr/vim-json'                    " Better JSON
-
-" Markdown
-Plug 'gabrielelana/vim-markdown'        " Better markdown
-
-" ----- Appearance ---------------------------------------------------------------------------
-Plug 'morhetz/gruvbox'
-Plug 'altercation/vim-colors-solarized'
-
-" Initialize plugin system
-call plug#end()
-
 
 " \ **************************************************************************************** \
-" \ General functionality \
+" \ General functionality
 " \ **************************************************************************************** \
 
 " ----- Environment --------------------------------------------------------------------------
@@ -64,6 +12,14 @@ set fileformat=unix             " gives <EOL> of current buffer
 " Vim needs a POSIX-Compliant shell. Fish is not.
 if $SHELL =~ 'bin/fish' || $SHELL =~ 'bin/zsh'
     set shell=/usr/bin/bash
+endif
+
+" tmux will send xterm-style keys when its xterm-keys option is on
+if &term =~ '^screen'
+	execute "set <xUp>=\e[1;*A"
+	execute "set <xDown>=\e[1;*B"
+	execute "set <xRight>=\e[1;*C"
+   execute "set <xLeft>=\e[1;*D"
 endif
 
 
@@ -126,12 +82,20 @@ let did_install_default_menus=1 " Don't load gvim menu stuff
 
 
 " \ **************************************************************************************** \
-" \ Appearance \
+" \ Appearance
 " \ **************************************************************************************** \
 
 set t_Co=256
 colorscheme solarized
 set background=dark
+
+" Mode aware cursors
+set gcr+=o:hor50-Cursor
+set gcr+=n:Cursor
+set gcr+=i-ci-sm:InsertCursor
+set gcr+=r-cr:ReplaceCursor-hor20
+set gcr+=c:CommandCursor
+set gcr+=v-ve:VisualCursor
 
 " Solarized options
 let g:solarized_termcolors=16
@@ -139,7 +103,7 @@ let g:solarized_termtrans=1
 
 
 " \ **************************************************************************************** \
-" \ Settings source files \
+" \ Settings source files
 " \ **************************************************************************************** \
 source ~/.vim/settings/statusline.vim
 source ~/.vim/settings/functions.vim
@@ -147,7 +111,7 @@ source ~/.vim/settings/mappings.vim
 
 
 " \ **************************************************************************************** \
-" \ Sources \
+" \ Sources
 " \ **************************************************************************************** \
 
 autocmd BufNewFile,BufRead *.py     source ~/.vim/sources/py.vim
@@ -158,7 +122,7 @@ autocmd BufNewFile,BufRead *.md     source ~/.vim/sources/md.vim
 
 
 " \ **************************************************************************************** \
-" \ Templates \
+" \ Templates
 " \ **************************************************************************************** \
 
 "au BufNewFile *.py r ~/.vim/templates/temp.py

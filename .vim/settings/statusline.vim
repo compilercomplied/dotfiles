@@ -1,9 +1,3 @@
-" Now set it up to change the status line based on mode.
-"if version >= 700
-"  au InsertEnter * hi StatusLine term=reverse ctermbg=5 gui=undercurl guisp=Magenta
-"  au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=2 gui=bold,reverse
-"endif
-
 " Display errors from Ale in statusline
 function! LinterStatus() abort
    let l:counts = ale#statusline#Count(bufnr(''))
@@ -28,15 +22,51 @@ function! StatuslineGit()
 endfunction
 
 
-" show a lock symbolwhen the file is readonly
+" show a lock symbol when the file is readonly
 function! ReadOnly() abort
   if &readonly || !&modifiable
-    return '🔒'
+    return '!!'
   else
     return ''
 endfunction
 
-" return filesizey
+" Status Line Custom
+" TODO weird issue with V·Block in which it doesn't found the key (^V)
+let g:currentmode={
+    \ 'n'  : 'Normal',
+    \ 'no' : 'Normal·Operator Pending',
+    \ 'v'  : 'Visual',
+    \ 'V'  : 'V·Line',
+    \ '^V' : 'V·Block',
+    \ 's'  : 'Select',
+    \ 'S'  : 'S·Line',
+    \ '^S' : 'S·Block',
+    \ 'i'  : 'Insert',
+    \ 'R'  : 'Replace',
+    \ 'Rv' : 'V·Replace',
+    \ 'c'  : 'Command',
+    \ 'cv' : 'Vim Ex',
+    \ 'ce' : 'Ex',
+    \ 'r'  : 'Prompt',
+    \ 'rm' : 'More',
+    \ 'r?' : 'Confirm',
+    \ '!'  : 'Shell',
+    \ 't'  : 'Terminal'
+    \}
+
+" Function: return current mode
+" abort -> function will abort soon as error detected
+function! CurrentMode() abort
+    let l:modecurrent = mode()
+    " use get() -> fails safely, since ^V doesn't seem to register
+    " 3rd arg is used when return of mode() == 0, which is case with ^V
+    " thus, ^V fails -> returns 0 -> replaced with 'V Block'
+    let l:modelist = toupper(get(g:currentmode, l:modecurrent, 'V·Block '))
+    let l:current_status_mode = l:modelist
+    return l:current_status_mode
+endfunction
+
+" return filesize
 function! FileSize() abort
     let l:bytes = getfsize(expand('%p'))
     if (l:bytes >= 1024)
@@ -51,31 +81,36 @@ function! FileSize() abort
     endif
   
     if (exists('mbytes'))
-        return l:mbytes . 'MB '
+        return l:mbytes . 'MB'
     elseif (exists('kbytes'))
-        return l:kbytes . 'KB '
+        return l:kbytes . 'KB'
     else
-        return l:bytes . 'B '
+        return l:bytes . 'B'
     endif
 endfunction
 
 set statusline=
 set statusline+=%#PmenuSel#
-set statusline+=%{StatuslineGit()}
+set statusline+=%{CurrentMode()}
 set statusline+=%#LineNr#
-set statusline+=\ 
+"set statusline+=\ 
 set statusline+=%{ReadOnly()}
 set statusline+=\ 
 set statusline+=%f
 set statusline+=\ 
-set statusline+=%{FileSize()}
+set statusline+=\(%{FileSize()}\)
 set statusline+=%m
+set statusline+=\ 
+set statusline+=%#PmenuSel#
+set statusline+=%{StatuslineGit()}
+set statusline+=%#LineNr#
+set statusline+=\ 
+set statusline+=%=
+set statusline+=%#CursorColumn#
 set statusline+=\ 
 set statusline+=%#PmenuSel#
 set statusline+=\[%{virtualenv#statusline()}\]
 set statusline+=%#LineNr#
-set statusline+=%=
-set statusline+=%#CursorColumn#
 set statusline+=\ 
 set statusline+=%y
 set statusline+=\ 

@@ -3,10 +3,10 @@
 " \ **************************************************************************************** \
 let mapleader = ","
 
-set t_ku=OA
-set t_kd=OB
-set t_kr=OC
-set t_kl=OD
+" set t_ku=OA
+" set t_kd=OB
+" set t_kr=OC
+" set t_kl=OD
 " source $MYVIMRC reloads the saved $MYVIMRC
 nnoremap <Leader>s :source $MYVIMRC
 " opens $MYVIMRC for editing
@@ -27,8 +27,8 @@ nnoremap <CR> <C-]>
 " Fat finger's save
 noremap :W :w
 " don't skip lines that overflow when moving using JK
-noremap j gj
-noremap k gk
+" nnoremap j gj
+" nnoremap k gk
 
 " maps F2 to netrw
 noremap <F2> :call ToggleVExplorer()<cr>
@@ -53,8 +53,8 @@ noremap <S-F12> m`:TrimSpaces<CR>``
 "inoremap " ""<Esc>i
 "inoremap ' ''<Esc>i
 " jk combination to enter normal mode
-noremap kj <esc>
-noremap jk <esc>
+inoremap kj <esc>
+inoremap jk <esc>
 
 " VISUAL MODE
 " _( map to close within brackets/quotes selected text
@@ -78,4 +78,3 @@ map <leader>B :Buffers<cr>
 map <leader>f :Files<cr>
 map <leader>g :GFiles<cr>
 map <leader>t :Tags<cr>
-

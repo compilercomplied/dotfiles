@@ -44,12 +44,10 @@ Plug 'jmcantrell/vim-virtualenv'        " Virtual envs
 Plug 'mattn/emmet-vim'                  " https://emmet.io like
 Plug 'elzr/vim-json'                    " Better JSON
 
-" Markdown
-Plug 'gabrielelana/vim-markdown'        " Better markdown
 
 " ----- Appearance ---------------------------------------------------------------------------
-Plug 'morhetz/gruvbox'
-Plug 'altercation/vim-colors-solarized'
+" Plug 'morhetz/gruvbox'
+" Plug 'altercation/vim-colors-solarized'
 
 " Initialize plugin system
 call plug#end()

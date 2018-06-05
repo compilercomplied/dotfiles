@@ -3,12 +3,14 @@
 *
 
 # Don't ignore these files
-# bash
-!.bash_aliases
-!.bashrc
 # git
 !.gitignore
 !.gitconfig
+# vim
+!.vim/vimrc
+!.vim/settings/
+!.vim/sources/
+!.vim/templates/
 # nvim
 !.config/nvim/init.vim
 !.config/nvim/buildvim.sh

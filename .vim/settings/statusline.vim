@@ -123,3 +123,4 @@ set statusline+=%l:%c
 set statusline+=\ 
 set statusline+=%{LinterStatus()}
 set statusline+=\ 
+

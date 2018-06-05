@@ -1,0 +1,6 @@
+shell nano __init__.py
+cd .config
+delete
+
+rename Xres
+rename dwarffortress

@@ -1,0 +1,21 @@
+URxvt.depth:                32
+URxvt.geometry:             90x30
+URxvt.loginShell:           true
+URxvt.internalBorder:       3
+URxvt.lineSpace:            0
+# shading - 0 to 99 darkens, 101 to 200 lightens.
+#   Don't use with tintColor; just use a darker or lighter color instead.
+URxvt*shading: 15
+
+URxvt*saveLines: 12000
+
+URxvt*font: xft:Deja\ Vu\ Sans\ Mono:pixelsize=15
+URxvt*boldFont: xft:Deja\ Vu\ Sans\ Mono:bold:pixelsize=15
+URxvt*letterSpace: -1
+URxvt*scrollBar: true
+
+# scrollbar position - left=false (default) or right=true
+URxvt*scrollBar_right: false
+
+# scrollbar style - rxvt (default), plain, next, or xterm
+URxvt*scrollstyle: plain

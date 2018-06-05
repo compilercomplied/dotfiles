@@ -85,21 +85,21 @@ let did_install_default_menus=1 " Don't load gvim menu stuff
 " \ Appearance
 " \ **************************************************************************************** \
 
-set t_Co=256
-colorscheme solarized
-set background=dark
+" set t_Co=256
+" colorscheme solarized
+" set background=light
 
 " Mode aware cursors
-set gcr+=o:hor50-Cursor
-set gcr+=n:Cursor
-set gcr+=i-ci-sm:InsertCursor
-set gcr+=r-cr:ReplaceCursor-hor20
-set gcr+=c:CommandCursor
-set gcr+=v-ve:VisualCursor
+" set gcr+=o:hor50-Cursor
+" set gcr+=n:Cursor
+" set gcr+=i-ci-sm:InsertCursor
+" set gcr+=r-cr:ReplaceCursor-hor20
+" set gcr+=c:CommandCursor
+" set gcr+=v-ve:VisualCursor
 
 " Solarized options
-let g:solarized_termcolors=16
-let g:solarized_termtrans=1
+" let g:solarized_termcolors=16
+" let g:solarized_termtrans=1
 
 
 " \ **************************************************************************************** \

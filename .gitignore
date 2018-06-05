@@ -18,7 +18,7 @@
 !.config/nvim/sources
 !.config/nvim/templates
 # emacs
-!.emacs.d/init.el
+!.emacs.d/
 # i3
 !.config/i3/config
 !.config/i3/launchpoly.sh
@@ -30,5 +30,11 @@
 # redshift
 !.config/redshift.conf
 # newsbeuter
-!.config/newsbeuter
-
+!.config/newsbeuter/
+# urxvt
+!.config/Xres/
+!.config/st
+!.config/ranger/
+!.config/qutebrowser/
+!.config/neofetch/
+!.config/htop/

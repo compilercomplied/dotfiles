@@ -1,0 +1,5 @@
+
+source ~/.vim/settings/core.vim
+
+noremap <C-w>q :q<Cr>
+noremap <leader>l I;<Esc>

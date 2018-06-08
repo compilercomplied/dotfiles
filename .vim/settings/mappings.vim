@@ -30,6 +30,10 @@ noremap :W :w
 " nnoremap j gj
 " nnoremap k gk
 
+" These create newlines like o and O but stay in normal mode
+nmap zj o<Esc>k
+nmap zk O<Esc>j
+
 " maps F2 to netrw
 noremap <F2> :call ToggleVExplorer()<cr>
 " maps F3 to tagbar

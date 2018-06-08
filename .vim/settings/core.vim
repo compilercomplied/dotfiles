@@ -126,5 +126,5 @@ autocmd BufNewFile,BufRead *.md     source ~/.vim/sources/md.vim
 " \ **************************************************************************************** \
 
 "au BufNewFile *.py r ~/.vim/templates/temp.py
-"au BufNewFile *.sh r ~/.vim/templates/temp.sh
+au BufNewFile *.sh r ~/.vim/templates/temp.sh
 au BufNewFile *.tex r ~/.vim/templates/temp.tex

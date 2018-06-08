@@ -7,8 +7,8 @@
 !.gitignore
 !.gitconfig
 # vim
-!.ideavimrc
 !.vim/vimrc
+!.vim/ideavimrc
 !.vim/settings/
 !.vim/sources/
 !.vim/templates/

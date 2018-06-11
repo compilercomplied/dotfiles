@@ -3,7 +3,6 @@
     name    = gdario
 
 [alias]
-
     # Lists aliases matching a regular expression.
     alias = "!f() { git config --get-regexp "^alias.${1}$" ; }; f"
 
@@ -17,10 +16,20 @@
     # Commits and pushes in one command, leaving a dull commit message.
     fuck = "!f() { git commit -m "lazy push" && git push origin master; }; f"
 
-# Display info
+    # Display info
     graph = log --graph --abbrev-commit --decorate --date=relative --format=format:'%Cblue%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+
+    # QoL
+	df = diff
+	dt = difftool
+    st = status .
+    cm = commit -m
 
 [color]
     ui = true
 
+[diff]
+	tool = vimdiff
 
+[difftool]
+	prompt = false

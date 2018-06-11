@@ -34,6 +34,9 @@ noremap :W :w
 nmap zj o<Esc>k
 nmap zk O<Esc>j
 
+" Quickly close editor
+noremap <C-w>A :qa<cr>
+
 " maps F2 to netrw
 noremap <F2> :call ToggleVExplorer()<cr>
 " maps F3 to tagbar

@@ -34,6 +34,7 @@
 !.config/newsbeuter/
 # urxvt
 !.config/Xres/
+!.config/bash/
 !.config/st
 !.config/ranger/
 !.config/qutebrowser/

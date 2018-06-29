@@ -30,5 +30,3 @@ URxvt*tintColor:	#727f7f
 
 URxvt*scrollColor:	#dc7979
 URxvt*throughColor:	#212222
-
-#include "/home/qkthr/.Xdefaults"

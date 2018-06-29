@@ -31,8 +31,8 @@ noremap :W :w
 " nnoremap k gk
 
 " These create newlines like o and O but stay in normal mode
-nmap zj o<Esc>k
-nmap zk O<Esc>j
+nmap zj o<Esc>
+nmap zk O<Esc>
 
 " Quickly close editor
 noremap <C-w>A :qa<cr>

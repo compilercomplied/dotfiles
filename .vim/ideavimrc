@@ -53,14 +53,6 @@ set lazyredraw                  " :help 'lazy
 set synmaxcol=200               " Don't highlight anything longer than 200 chars
 let did_install_default_menus=1 " Don't load gvim menu stuff
 
-noremap <C-w>q :q<Cr>
-noremap <leader>l A;<Esc>
-
-
-" Won't work in visual mode (with vmap) for some reason.
-" Use default map of <c-/> for that.
-nmap gcc :action CommentByLineComment<cr>
-
 
 
 " \ **************************************************************************************** \
@@ -71,7 +63,7 @@ nmap gcc :action CommentByLineComment<cr>
 let mapleader = ","
 
 " source $MYVIMRC reloads the saved $MYVIMRC
-nnoremap <leader>s source ~/.ideavimrc<cr>
+nnoremap <leader>s :source ~/.ideavimrc<cr>
 
 
 " ----- Accesibility --------------------------------------------------------------------------
@@ -99,22 +91,42 @@ vnoremap _' <Esc>`>a'<Esc>`<i'<Esc>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
+" Quickly close editor
+noremap <C-w>A :qa<cr>
+
+noremap <C-w>q :q<Cr>
+noremap <leader>l A;<Esc>
+
+
+" Won't work in visual mode (with vmap) for some reason.
+" Use default map of <c-/> for that.
+nmap gcc :action CommentByLineComment<cr>
+
 
 
 " \ **************************************************************************************** \
 " \ Idea actions
 " \ **************************************************************************************** \
-nmap <leader>g          :action GotoDeclaration<cr>
-nmap <leader>t          :action GotoFile<cr>
-nmap <leader>c          :action GotoClass<cr>
-nmap <leader>d          :action ShowErrorDescription<cr>
-map <leader>bb          :action ToggleTemporaryLineBreakpoint<CR>
-map <C-w><Space>        :action MoveEditorToOppositeTabGroup<cr>
+noremap <leader>d           :action GotoDeclaration<cr>
+noremap gf                  :action GotoFile<cr>
+noremap <leader>c           :action GotoClass<cr>
+noremap <leader>d           :action ShowErrorDescription<cr>
+
+noremap <leader>bb          :action ToggleLineBreakpoint<CR>
+
+noremap <C-w><Space>        :action MoveEditorToOppositeTabGroup<cr>
+
+noremap <leader>S           :action Stop<cr>
+noremap <leader>rr          :action RunClass<cr>
+noremap <leader>rR          :action RerunFailedTests<cr>
+noremap <leader>rd          :action DebugClass<cr>
+noremap <leader>rD          :action Debug<cr>
+noremap <leader>rm          :action RunMenu<cr>
 
 
 
 " \ **************************************************************************************** \
-" \ Ideavim optiond
+" \ Ideavim options
 " \ **************************************************************************************** \
 
 " ----- Plugins ------------------------------------------------------------------------------

@@ -26,6 +26,7 @@ Plug 'xolox/vim-easytags'               " Gen ctags
 Plug 'xolox/vim-misc'                   " Dependency to easy-tags
 Plug 'majutsushi/tagbar'                " Browse ctag
 Plug 'w0rp/ale'                         " Linting
+" Plug 'neomutt/neomutt.vim'              " Neomutt config syntax highlighting
 
 " ----- File navigation ----------------------------------------------------------------------
 Plug 'junegunn/fzf.vim'                 " Fuzzy find
@@ -47,7 +48,7 @@ Plug 'elzr/vim-json'                    " Better JSON
 
 " ----- Appearance ---------------------------------------------------------------------------
 " Plug 'morhetz/gruvbox'
-" Plug 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 
 " Initialize plugin system
 call plug#end()

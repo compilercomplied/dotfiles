@@ -1,0 +1,58 @@
+set imap_user           = "dario.gullon@gmail.com"
+set imap_keepalive      = 30
+set folder              = "imaps://imap.gmail.com"
+set spoolfile           = "+INBOX"
+set postponed           = "+[Gmail]/Drafts"
+set header_cache        = ~/.config/mutt/dariogullon/headers
+set message_cachedir    = ~/.config/mutt/dariogullon/bodies
+set certificate_file    = ~/.config/mutt/certificates
+set smtp_url            = "smtp://dario.gullon@smtp.gmail.com:587/"
+set move                = no
+
+
+unset imap_passive      # allow mutt to open new imap connection automatically
+set sort=threads
+set sort_aux=last-date-received
+
+
+
+bind g noop
+macro index,pager I  O  "Mark as read"
+macro index,pager U  O  "Mark as unread"
+macro index,pager ga "=[Gmail]/All Mail"  "Go to all mail"
+macro index,pager gd =[Gmail]/Drafts  "Go to 'Drafts'"
+macro index,pager gl ?       "Go to 'Label'"
+macro index,pager gi =INBOX     "Go to inbox"
+macro index,pager gt "=[Gmail]/Sent Mail" "Go to 'Sent Mail'"
+macro index,pager d "=[Gmail]/Trash" "Trash"
+macro index,pager !  =[Gmail]/Spam "Report spam"
+macro index,pager e  "=[All]/Gmail Mail" "Archive conversation"
+
+folder-hook +INBOX 'macro index,pager y "=[Gmail]/All Mail" "Archive conversation"'
+folder-hook +[Gmail]/Trash macro index,pager y =INBOX "Move to inbox"
+folder-hook +[Gmail]/Starred bind  index,pager y flag-message #"Toggle star"
+
+
+bind  editor  noop
+bind  index,pager c  mail                      # compose
+bind  generic     x  tag-entry                 # Select Conversation
+bind  index       x  tag-thread                # Select Conversation
+bind  pager       x  tag-message               # Select Conversation
+bind  index,pager s  flag-message              # Star a message
+
+bind  index,pager a  group-reply               # Reply all
+bind  index,pager \# delete-thread             # Delete
+bind  index,pager l  copy-message              # Label
+bind  index,pager v  save-message              # Move to
+
+
+set timeout             = 60                   # idle time before scanning
+set mail_check          = 60                   # minimum time between scans
+
+
+# gpg -r your.email@example.com -e ~/.mutt/passwords
+# shred ~/.mutt/passwords
+# rm ~/.mutt/passwords
+source "gpg -d ~/.config/mutt/passwords.gpg |"
+source "~/.config/mutt/config/colorscheme"
+

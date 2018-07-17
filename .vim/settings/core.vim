@@ -72,6 +72,8 @@ set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 
 " ----- Languages ----------------------------------------------------------------------------
 let g:pymode_python = 'python3' " python 3 as default
+let g:python_host_prog  = '/usr/bin/python2'
+let g:python3_host_prog = '/usr/bin/python3'
 
 
 " ----- Performance --------------------------------------------------------------------------
@@ -85,9 +87,9 @@ let did_install_default_menus=1 " Don't load gvim menu stuff
 " \ Appearance
 " \ **************************************************************************************** \
 
-" set t_Co=256
-" colorscheme solarized
-" set background=light
+set t_Co=256
+colorscheme solarized
+set background=light
 
 " Mode aware cursors
 " set gcr+=o:hor50-Cursor
@@ -128,3 +130,16 @@ autocmd BufNewFile,BufRead *.md     source ~/.vim/sources/md.vim
 "au BufNewFile *.py r ~/.vim/templates/temp.py
 au BufNewFile *.sh r ~/.vim/templates/temp.sh
 au BufNewFile *.tex r ~/.vim/templates/temp.tex
+
+
+" \ **************************************************************************************** \
+" \ Plugin-specific config
+" \ **************************************************************************************** \
+
+" ----- LSP ----------------------------------------------------------------------------------
+let g:LanguageClient_serverCommands = {
+    \ 'python': ['tcp://127.0.0.1:9009']
+    \ }
+
+" ----- deoplete -----------------------------------------------------------------------------
+let g:deoplete#enable_at_startup=1

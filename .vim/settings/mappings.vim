@@ -20,6 +20,8 @@ inoremap <C-S-Tab> <C-d>
 inoremap <C-U> <C-G>u<C-U>
 " easier help navigation
 nnoremap <CR> <C-]>
+" move no next/previous error using quickfix builtin
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 
 " \ **************************************************************************************** \
 " \ Accesibility 
@@ -79,9 +81,17 @@ vnoremap <S-F12> :TrimSpaces<CR>
 " \ **************************************************************************************** \
 " \ Plugins 
 " \ **************************************************************************************** \
-" FZF
+
+" ----- FZF ----------------------------------------------------------------------------------
 imap <c-x><c-o> <plug>(fzf-complete-line)
-map <leader>B :Buffers<cr>
-map <leader>f :Files<cr>
-map <leader>g :GFiles<cr>
-map <leader>t :Tags<cr>
+noremap <leader>sb :Buffers<cr>
+noremap <leader>sf :Files<cr>
+noremap <leader>st :BTags<cr>
+
+" ----- LSP ----------------------------------------------------------------------------------
+noremap <leader>cf  :call LanguageClient#textDocument_formatting()<cr>
+noremap <leader>cd  :call LanguageClient#textDocument_definition()<cr>
+noremap <leader>ch  :call LanguageClient#textDocument_hover()<cr>
+noremap <leader>ci  :call LanguageClient#textDocument_implementation()<cr>
+noremap <leader>cr  :call LanguageClient#textDocument_references()<cr>
+

@@ -131,3 +131,14 @@ noremap <leader>rm          :action RunMenu<cr>
 
 " ----- Plugins ------------------------------------------------------------------------------
 set surround
+
+
+
+" \ **************************************************************************************** \
+" \ Ideavim overrides
+" \ **************************************************************************************** \
+
+" by default don't split in two but move from one split to another (or create
+" a new one without repeating the split.
+noremap <C-w>v  :vsplit<cr><C-w>W<C-w><space>
+noremap <C-w>s  :split<cr><C-w>W<C-w><space>

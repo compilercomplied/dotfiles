@@ -18,10 +18,11 @@ Plug 'tpope/vim-commentary'             " Comments+text objects.
 Plug 'junegunn/vim-easy-align'          " Aligning
 
 " ----- Code ---- ----------------------------------------------------------------------------
-" Plug 'autozimu/LanguageClient-neovim', {
-"     \ 'branch': 'next',
-"     \ 'do': 'bash install.sh',
-"     \ }
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+Plug 'Shougo/deoplete.nvim'             " Asyncrhonous language agnostic completion
 Plug 'xolox/vim-easytags'               " Gen ctags
 Plug 'xolox/vim-misc'                   " Dependency to easy-tags
 Plug 'majutsushi/tagbar'                " Browse ctag
@@ -37,12 +38,12 @@ Plug 'tpope/vim-fugitive'               " Git wrapper
 
 " ----- Languages ----------------------------------------------------------------------------
 "  Python
-Plug 'davidhalter/jedi-vim'             " Code completion
+" Plug 'davidhalter/jedi-vim'             " Code completion
 Plug 'tmhedberg/SimpylFold'             " Folding
 Plug 'jmcantrell/vim-virtualenv'        " Virtual envs
 
 " Web
-Plug 'mattn/emmet-vim'                  " https://emmet.io like
+" Plug 'mattn/emmet-vim'                  " https://emmet.io like
 Plug 'elzr/vim-json'                    " Better JSON
 
 

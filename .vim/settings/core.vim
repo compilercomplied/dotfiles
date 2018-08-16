@@ -68,6 +68,8 @@ set autowrite                   " :w automatically when a bunch of stuff happens
 
 
 set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+" close preview window on leaving the insert mode
+" autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 
 " ----- Languages ----------------------------------------------------------------------------

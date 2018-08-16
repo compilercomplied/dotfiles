@@ -21,7 +21,7 @@ Plug 'junegunn/vim-easy-align'          " Aligning
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
-    \ }
+    \ }                                 " LSP client
 Plug 'Shougo/deoplete.nvim'             " Asyncrhonous language agnostic completion
 Plug 'xolox/vim-easytags'               " Gen ctags
 Plug 'xolox/vim-misc'                   " Dependency to easy-tags
@@ -30,8 +30,11 @@ Plug 'w0rp/ale'                         " Linting
 " Plug 'neomutt/neomutt.vim'              " Neomutt config syntax highlighting
 
 " ----- File navigation ----------------------------------------------------------------------
-Plug 'junegunn/fzf.vim'                 " Fuzzy find
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', {
+            \ 'dir': '~/.fzf',
+            \ 'do': './install --all'
+            \ }                         " Fuzzy find
 
 " ----- Functionality wrappers ---------------------------------------------------------------
 Plug 'tpope/vim-fugitive'               " Git wrapper

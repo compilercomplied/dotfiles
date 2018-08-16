@@ -20,10 +20,9 @@ inoremap <C-S-Tab> <C-d>
 inoremap <C-U> <C-G>u<C-U>
 " easier help navigation
 nnoremap <CR> <C-]>
-" move no next/previous error using quickfix builtin
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 " save
 noremap <Leader>w :update<CR>
+
 
 " \ **************************************************************************************** \
 " \ Accesibility 
@@ -48,8 +47,12 @@ noremap <C-w>A :qa<cr>
 
 " maps F2 to netrw
 noremap <F2> :call ToggleVExplorer()<cr>
+
 " maps F3 to tagbar
-noremap <F3> :TagbarToggle<CR>
+if exists(:TagbarToggle)
+    noremap <F3> :TagbarToggle<CR>
+endif
+
 " Use LH to move panes between tabs
 nmap <leader>L :call MoveToNextTab()<CR>
 nmap <leader>H :call MoveToPrevTab()<CR>
@@ -93,16 +96,24 @@ vnoremap <S-F12> :TrimSpaces<CR>
 " \ **************************************************************************************** \
 
 " ----- FZF ----------------------------------------------------------------------------------
-imap <c-x><c-o> <plug>(fzf-complete-line)
-noremap <leader>fb :Buffers<cr>
-noremap <leader>ff :Files<cr>
-noremap <leader>ft :BTags<cr>
+if exists(:FZF)
+
+    imap <c-x><c-o> <plug>(fzf-complete-line)
+    noremap <leader>fb :Buffers<cr>
+    noremap <leader>ff :Files<cr>
+    noremap <leader>ft :BTags<cr>
+
+endif
 
 " ----- LSP ----------------------------------------------------------------------------------
-noremap <leader>cf  :call LanguageClient#textDocument_formatting()<cr>
-noremap <leader>cd  :call LanguageClient#textDocument_definition()<cr>
-noremap <leader>ct  call LanguageClient#textDocument_typeDefinition()<cr>
-noremap <leader>ch  :call LanguageClient#textDocument_hover()<cr>
-noremap <leader>ci  :call LanguageClient#textDocument_implementation()<cr>
-noremap <leader>cr  :call LanguageClient#textDocument_references()<cr>
-" noremap <leader>ft  :call LanguageClient#textDocument_documentSymbol()<cr>
+if exists(:LanguageClientStart)
+
+    noremap <leader>cf  :call LanguageClient#textDocument_formatting()<cr>
+    noremap <leader>cd  :call LanguageClient#textDocument_definition()<cr>
+    noremap <leader>ct  call LanguageClient#textDocument_typeDefinition()<cr>
+    noremap <leader>ch  :call LanguageClient#textDocument_hover()<cr>
+    noremap <leader>ci  :call LanguageClient#textDocument_implementation()<cr>
+    noremap <leader>cr  :call LanguageClient#textDocument_references()<cr>
+    " noremap <leader>ft  :call LanguageClient#textDocument_documentSymbol()<cr>
+
+endif

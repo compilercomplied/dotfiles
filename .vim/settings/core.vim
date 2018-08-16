@@ -15,12 +15,12 @@ if $SHELL =~ 'bin/fish' || $SHELL =~ 'bin/zsh'
 endif
 
 " tmux will send xterm-style keys when its xterm-keys option is on
-if &term =~ '^screen'
-	execute "set <xUp>=\e[1;*A"
-	execute "set <xDown>=\e[1;*B"
-	execute "set <xRight>=\e[1;*C"
-   execute "set <xLeft>=\e[1;*D"
-endif
+" if &term =~ '^screen'
+" 	execute "set <xUp>=\e[1;*A"
+" 	execute "set <xDown>=\e[1;*B"
+" 	execute "set <xRight>=\e[1;*C"
+"    execute "set <xLeft>=\e[1;*D"
+" endif
 
 
 " ----- Input --------------------------------------------------------------------------------
@@ -88,10 +88,18 @@ let did_install_default_menus=1 " Don't load gvim menu stuff
 " \ **************************************************************************************** \
 " \ Appearance
 " \ **************************************************************************************** \
+"
+if exists(g:solarized_termcolors)
 
-set t_Co=256
-colorscheme solarized
-set background=light
+    set t_Co=256
+    colorscheme solarized
+    set background=light
+
+    " Solarized options
+    " let g:solarized_termcolors=16
+    " let g:solarized_termtrans=1
+
+endif
 
 " Mode aware cursors
 " set gcr+=o:hor50-Cursor
@@ -100,10 +108,6 @@ set background=light
 " set gcr+=r-cr:ReplaceCursor-hor20
 " set gcr+=c:CommandCursor
 " set gcr+=v-ve:VisualCursor
-
-" Solarized options
-" let g:solarized_termcolors=16
-" let g:solarized_termtrans=1
 
 
 " \ **************************************************************************************** \
@@ -119,10 +123,10 @@ source ~/.vim/settings/mappings.vim
 " \ **************************************************************************************** \
 
 autocmd BufNewFile,BufRead *.py     source ~/.vim/sources/py.vim
-autocmd BufNewFile,BufRead *.cpp    source ~/.vim/sources/cpp.vim
-autocmd BufNewFile,BufRead *.c      source ~/.vim/sources/c.vim
-autocmd BufNewFile,BufRead *.tex    source ~/.vim/sources/tex.vim
 autocmd BufNewFile,BufRead *.md     source ~/.vim/sources/md.vim
+" autocmd BufNewFile,BufRead *.cpp    source ~/.vim/sources/cpp.vim
+" autocmd BufNewFile,BufRead *.c      source ~/.vim/sources/c.vim
+" autocmd BufNewFile,BufRead *.tex    source ~/.vim/sources/tex.vim
 
 
 " \ **************************************************************************************** \
@@ -139,9 +143,15 @@ au BufNewFile *.tex r ~/.vim/templates/temp.tex
 " \ **************************************************************************************** \
 
 " ----- LSP ----------------------------------------------------------------------------------
-let g:LanguageClient_serverCommands = {
-    \ 'python': ['tcp://127.0.0.1:9009']
-    \ }
+if exists(g:LanguageClient_serverCommands)
+    let g:LanguageClient_serverCommands = {
+        \ 'python': ['tcp://127.0.0.1:9009']
+        \ }
+endif
 
 " ----- deoplete -----------------------------------------------------------------------------
-let g:deoplete#enable_at_startup=1
+if exists(g:deoplete#enable_at_startup)
+
+    let g:deoplete#enable_at_startup=1
+
+endif

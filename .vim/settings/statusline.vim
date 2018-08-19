@@ -1,6 +1,6 @@
 " Display errors from Ale in statusline
 function! LinterStatus() abort
-    if exists(:ALEEnable)
+    if exists(':ALEDetail')
         let l:counts = ale#statusline#Count(bufnr(''))
         let l:all_errors = l:counts.error + l:counts.style_error
         let l:all_non_errors = l:counts.total - l:all_errors
@@ -111,7 +111,9 @@ set statusline+=%=
 set statusline+=%#CursorColumn#
 set statusline+=\ 
 set statusline+=%#PmenuSel#
-set statusline+=\[%{virtualenv#statusline()}\]
+if exists('virtualenv#statusline()')
+    set statusline+=\[%{virtualenv#statusline()}\]
+endif
 set statusline+=%#LineNr#
 set statusline+=\ 
 set statusline+=%y

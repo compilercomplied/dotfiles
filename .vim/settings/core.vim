@@ -1,3 +1,11 @@
+"
+" g:editor_mode can take three string values:
+"   - rich: full configuration (taking into account plugins)
+"   - idea: some intelli j idea overrides and don't load plugins
+"   - simple: smallest configuration for fast loading
+"
+
+
 
 " \ **************************************************************************************** \
 " \ General functionality
@@ -88,8 +96,8 @@ let did_install_default_menus=1 " Don't load gvim menu stuff
 " \ **************************************************************************************** \
 " \ Appearance
 " \ **************************************************************************************** \
-"
-if exists(g:solarized_termcolors)
+
+if exists('solarized_termcolors')
 
     set t_Co=256
     colorscheme solarized
@@ -98,8 +106,8 @@ if exists(g:solarized_termcolors)
     " Solarized options
     " let g:solarized_termcolors=16
     " let g:solarized_termtrans=1
-
 endif
+
 
 " Mode aware cursors
 " set gcr+=o:hor50-Cursor
@@ -113,45 +121,15 @@ endif
 " \ **************************************************************************************** \
 " \ Settings source files
 " \ **************************************************************************************** \
+
 source ~/.vim/settings/statusline.vim
 source ~/.vim/settings/functions.vim
 source ~/.vim/settings/mappings.vim
 
+if (editor_mode == "rich") 
+    source ~/.vim/settings/rich.vim
 
-" \ **************************************************************************************** \
-" \ Sources
-" \ **************************************************************************************** \
-
-autocmd BufNewFile,BufRead *.py     source ~/.vim/sources/py.vim
-autocmd BufNewFile,BufRead *.md     source ~/.vim/sources/md.vim
-" autocmd BufNewFile,BufRead *.cpp    source ~/.vim/sources/cpp.vim
-" autocmd BufNewFile,BufRead *.c      source ~/.vim/sources/c.vim
-" autocmd BufNewFile,BufRead *.tex    source ~/.vim/sources/tex.vim
-
-
-" \ **************************************************************************************** \
-" \ Templates
-" \ **************************************************************************************** \
-
-"au BufNewFile *.py r ~/.vim/templates/temp.py
-au BufNewFile *.sh r ~/.vim/templates/temp.sh
-au BufNewFile *.tex r ~/.vim/templates/temp.tex
-
-
-" \ **************************************************************************************** \
-" \ Plugin-specific config
-" \ **************************************************************************************** \
-
-" ----- LSP ----------------------------------------------------------------------------------
-if exists(g:LanguageClient_serverCommands)
-    let g:LanguageClient_serverCommands = {
-        \ 'python': ['tcp://127.0.0.1:9009']
-        \ }
-endif
-
-" ----- deoplete -----------------------------------------------------------------------------
-if exists(g:deoplete#enable_at_startup)
-
-    let g:deoplete#enable_at_startup=1
+elseif (editor_mode == "idea")
+    source ~/.vim/settings/idea.vim
 
 endif

@@ -60,7 +60,7 @@ set modeline                    " modeline
 set laststatus=2                " if set to `2`, statusline is always displayed
 
 highlight ColorColumn
-            \ ctermbg=0
+            \ ctermbg=7
             \ guibg=lightgrey   " adds color column of line, width set with `set colorcolumn`
 
 
@@ -74,7 +74,6 @@ set formatoptions+=j            " delete comment character when joining commente
 set autoread                    " reload files changed externally
 set autowrite                   " :w automatically when a bunch of stuff happens
 
-
 set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 " close preview window on leaving the insert mode
 " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
@@ -87,10 +86,10 @@ let g:python3_host_prog = '/usr/bin/python3'
 
 
 " ----- Performance --------------------------------------------------------------------------
-set lazyredraw                  " :help 'lazy
+set lazyredraw                  " avoid redrawing when executing macros and other commands
 set synmaxcol=200               " Don't highlight anything longer than 200 chars
 let did_install_default_menus=1 " Don't load gvim menu stuff
-"let loaded_matchparen=1         " Don't hightlight matching parents
+" let loaded_matchparen=1         " Don't hightlight matching parents
 
 
 " \ **************************************************************************************** \

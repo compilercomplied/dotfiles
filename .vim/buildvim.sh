@@ -4,8 +4,9 @@
 git clone https://github.com/vim/vim.git
 cd vim
 
+p3_version="3.7"
 p2=$(ls /usr/lib/python2.7/ | grep ^config)
-p3=$(ls /usr/lib/python3.5/ | grep ^config)
+p3=$(ls /usr/lib/python$p3_version/ | grep ^config)
 
 # Needed python-dev && python3-dev
 # enable-gui and with-x flags are the ones that give support for xterm clipboard option
@@ -13,7 +14,7 @@ p3=$(ls /usr/lib/python3.5/ | grep ^config)
             --enable-luainterp=yes \
             --enable-perlinterp=yes \
             --enable-python3interp=yes \
-            --with-python3-config-dir=/usr/lib/python3.5/$p3 \
+            --with-python3-config-dir=/usr/lib/python$p3_version/$p3 \
             --enable-pythoninterp=yes \
             --with-python-config-dir=/usr/lib/python2.7/$p2 \
             --enable-rubyinterp=yes \
@@ -23,7 +24,7 @@ p3=$(ls /usr/lib/python3.5/ | grep ^config)
             
 
 
-make VIMRUNTIMEDIR=/usr/local/share/vim/vim80/
+#make VIMRUNTIMEDIR=/usr/local/share/vim/vim81/
 sudo make install
 cd .. && rm -rf vim
 

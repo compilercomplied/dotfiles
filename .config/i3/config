@@ -40,16 +40,14 @@ bindcode 99 exec scrot
 bindsym $mod+u exec updates
 
 # start a terminal
-bindsym $mod+Return exec konsole 
+#bindsym $mod+Return exec konsole 
 #bindsym $mod+Return exec st
-#bindsym $mod+Return exec rxvt-unicode
+bindsym $mod+Return exec rxvt-unicode
 #bindsym $mod+Return exec urxvtc
 
 # launchers 
-bindsym $mod+d exec --no-startup-id dmenu_run
-#bindsym $mod+d exec --no-startup-id rofi -show drun
-#bindsym $mod+Shift+d exec --no-startup-id rofi -show run
-#bindsym $mod+Ctrl+d exec bash ~/Scripts/rofidirs.sh
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+Shift+d exec --no-startup-id dmenu_run
 
 
 
@@ -350,25 +348,25 @@ mode "focused" {
 #######
 # Bar #
 #######
-#exec --no-startup-id $HOME/.config/i3/launchpoly.sh
-bar {
-	colors {
-		background $bckgrn
-        statusline $clrtxt
-	    separator  #666666
-
-		# Type              border  bckgrnd font
-		focused_workspace   $bckgrn $bckgrn $mainco
-	    active_workspace    $bckgrn $bckgrn #a89984
-	    inactive_workspace  $bckgrn $bckgrn #a89984
-	    urgent_workspace    $bckgrn $bckgrn $colora
-	}
-	font pango:DejaVuSansMono 10
-	strip_workspace_numbers yes
-	position top
-    status_command i3status --config ~/.config/i3/i3status.conf
-	workspace_buttons yes
-}
+exec --no-startup-id $HOME/.config/i3/launchpoly.sh
+# bar {
+# 	colors {
+#		background $bckgrn
+#       statusline $clrtxt
+#	    separator  #666666
+#
+#		# Type              border  bckgrnd font
+#		focused_workspace   $bckgrn $bckgrn $mainco
+#	    active_workspace    $bckgrn $bckgrn #a89984
+#	    inactive_workspace  $bckgrn $bckgrn #a89984
+#	    urgent_workspace    $bckgrn $bckgrn $colora
+#	}
+#	font pango:DejaVuSansMono 10
+#	strip_workspace_numbers yes
+#	position top
+#   status_command i3status --config ~/.config/i3/i3status.conf
+#	workspace_buttons yes
+# }
 
 
 
@@ -419,7 +417,7 @@ exec sleep 2;
 #exec --no-startup-id i3-msg 'workspace $tag3; exec st -t terminal'
 
 #exec sleep 2;
-#exec --no-startup-id i3-msg 'workspace $tag2; exec firefox'
+exec --no-startup-id i3-msg 'workspace $tag2; exec firefox'
 
 
 # quick terminal

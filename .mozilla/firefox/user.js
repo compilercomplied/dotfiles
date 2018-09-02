@@ -5,7 +5,11 @@ user_pref(
 
 user_pref(
     "browser.pocket.enabled", false
-);	
+);
+
+user_pref(
+    "browser.tabs.warnOnCloseOtherTabs", false
+);
 
 user_pref(
     "extensions.shield-recipe-client.enabled", false

@@ -82,6 +82,8 @@ vnoremap K :m '<-2<CR>gv=gv
 " inoremap " ""<Esc>i
 " inoremap ' ''<Esc>i
 
+" Add ; to the end of the line and drop one
+noremap <leader>l A;<Esc>o<Esc>
 " jk combination to enter normal mode
 inoremap kj <esc>
 inoremap jk <esc>

@@ -80,9 +80,13 @@ set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 
 
 " ----- Languages ----------------------------------------------------------------------------
-let g:pymode_python = 'python3' " python 3 as default
-let g:python_host_prog  = '/usr/bin/python2'
-let g:python3_host_prog = '/usr/bin/python3'
+if has('win32') ||has('win64')
+    let g:python3_host_prog = 'C:\Python37\python.exe'
+else
+    let g:pymode_python = 'python3' " python 3 as default
+    let g:python_host_prog  = '/usr/bin/python2'
+    let g:python3_host_prog = '/usr/bin/python3'
+endif
 
 
 " ----- Performance --------------------------------------------------------------------------

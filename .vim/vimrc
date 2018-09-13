@@ -18,10 +18,18 @@ Plug 'tpope/vim-commentary'             " Comments+text objects.
 Plug 'junegunn/vim-easy-align'          " Aligning
 
 " ----- Code ---- ----------------------------------------------------------------------------
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }                                 " LSP client
+if has('win32') || has('win64')
+    Plug 'OmniSharp/omnisharp-vim'
+    Plug 'autozimu/LanguageClient-neovim', {
+        \ 'branch': 'next',
+        \ 'do': 'powershell -executionpolicy bypass -File install.ps1'
+        \ }                                 " LSP client
+else
+    Plug 'autozimu/LanguageClient-neovim', {
+        \ 'branch': 'next',
+        \ 'do': 'bash install.sh'
+        \ }                                 " LSP client
+endif
 Plug 'Shougo/deoplete.nvim'             " Asyncrhonous language agnostic completion
 Plug 'xolox/vim-easytags'               " Gen ctags
 Plug 'xolox/vim-misc'                   " Dependency to easy-tags

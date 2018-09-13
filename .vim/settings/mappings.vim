@@ -56,6 +56,8 @@ tnoremap jk     <C-\><C-n>
 
 " Quickly close editor
 noremap <C-w>A :qa<cr>
+" Close tab using c-w menu
+noremap <C-w>q :q<cr>
 
 " Use LH to move panes between tabs
 nmap <leader>L :call MoveToNextTab()<CR>

@@ -9,16 +9,13 @@
 " \ **************************************************************************************** \
 
 " ----- LSP ----------------------------------------------------------------------------------
-if exists('LanguageClientStart')
-    let g:LanguageClient_serverCommands = {
-        \ 'python': ['tcp://127.0.0.1:9009']
-        \ }
-endif
+let g:LanguageClient_serverCommands = {
+    \ 'python': ['tcp://127.0.0.1:9009'],
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls']
+    \ }
 
 " ----- deoplete -----------------------------------------------------------------------------
-if exists('deoplete#enable_at_startup')
-    let g:deoplete#enable_at_startup=1
-endif
+let g:deoplete#enable_at_startup=1
 
 
 " \ **************************************************************************************** \
@@ -26,34 +23,37 @@ endif
 " \ **************************************************************************************** \
 
 " --- Tagbar ---------------------------------------------------------------------------------
-if exists(':TagbarToggle')
-    noremap <F3> :TagbarToggle<CR>
-endif
+noremap <F3> :TagbarToggle<CR>
 
 " ----- FZF ----------------------------------------------------------------------------------
-if exists(':FZF')
-    imap <c-x><c-o> <plug>(fzf-complete-line)
-    noremap <leader>fb :Buffers<cr>
-    noremap <leader>ff :Files<cr>
-    noremap <leader>ft :BTags<cr>
-endif
+imap <c-x><c-o> <plug>(fzf-complete-line)
+noremap <leader>fb :Buffers<cr>
+noremap <leader>ff :Files<cr>
+noremap <leader>ft :BTags<cr>
 
 " ----- LSP ----------------------------------------------------------------------------------
-if exists(':LanguageClientStart')
-    noremap <leader>cf  :call LanguageClient#textDocument_formatting()<cr>
-    noremap <leader>cd  :call LanguageClient#textDocument_definition()<cr>
-    noremap <leader>ct  :call LanguageClient#textDocument_typeDefinition()<cr>
-    noremap <leader>ch  :call LanguageClient#textDocument_hover()<cr>
-    noremap <leader>ci  :call LanguageClient#textDocument_implementation()<cr>
-    noremap <leader>cr  :call LanguageClient#textDocument_references()<cr>
-    " noremap <leader>ft  :call LanguageClient#textDocument_documentSymbol()<cr>
-endif
+noremap <leader>cF  :call LanguageClient#textDocument_formatting()<cr>
+noremap <leader>cf  :call LanguageClient#textDocument_rangeFormatting()<cr>
+noremap <leader>cn  :call LanguageClient#textDocument_rename()<cr>
 
+noremap <leader>cd  :call LanguageClient#textDocument_definition()<cr>
+noremap <leader>ct  :call LanguageClient#textDocument_typeDefinition()<cr>
+noremap <leader>ci  :call LanguageClient#textDocument_implementation()<cr>
+noremap <leader>cr  :call LanguageClient#textDocument_references()<cr>
+noremap <leader>ch  :call LanguageClient#textDocument_hover()<cr>
+
+noremap <leader>cs  :call LanguageClient#textDocument_documentSymbol()<cr>
+noremap <leader>cS  :call LanguageClient#workspace_symbol())<cr>
 
 
 " \ **************************************************************************************** \
 " \ Plugin specific functions
 " \ **************************************************************************************** \
+
+" deoplete
+call deoplete#custom#source('LanguageClient',
+            \ 'min_pattern_length',
+            \ 2)
 
 " ----- FuzzyTags ----------------------------------------------------------------------------
 " Fuzzy search tags within current buffer. FZF needed.

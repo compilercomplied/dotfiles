@@ -32,6 +32,9 @@ noremap <F12> :ShowSpaces 1<CR>
 " Remove unwanted spaces
 noremap <S-F12> m`:TrimSpaces<CR>``
 
+" Toggle search result highlighting
+nnoremap <silent><expr> <Leader>h (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n"
+
 
 
 " \ **************************************************************************************** \
@@ -59,16 +62,20 @@ noremap <C-w>A :qa<cr>
 " Close tab using c-w menu
 noremap <C-w>q :q<cr>
 
-" Use LH to move panes between tabs
+" Use <leader>L|H to move panes between tabs
 nmap <leader>L :call MoveToNextTab()<CR>
 nmap <leader>H :call MoveToPrevTab()<CR>
 
 " Split line, the move to beginning of new line
 noremap <leader>n i<Enter><Esc>
 
-" use J K to move around selected block
+" use J K in visual mode to move around selected block
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+
+" whereas in normal mode J K moves between tabs
+nnoremap K gt
+nnoremap J gT
 
 
 

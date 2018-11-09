@@ -16,4 +16,4 @@ URxvt*letterSpace: -1
 URxvt*scrollBar: false
 
 ! Scrollbar style - rxvt (default), plain, next, or xterm
-URxvt*scrollstyle: plain
+!URxvt*scrollstyle: plain

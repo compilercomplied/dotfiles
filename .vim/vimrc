@@ -18,24 +18,20 @@ Plug 'tpope/vim-commentary'             " Comments+text objects.
 Plug 'junegunn/vim-easy-align'          " Aligning
 
 " ----- Code ---- ----------------------------------------------------------------------------
-if has('win32') || has('win64')
-    Plug 'OmniSharp/omnisharp-vim'
-    Plug 'autozimu/LanguageClient-neovim', {
-        \ 'branch': 'next',
-        \ 'do': 'powershell -executionpolicy bypass -File install.ps1'
-        \ }                                 " LSP client
-else
-    Plug 'autozimu/LanguageClient-neovim', {
-        \ 'branch': 'next',
-        \ 'do': 'bash install.sh'
-        \ }                                 " LSP client
-endif
-Plug 'Shougo/deoplete.nvim'             " Asyncrhonous language agnostic completion
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }                                 " LSP
+
+Plug 'Shougo/deoplete.nvim', {
+	\ 'do': ':UpdateRemotePlugins'
+	\ }									" Async language agnostic completion
+
+Plug 'Shougo/echodoc.vim'               " Show parameter docs
 Plug 'xolox/vim-easytags'               " Gen ctags
 Plug 'xolox/vim-misc'                   " Dependency to easy-tags
 Plug 'majutsushi/tagbar'                " Browse ctag
 Plug 'w0rp/ale'                         " Linting
-" Plug 'neomutt/neomutt.vim'              " Neomutt config syntax highlighting
 
 " ----- File navigation ----------------------------------------------------------------------
 Plug 'junegunn/fzf.vim'
@@ -49,9 +45,12 @@ Plug 'tpope/vim-fugitive'               " Git wrapper
 
 " ----- Languages ----------------------------------------------------------------------------
 "  Python
-" Plug 'davidhalter/jedi-vim'             " Code completion
+Plug 'davidhalter/jedi-vim'             " Code completion
 Plug 'tmhedberg/SimpylFold'             " Folding
 Plug 'jmcantrell/vim-virtualenv'        " Virtual envs
+
+" Rust
+Plug 'rust-lang/rust.vim'               " General goodies
 
 " Web
 " Plug 'mattn/emmet-vim'                  " https://emmet.io like

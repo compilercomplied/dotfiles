@@ -40,10 +40,15 @@ noremap <leader>cd  :call LanguageClient#textDocument_definition()<cr>
 noremap <leader>ct  :call LanguageClient#textDocument_typeDefinition()<cr>
 noremap <leader>ci  :call LanguageClient#textDocument_implementation()<cr>
 noremap <leader>cr  :call LanguageClient#textDocument_references()<cr>
+
 noremap <leader>ch  :call LanguageClient#textDocument_hover()<cr>
+noremap <leader>cc  :call LanguageClient_contextMenu()<cr>
+
+noremap <leader>cl  :call LanguageClient#textDocument_documentHighlight()<cr>
+noremap <leader>cL  :call LanguageClient#clearDocumentHighlight()<cr>
 
 noremap <leader>cs  :call LanguageClient#textDocument_documentSymbol()<cr>
-noremap <leader>cS  :call LanguageClient#workspace_symbol())<cr>
+noremap <leader>cS  :call LanguageClient#workspace_symbol()<cr>
 
 
 " \ **************************************************************************************** \

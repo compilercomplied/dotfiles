@@ -25,7 +25,7 @@ Plug 'autozimu/LanguageClient-neovim', {
 
 Plug 'Shougo/deoplete.nvim', {
 	\ 'do': ':UpdateRemotePlugins'
-	\ }									" Async language agnostic completion
+	\ }                                 " Async language agnostic completion
 
 Plug 'Shougo/echodoc.vim'               " Show parameter docs
 Plug 'xolox/vim-easytags'               " Gen ctags

@@ -11,6 +11,7 @@
 " ----- LSP ----------------------------------------------------------------------------------
 let g:LanguageClient_serverCommands = {
     \ 'python': ['tcp://127.0.0.1:9009'],
+    \ 'java': ['/usr/local/bin/jdtls'],
     \ 'rust': ['rustup', 'run', 'nightly', 'rls']
     \ }
 

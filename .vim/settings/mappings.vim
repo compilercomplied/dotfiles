@@ -91,8 +91,8 @@ nnoremap J gT
 " inoremap " ""<Esc>i
 " inoremap ' ''<Esc>i
 
-" Add ; to the end of the line and drop one
-noremap <leader>l A;<Esc>o<Esc>
+" Add ; to the end of the line
+noremap <leader>l A;<Esc>
 " jk combination to enter normal mode
 inoremap kj <esc>
 inoremap jk <esc>

@@ -1,13 +1,14 @@
 [user]
-    email   = git.gdario@example.com
+    email   = git.gdario@gmail.com
     name    = gdario
 
 [alias]
+
     # Lists aliases matching a regular expression.
     alias = "!f() { git config --get-regexp "^alias.${1}$" ; }; f"
 
-    # Pretty prints git log with a custom format.
-    work = log --pretty=format:\"%Cred%h%Cgreen%x09%<(10)%an%Creset%x09%ad%Cblue%x09%s\"
+    # Show all of my configured aliases
+    aliases = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
 
     # Commits and pushes in one command, with input as commit message.
     # Usage: git cpush "commit message goes here"
@@ -17,6 +18,7 @@
     fuck = "!f() { git commit -m "lazy push" && git push origin master; }; f"
 
     # Display info
+    work = log --pretty=format:\"%Cred%h%Cgreen%x09%<(10)%an%Creset%x09%ad%Cblue%x09%s\"
     graph = log --graph --abbrev-commit --decorate --date=relative --format=format:'%Cblue%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 
     # QoL
@@ -25,13 +27,17 @@
     st = status .
     cm = commit -m
 
+[push]
+    # let's you say just `git push origin` to push the current branch
+    default = current 
+
 [color]
     ui = true
-
 [diff]
 	tool = vimdiff
-
 [difftool]
 	prompt = false
 [core]
 	editor = vim
+[merge]
+	tool = nvim

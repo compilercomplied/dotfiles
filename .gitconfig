@@ -43,6 +43,6 @@
 	prompt = false
 [core]
 	editor = vim
-	excludesfile = /home/sine/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [merge]
 	tool = nvim

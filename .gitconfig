@@ -15,7 +15,7 @@
     cpush = "!f() { git commit -m \"$@\" && git push; }; f"
 
     # Commits and pushes in one command, leaving a dull commit message.
-    fuck = "!f() { git commit -m "lazy push" && git push origin master; }; f"
+    fuck = "!f() { git commit -m "lazy push" && git push; }; f"
 
     # Display info
     work = log --pretty=format:\"%Cred%h%Cgreen%x09%<(10)%an%Creset%x09%ad%Cblue%x09%s\"
@@ -43,5 +43,6 @@
 	prompt = false
 [core]
 	editor = vim
+	excludesfile = /home/sine/.gitignore_global
 [merge]
 	tool = nvim

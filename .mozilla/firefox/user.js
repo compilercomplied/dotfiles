@@ -49,6 +49,14 @@ user_pref(
 );
 
 user_pref(
+    "dom.push.connection.enabled", false
+);
+
+user_pref(
+    "dom.push.enabled", false
+);
+
+user_pref(
     "devtools.webide.autoinstallFxdtAdapters", false
 );
 

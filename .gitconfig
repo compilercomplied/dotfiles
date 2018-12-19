@@ -4,25 +4,24 @@
 
 [alias]
 
+    # --- Semantic ---------------------------------------------------------------------------
     # Lists aliases matching a regular expression.
     alias = "!f() { git config --get-regexp "^alias.${1}$" ; }; f"
-
     # Show all of my configured aliases
     aliases = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
+    uncommit = reset --soft HEAD^
+    unstage = reset
+    staged = diff --cached
+    tags = tag -l
+    branches = branch -a
+    remotes = remote -v
+    # Rewrite the last commit to include the currently-staged changes
+    amend = commit --amend -C HEAD --reset-author
+    # Show root
+    root = rev-parse --show-toplevel
 
-    # Commits and pushes in one command, with input as commit message.
-    # Usage: git cpush "commit message goes here"
-    cpush = "!f() { git commit -m \"$@\" && git push; }; f"
 
-    # Commits and pushes in one command, leaving a dull commit message.
-    fuck = "!f() { git commit -m "lazy push" && git push; }; f"
-
-    # Display info
-    work = log --pretty=format:\"%Cred%h%Cgreen%x09%<(10)%an%Creset%x09%ad%Cblue%x09%s\"
-    graph = log --graph --abbrev-commit --decorate --date=relative --format=format:'%Cblue%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-
-
-    # QoL
+    # --- QoL --------------------------------------------------------------------------------
     lls = branch --list
     rls = branch -r
     df = diff
@@ -30,6 +29,16 @@
     s = status
     st = status .
     cm = commit -m
+    # Commits and pushes in one command, with input as commit message.
+    # Usage: git cpush "commit message goes here"
+    cpush = "!f() { git commit -m \"$@\" && git push; }; f"
+    # Commits and pushes in one command, leaving a dull commit message.
+    fuck = "!f() { git commit -m "lazy push" && git push; }; f"
+
+
+    # --- Display ----------------------------------------------------------------------------
+    work = log --pretty=format:\"%Cred%h%Cgreen%x09%<(10)%an%Creset%x09%ad%Cblue%x09%s\"
+    graph = log --graph --abbrev-commit --decorate --date=relative --format=format:'%Cblue%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 
 [push]
     # let's you say just `git push origin` to push the current branch

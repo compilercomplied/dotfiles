@@ -16,6 +16,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'               " Surrounds edit. Good for HTML/XML editing.
 Plug 'tpope/vim-commentary'             " Comments+text objects.
 Plug 'junegunn/vim-easy-align'          " Aligning
+Plug 'lilydjwg/colorizer'               " Friendlier HTML colour codes
+Plug 'RRethy/vim-illuminate'            " Highlight match under cursor in same buffer
+Plug 'inside/vim-search-pulse'          " Pulse for each n N search move
 
 " ----- Code ---- ----------------------------------------------------------------------------
 Plug 'autozimu/LanguageClient-neovim', {
@@ -31,7 +34,7 @@ Plug 'Shougo/echodoc.vim'               " Show parameter docs
 Plug 'xolox/vim-easytags'               " Gen ctags
 Plug 'xolox/vim-misc'                   " Dependency to easy-tags
 Plug 'majutsushi/tagbar'                " Browse ctag
-Plug 'w0rp/ale'                         " Linting
+" Plug 'w0rp/ale'                         " Linting
 
 " ----- File navigation ----------------------------------------------------------------------
 Plug 'junegunn/fzf.vim'

@@ -1,0 +1,1 @@
+pgrep 'tmux|startx' || startx

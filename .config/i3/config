@@ -8,9 +8,7 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:DejaVuSansMono 10
 
-###############
-# Keybindings #
-###############
+# --- Keybindings ----------------------------------------------------------------------------
 
 # music
 bindsym Ctrl+Shift+b exec mpc toggle
@@ -51,9 +49,7 @@ bindsym $mod+Shift+d exec --no-startup-id dmenu_run
 
 
 
-###################
-# Colour bindings #
-###################
+# --- Colour bindings ------------------------------------------------------------------------ 
 
 ###SOLARDARK###
 #set $colora	#dc322f
@@ -183,27 +179,27 @@ bindsym $mod+z workspace back_and_forth
 bindsym $mod+Shift+z move container to workspace back_and_forth; workspace back_and_forth
 
 # name the workspaces
-set $tag1 "I"
-set $tag2 "II"
-set $tag3 "III"
-set $tag4 "IV"
-set $tag5 "V"
-set $tag6 "VI"
-set $tag7 "VII"
-set $tag8 "VIII"
-set $tag9 "IV"
-set $tag0 "X"
+# set $tag1 "I"
+# set $tag2 "II"
+# set $tag3 "III"
+# set $tag4 "IV"
+# set $tag5 "V"
+# set $tag6 "VI"
+# set $tag7 "VII"
+# set $tag8 "VIII"
+# set $tag9 "IV"
+# set $tag0 "X"
 
-#set $tag1 "1: "
-#set $tag2 "2: "
-#set $tag3 "3: "
-#set $tag4 "4: "
-#set $tag5 "5: "
-#set $tag6 "6: "
-#set $tag7 "7: "
-#set $tag8 "8: "
-#set $tag9 "9: "
-#set $tag0 "10: "
+set $tag1 "1: "
+set $tag2 "2: "
+set $tag3 "3: "
+set $tag4 "4: "
+set $tag5 "5: "
+set $tag6 "6: "
+set $tag7 "7: "
+set $tag8 "8: "
+set $tag9 "9: "
+set $tag0 "10: "
 
 
 # switch to workspace

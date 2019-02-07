@@ -12,6 +12,7 @@
 let g:LanguageClient_serverCommands = {
     \ 'python': ['tcp://127.0.0.1:9009'],
     \ 'java': ['/usr/local/bin/jdtls'],
+    \ 'javascript': ['tcp://127.0.0.1:2089'],
     \ 'rust': ['rustup', 'run', 'nightly', 'rls']
     \ }
 
@@ -22,7 +23,7 @@ let g:deoplete#enable_at_startup=1
 let g:rainbow_active = 1
 
 " ----- pulse --------------------------------------------------------------------------------
-let g:vim_search_pulse_duration = 200
+let g:vim_search_pulse_duration = 100
 
 
 " \ **************************************************************************************** \

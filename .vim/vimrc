@@ -20,7 +20,7 @@ Plug 'lilydjwg/colorizer'               " Friendlier HTML colour codes
 Plug 'RRethy/vim-illuminate'            " Highlight match under cursor in same buffer
 Plug 'inside/vim-search-pulse'          " Pulse for each n N search move
 
-" ----- Code ---- ----------------------------------------------------------------------------
+" ----- Code ---------------------------------------------------------------------------------
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
@@ -34,10 +34,9 @@ Plug 'Shougo/echodoc.vim'               " Show parameter docs
 Plug 'xolox/vim-easytags'               " Gen ctags
 Plug 'xolox/vim-misc'                   " Dependency to easy-tags
 Plug 'majutsushi/tagbar'                " Browse ctag
-" Plug 'w0rp/ale'                         " Linting
+Plug 'w0rp/ale'                         " Linting
 
 " ----- File navigation ----------------------------------------------------------------------
-Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', {
             \ 'dir': '~/.fzf',
             \ 'do': './install --all'
@@ -59,6 +58,9 @@ Plug 'rust-lang/rust.vim'               " General goodies
 " Plug 'mattn/emmet-vim'                  " https://emmet.io like
 Plug 'elzr/vim-json'                    " Better JSON
 
+" Wabbascript *dabs*
+Plug 'leafgarland/typescript-vim'       " Typescript syntax
+Plug 'posva/vim-vue'                    " Vue components
 
 " ----- Appearance ---------------------------------------------------------------------------
 " Plug 'morhetz/gruvbox'

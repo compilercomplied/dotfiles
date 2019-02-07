@@ -75,7 +75,7 @@ call deoplete#custom#source('LanguageClient',
             \ 'min_pattern_length',
             \ 2)
 
-call deoplete#enable_logging("DEBUG", "deoplete.log")
+call deoplete#enable_logging("DEBUG", ".deoplete.log")
 
 " ----- FuzzyTags ----------------------------------------------------------------------------
 " Fuzzy search tags within current buffer. FZF needed.

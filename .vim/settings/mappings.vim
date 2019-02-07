@@ -35,14 +35,18 @@ noremap <S-F12> m`:TrimSpaces<CR>``
 " Toggle search result highlighting
 nnoremap <silent><expr> <Leader>h (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n"
 
+" Fat finger's save
+noremap :W :w
+
+" jk combination to enter normal mode
+inoremap kj <esc>
+inoremap jk <esc>
+
 
 
 " \ **************************************************************************************** \
 " \ Movement 
 " \ **************************************************************************************** \
-
-" Fat finger's save
-noremap :W :w
 
 " don't skip lines that overflow when moving using JK
 " nnoremap j gj
@@ -93,9 +97,6 @@ nnoremap J gT
 
 " Add ; to the end of the line
 noremap <leader>l A;<Esc>
-" jk combination to enter normal mode
-inoremap kj <esc>
-inoremap jk <esc>
 
 " _( map to close within brackets/quotes selected text
 vnoremap _[ <Esc>`>a]<Esc>`<i[<Esc>

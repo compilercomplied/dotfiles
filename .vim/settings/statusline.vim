@@ -128,3 +128,6 @@ set statusline+=\
 set statusline+=%{LinterStatus()}
 set statusline+=\ 
 
+" --------------------------------------------------------------------------------------------
+set cmdwinheight=5
+set cmdheight=2

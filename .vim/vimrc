@@ -30,7 +30,7 @@ Plug 'Shougo/deoplete.nvim', {
 	\ 'do': ':UpdateRemotePlugins'
 	\ }                                 " Async language agnostic completion
 
-Plug 'Shougo/echodoc.vim'               " Show parameter docs
+Plug 'Shougo/echodoc.vim'               " Show function signatures
 Plug 'xolox/vim-easytags'               " Gen ctags
 Plug 'xolox/vim-misc'                   " Dependency to easy-tags
 Plug 'majutsushi/tagbar'                " Browse ctag

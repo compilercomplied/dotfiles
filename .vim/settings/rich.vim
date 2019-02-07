@@ -10,14 +10,21 @@
 
 " ----- LSP ----------------------------------------------------------------------------------
 let g:LanguageClient_serverCommands = {
-    \ 'python': ['tcp://127.0.0.1:9009'],
-    \ 'java': ['/usr/local/bin/jdtls'],
+    \ 'python':     ['tcp://127.0.0.1:9009'],
+    \ 'java':       ['/usr/local/bin/jdtls'],
     \ 'javascript': ['tcp://127.0.0.1:2089'],
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls']
+    \ 'typescript': ['tcp://127.0.0.1:2089'],
+    \ 'rust':       ['rustup', 'run', 'nightly', 'rls']
     \ }
 
 " ----- deoplete -----------------------------------------------------------------------------
 let g:deoplete#enable_at_startup=1
+let g:deoplete#enable_smart_case=1
+let g:deoplete#is_debug_enabled="True"
+
+" ----- echodoc ------------------------------------------------------------------------------
+let g:echodoc#enable_at_startup = 1
+let g:echodoc#type = 'signature'
 
 " ----- rainbow ------------------------------------------------------------------------------
 let g:rainbow_active = 1
@@ -42,7 +49,7 @@ noremap <leader>ft :BTags<cr>
 " ----- LSP ----------------------------------------------------------------------------------
 noremap <leader>cF  :call LanguageClient#textDocument_formatting()<cr>
 noremap <leader>cf  :call LanguageClient#textDocument_rangeFormatting()<cr>
-noremap <leader>cn  :call LanguageClient#textDocument_rename()<cr>
+noremap <leader>cR  :call LanguageClient#textDocument_rename()<cr>
 
 noremap <leader>cd  :call LanguageClient#textDocument_definition()<cr>
 noremap <leader>ct  :call LanguageClient#textDocument_typeDefinition()<cr>
@@ -67,6 +74,8 @@ noremap <leader>cS  :call LanguageClient#workspace_symbol()<cr>
 call deoplete#custom#source('LanguageClient',
             \ 'min_pattern_length',
             \ 2)
+
+call deoplete#enable_logging("DEBUG", "deoplete.log")
 
 " ----- FuzzyTags ----------------------------------------------------------------------------
 " Fuzzy search tags within current buffer. FZF needed.

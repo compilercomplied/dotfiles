@@ -18,13 +18,15 @@ let g:LanguageClient_serverCommands = {
     \ }
 
 " ----- deoplete -----------------------------------------------------------------------------
+set completeopt+=noinsert
+set completeopt+=noselect
 let g:deoplete#enable_at_startup=1
 let g:deoplete#enable_smart_case=1
 let g:deoplete#is_debug_enabled="True"
 
 " ----- echodoc ------------------------------------------------------------------------------
 let g:echodoc#enable_at_startup = 1
-let g:echodoc#type = 'signature'
+" let g:echodoc#type = 'signature'
 
 " ----- rainbow ------------------------------------------------------------------------------
 let g:rainbow_active = 1
@@ -71,11 +73,17 @@ noremap <leader>cS  :call LanguageClient#workspace_symbol()<cr>
 " \ **************************************************************************************** \
 
 " deoplete
-call deoplete#custom#source('LanguageClient',
+" call deoplete#enable_logging("DEBUG", ".deoplete.log")
+call deoplete#custom#source(
+            \ 'LanguageClient',
             \ 'min_pattern_length',
-            \ 2)
+            \ 2
+\ )
 
-call deoplete#enable_logging("DEBUG", ".deoplete.log")
+call deoplete#custom#option({
+    \ 'auto_complete_delay': 200,
+    \ 'smart_case': v:true,
+\ })
 
 " ----- FuzzyTags ----------------------------------------------------------------------------
 " Fuzzy search tags within current buffer. FZF needed.

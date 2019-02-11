@@ -11,9 +11,9 @@
 " ----- LSP ----------------------------------------------------------------------------------
 let g:LanguageClient_serverCommands = {
     \ 'python':     ['tcp://127.0.0.1:9009'],
-    \ 'java':       ['/usr/local/bin/jdtls'],
     \ 'javascript': ['tcp://127.0.0.1:2089'],
     \ 'typescript': ['tcp://127.0.0.1:2089'],
+    \ 'java':       ['/usr/local/bin/jdtls'],
     \ 'rust':       ['rustup', 'run', 'nightly', 'rls']
     \ }
 
@@ -78,7 +78,8 @@ let g:vue_disable_pre_processors=1  " https://github.com/posva/vim-vue/issues/95
 autocmd Filetype * AnyFoldActivate
 set foldlevel=99
 
-
+" ----- whichkey -----------------------------------------------------------------------------
+" nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 
 " \ **************************************************************************************** \
 " \ Plugin specific binds

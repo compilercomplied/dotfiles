@@ -1,7 +1,8 @@
 " \ **************************************************************************************** \
 " \ General Binds 
 " \ **************************************************************************************** \
-let mapleader = ","
+" let mapleader = ","
+let mapleader = "\<space>"
 
 " source $MYVIMRC reloads the saved $MYVIMRC
 nnoremap <Leader>s :source $MYVIMRC
@@ -36,7 +37,8 @@ noremap <S-F12> m`:TrimSpaces<CR>``
 nnoremap <silent><expr> <Leader>h (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n"
 
 " Fat finger's save
-noremap :W :w
+nnoremap :W :w
+nnoremap <C-s> :wa<cr>
 
 " jk combination to enter normal mode
 inoremap kj <esc>
@@ -89,14 +91,17 @@ nnoremap J gT
 
 " Bracket and parenthesis handling
 " automatically adds closing brackets
-" inoremap ( ()<Esc>i
-" inoremap [ []<Esc>i
-" inoremap { {}<Esc>i
-" inoremap " ""<Esc>i
-" inoremap ' ''<Esc>i
+inoremap ( ()<Esc>i
+inoremap [ []<Esc>i
+inoremap { {}<Esc>i
+inoremap " ""<Esc>i
+inoremap ' ''<Esc>i
 
 " Add ; to the end of the line
 noremap <leader>l A;<Esc>
+
+" Add , to the end of the line
+noremap <leader>m A,<Esc>
 
 " _( map to close within brackets/quotes selected text
 vnoremap _[ <Esc>`>a]<Esc>`<i[<Esc>

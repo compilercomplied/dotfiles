@@ -45,6 +45,7 @@ Plug 'junegunn/fzf', {
 
 " ----- Functionality wrappers ---------------------------------------------------------------
 Plug 'tpope/vim-fugitive'               " Git wrapper
+" Plug 'liuchengxu/vim-which-key'         " Keybinds hint
 
 " ----- Languages ----------------------------------------------------------------------------
 "  Python
@@ -56,7 +57,7 @@ Plug 'jmcantrell/vim-virtualenv'        " Virtual envs
 Plug 'rust-lang/rust.vim'               " General goodies
 
 " Web
-Plug 'mattn/emmet-vim'                  " https://emmet.io like
+" Plug 'mattn/emmet-vim'                  " https://emmet.io like
 Plug 'elzr/vim-json'                    " Better JSON
 
 " Wabbascript *dabs*

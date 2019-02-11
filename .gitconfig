@@ -11,6 +11,9 @@
     aliases = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
     uncommit = reset --soft HEAD^
     unstage = reset
+    discard = reset --hard
+    purge = clean -nd
+    purge-force = clean -fd
     staged = diff --cached
     tags = tag -l
     branches = branch -a

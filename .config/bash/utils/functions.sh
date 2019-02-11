@@ -71,3 +71,7 @@ myinfo () {
 }
 
 
+# Easily pipe grep to fzf to search inside files
+function frep() {
+    grep --line-buffered --color=never -r "" $1 | fzf -e
+}

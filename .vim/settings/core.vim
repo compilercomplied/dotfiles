@@ -63,6 +63,9 @@ highlight ColorColumn
             \ ctermbg=7
             \ guibg=lightgrey   " adds color column of line, width set with `set colorcolumn`
 
+highlight Search cterm=NONE ctermfg=Black ctermbg=lightgrey
+
+
 
 " ----- Accesibility -------------------------------------------------------------------------
 set ruler                       " show cursor position
@@ -80,10 +83,11 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 2
 " let g:netrw_altv = 1
 let g:netrw_winsize = 25
+let g:netrw_list_hide= '.*\.swp$,.*\.d.ts$,.*\.pyc$'
 
-" set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 " close preview window on leaving the insert mode
 " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+"
 
 
 " ----- Languages ----------------------------------------------------------------------------

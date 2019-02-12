@@ -38,6 +38,7 @@ Plug 'w0rp/ale'                         " Linting
 Plug 'pseewald/vim-anyfold'             " Language agnostic folding
 
 " ----- File navigation ----------------------------------------------------------------------
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', {
             \ 'dir': '~/.fzf',
             \ 'do': './install --all'

@@ -84,7 +84,7 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 2
 " let g:netrw_altv = 1
 let g:netrw_winsize = 25
-let g:netrw_list_hide= '.*\.swp$,.*\.d.ts$,.*\.pyc$'
+let g:netrw_list_hide= '.*\.swp$,.*\.d.ts$,.*\.pyc$,.*\.js.map$'
 
 " close preview window on leaving the insert mode
 " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
@@ -127,6 +127,8 @@ endif
 " set gcr+=r-cr:ReplaceCursor-hor20
 " set gcr+=c:CommandCursor
 " set gcr+=v-ve:VisualCursor
+
+hi DiffText ctermfg=darkred ctermbg=lightgrey
 
 
 " \ **************************************************************************************** \

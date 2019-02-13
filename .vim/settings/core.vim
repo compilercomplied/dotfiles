@@ -63,8 +63,6 @@ highlight ColorColumn
             \ ctermbg=7
             \ guibg=lightgrey   " adds color column of line, width set with `set colorcolumn`
 
-highlight Search cterm=NONE ctermfg=Black ctermbg=lightgrey
-
 
 
 " ----- Accesibility -------------------------------------------------------------------------
@@ -117,6 +115,10 @@ if exists('solarized_termcolors')
     " Solarized options
     " let g:solarized_termcolors=16
     " let g:solarized_termtrans=1
+endif
+
+if &diff
+    colorscheme github
 endif
 
 

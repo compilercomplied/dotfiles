@@ -12,6 +12,7 @@
     uncommit = reset --soft HEAD^
     unstage = reset
     discard = reset --hard
+    follow = log --follow -p --
     purge = clean -nd
     purge-force = clean -fd
     staged = diff --cached

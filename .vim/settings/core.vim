@@ -130,7 +130,11 @@ endif
 " set gcr+=c:CommandCursor
 " set gcr+=v-ve:VisualCursor
 
+" Diff colours
 hi DiffText ctermfg=darkred ctermbg=lightgrey
+
+" Other colours
+hi Search ctermfg=black ctermbg=lightmagenta
 
 
 " \ **************************************************************************************** \

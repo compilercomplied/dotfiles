@@ -38,7 +38,6 @@ nnoremap <silent><expr> <Leader>h (&hls && v:hlsearch ? ':nohls' : ':set hls')."
 
 " Fat finger's save
 nnoremap :W :w
-nnoremap <C-s> :wa<cr>
 
 " jk combination to enter normal mode
 inoremap kj <esc>

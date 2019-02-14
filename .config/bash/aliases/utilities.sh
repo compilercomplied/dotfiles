@@ -31,3 +31,6 @@ alias reloadbash='. ~/.bashrc'
 
 # change the current directory to the parent directory that contains the .git folder
 alias git-root='cd "`git rev-parse --show-toplevel`"'
+
+# Wrapper around jq to print out non json lines while beautifying json
+alias jsonpp='jq -R -r '"'"'. as $line | try fromjson catch $line'"'"''

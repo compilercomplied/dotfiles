@@ -106,16 +106,7 @@ let did_install_default_menus=1 " Don't load gvim menu stuff
 " \ Appearance
 " \ **************************************************************************************** \
 
-if exists('solarized_termcolors')
-
-    set t_Co=256
-    colorscheme solarized
-    set background=light
-
-    " Solarized options
-    " let g:solarized_termcolors=16
-    " let g:solarized_termtrans=1
-endif
+set t_Co=256
 
 if &diff
     colorscheme github

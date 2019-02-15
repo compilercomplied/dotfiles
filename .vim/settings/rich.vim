@@ -78,6 +78,13 @@ let g:vue_disable_pre_processors=1  " https://github.com/posva/vim-vue/issues/95
 autocmd Filetype * AnyFoldActivate
 set foldlevel=99
 
+
+" ----- Solarized ----------------------------------------------------------------------------
+set background=light
+colorscheme solarized
+let g:solarized_termcolors=16
+let g:solarized_termtrans=1
+
 " ----- whichkey -----------------------------------------------------------------------------
 " nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 

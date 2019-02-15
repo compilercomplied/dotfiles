@@ -10,8 +10,8 @@ URxvt*shading: 15
 
 URxvt*saveLines: 12000
 
-URxvt*font: xft:Deja\ Vu\ Sans\ Mono:pixelsize=15
-URxvt*boldFont: xft:Deja\ Vu\ Sans\ Mono:bold:pixelsize=15
+URxvt*font: xft:DejaVuSansMono Nerd:pixelsize=15
+URxvt*boldFont: xft:DejaVuSansMono Nerd:bold:pixelsize=15
 URxvt*letterSpace: -1
 URxvt*scrollBar: false
 

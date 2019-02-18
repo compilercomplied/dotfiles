@@ -22,11 +22,11 @@ set completeopt+=noinsert
 set completeopt+=noselect
 let g:deoplete#enable_at_startup=1
 let g:deoplete#enable_smart_case=1
-let g:deoplete#is_debug_enabled="True"
+" let g:deoplete#is_debug_enabled="True"
 
 " ----- echodoc ------------------------------------------------------------------------------
 let g:echodoc#enable_at_startup = 1
-" let g:echodoc#type = 'signature'
+let g:echodoc#type = 'signature'
 
 " ----- rainbow ------------------------------------------------------------------------------
 let g:rainbow_active = 1

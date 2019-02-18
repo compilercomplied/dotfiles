@@ -5,6 +5,7 @@ function! MoveToPrevTab()
   "there is only one window
   if tabpagenr('$') == 1 && winnr('$') == 1
     return
+
   endif
   "preparing new window
   let l:tab_nr = tabpagenr('$')

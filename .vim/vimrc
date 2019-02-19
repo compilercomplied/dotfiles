@@ -47,7 +47,7 @@ Plug 'junegunn/fzf', {
 " ----- Functionality wrappers ---------------------------------------------------------------
 Plug 'tpope/vim-fugitive'               " Git wrapper
 Plug 'tpope/vim-surround'               " Surrounds + motions
-" Plug 'liuchengxu/vim-which-key'         " Keybinds hint
+Plug 'liuchengxu/vim-which-key'         " Keybinds hint
 
 " ----- Languages ----------------------------------------------------------------------------
 "  Python

@@ -74,7 +74,8 @@ set display+=lastline           " :help 'display'
 set formatoptions+=j            " delete comment character when joining commented lines
 set autoread                    " reload files changed externally
 set autowrite                   " :w automatically when a bunch of stuff happens
-set notimeout                   " disable bind combo timeout
+" set notimeout                   " disable bind combo timeout
+set timeout
 
 " netrw sane defaults
 let g:netrw_banner = 0

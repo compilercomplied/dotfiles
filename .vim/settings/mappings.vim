@@ -5,24 +5,19 @@
 let mapleader = "\<space>"
 
 " source $MYVIMRC reloads the saved $MYVIMRC
-nnoremap <Leader>s :source $MYVIMRC
+nnoremap <Leader>s :source $MYVIMRC<cr>
 " opens $MYVIMRC for editing
-nnoremap <Leader>v :tabedit $MYVIMRC
+nnoremap <Leader>v :tabedit $MYVIMRC<cr>
 
-" Easy tab/untab in IM and NM
-nnoremap <C-Tab> a<C-t><Esc>
-nnoremap <C-S-Tab> a<C-d><Esc>
-inoremap <C-Tab> <C-t>
-inoremap <C-S-Tab> <C-d>
+" Easy tab/untab
+nnoremap <Tab> >>
+nnoremap <S-Tab> << 
 
 " overload undo
 inoremap <C-U> <C-G>u<C-U>
 
 " easier help navigation
 nnoremap <CR> <C-]>
-
-" save
-noremap <Leader>w :update<CR>
 
 " maps F2 to netrw
 noremap <F2> :call ToggleVExplorer()<cr>
@@ -34,7 +29,7 @@ noremap <F12> :ShowSpaces 1<CR>
 noremap <S-F12> m`:TrimSpaces<CR>``
 
 " Toggle search result highlighting
-nnoremap <silent><expr> <Leader>h (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n"
+" nnoremap <silent><expr> <Leader>h (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n"
 
 " Fat finger's save
 nnoremap :W :w
@@ -68,8 +63,8 @@ noremap <C-w>A :qa<cr>
 noremap <C-w>q :q<cr>
 
 " Use <leader>L|H to move panes between tabs
-nmap <leader>L :call MoveToNextTab()<CR>
-nmap <leader>H :call MoveToPrevTab()<CR>
+" nmap <leader>L :call MoveToNextTab()<CR>
+" nmap <leader>H :call MoveToPrevTab()<CR>
 
 " Split line, the move to beginning of new line
 noremap <leader>n i<Enter><Esc>
@@ -97,10 +92,10 @@ inoremap " ""<Esc>i
 inoremap ' ''<Esc>i
 
 " Add ; to the end of the line
-noremap <leader>l A;<Esc>
+" noremap <leader>l A;<Esc>
 
 " Add , to the end of the line
-noremap <leader>m A,<Esc>
+" noremap <leader>m A,<Esc>
 
 " _( map to close within brackets/quotes selected text
 vnoremap _[ <Esc>`>a]<Esc>`<i[<Esc>

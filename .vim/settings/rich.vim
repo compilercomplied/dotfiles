@@ -86,7 +86,103 @@ let g:solarized_termcolors=16
 let g:solarized_termtrans=1
 
 " ----- whichkey -----------------------------------------------------------------------------
-" nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+set timeoutlen=500
+let g:which_key_map = {}
+
+let g:which_key_map.t = { 
+            \ 'name' : '+tabs' ,
+            \ 'h' : ['MoveToPrevTab()', 'next-tab'],
+            \ 'l' : ['MoveToNextTab()', 'prev-tab'],
+\ }
+let g:which_key_map.l = { 
+            \ 'name' : '+lines',
+            \ 'l' : ['A;<Esc>', 'append-semicolon'],
+            \ 'j' : ['i<Enter><Esc>', 'split-line'],
+            \ 'h' : ['A,<Esc>', 'append-comma'],
+\ }
+let g:which_key_map.c = {
+            \ 'name' : '+lsp',
+            \ 'r' : ['LanguageClient#textDocument_references()',      'references'],
+            \ 'R' : ['LanguageClient#textDocument_rename()',          'rename'],
+            \ 'c' : ['LanguageClient_contextMenu',                    'context-menu'],
+            \ 'h' : ['LanguageClient#textDocument_hover()',           'hover'],
+            \ 'F' : ['LanguageClient#textDocument_formatting()',      'formatting'],
+            \ 'f' : ['LanguageClient#textDocument_rangeFormatting',   'range-formatting'],
+            \ 'l' : ['LanguageClient#textDocument_documentHighlight()','highlight'],
+            \ 'L' : ['LanguageClient#clearDocumentHighlight()',       'unmark-highlight'],
+            \ 's' : ['LanguageClient#textDocument_documentSymbol()',  'document-symbol'],
+            \ 'S' : ['LanguageClient#workspace_symbol()',             'workspace-symbol'],
+            \ 'g' : {
+                \ 'name': '+goto',
+                \ 'd' : ['LanguageClient#textDocument_definition()',    'definition'],
+                \ 't' : ['LanguageClient#textDocument_typeDefinition()','type-definition'],
+                \ 'i' : ['LanguageClient#textDocument_implementation()','implementation'],
+            \ },
+\ }
+
+let g:which_key_map.b = {
+            \ 'name' : '+buffer' ,
+            \ '1' : ['b1'        , 'buffer 1']        ,
+            \ '2' : ['b2'        , 'buffer 2']        ,
+            \ 'd' : ['bd'        , 'delete-buffer']   ,
+            \ 'f' : ['bfirst'    , 'first-buffer']    ,
+            \ 'h' : ['Startify'  , 'home-buffer']     ,
+            \ 'l' : ['blast'     , 'last-buffer']     ,
+            \ 'n' : ['bnext'     , 'next-buffer']     ,
+            \ 'p' : ['bprevious' , 'previous-buffer'] ,
+            \ 'b' : ['Buffers'   , 'fzf-buffer']      ,
+\ }
+
+nnoremap <C-W>ñk :resize -5<cr>
+nnoremap <C-W>ñj :resize +5<cr>
+let g:which_key_map['w'] = {
+            \ 'name' : '+windows' ,
+            \ 'w' : ['<C-W>w'     , 'other-window']          ,
+            \ 'W' : ['<C-W>W'     , 'other-window-reverse']  ,
+            \ 's' : ['<C-W>s'     , 'split-window-below']    ,
+            \ 'v' : ['<C-W>v'     , 'split-window-below']    ,
+            \ 'h' : ['<C-W>h'     , 'window-left']           ,
+            \ 'j' : ['<C-W>j'     , 'window-below']          ,
+            \ 'l' : ['<C-W>l'     , 'window-right']          ,
+            \ 'k' : ['<C-W>k'     , 'window-up']             ,
+            \ '=' : ['<C-W>='     , 'balance-window']        ,
+            \ 'q' : ['<C-W>q'     , 'close-window']           ,
+            \ 'A' : ['<C-W>A'     , 'close-editor']           ,
+            \ '?' : ['Windows'    , 'fzf-window']            ,
+            \ 'x' : {
+                \ 'name': '+expand',
+                \ 'h' : ['<C-W>5<', 'left']    ,
+                \ 'j' : ['<C-W>ñj'  , 'below']   ,
+                \ 'k' : ['<C-W>ñk'  , 'up']      ,
+                \ 'l' : ['<C-W>5>'    , 'right']   ,
+            \ },
+            \ 'm' : {
+                \ 'name': '+move',
+                \ 'h' : ['<C-W>H', 'left']    ,
+                \ 'j' : ['<C-W>J', 'bottom']   ,
+                \ 'k' : ['<C-W>K', 'top']      ,
+                \ 'l' : ['<C-W>L', 'right']   ,
+            \ },
+\ }
+
+let g:which_key_map.g = {
+            \ 'name' : '+git/vsc' ,
+            \ 'b' : ['Gblame'                 , 'blame']             ,
+            \ 'c' : ['BCommits'               , 'commits-for-current-buffer'] ,
+            \ 'C' : ['Gcommit'                , 'commit']            ,
+            \ 'd' : ['Gdiff'                  , 'diff']              ,
+            \ 'e' : ['Gedit'                  , 'edit']              ,
+            \ 'l' : ['Glog'                   , 'log']               ,
+            \ 'r' : ['Gread'                  , 'read']              ,
+            \ 's' : ['Gstatus'                , 'status']            ,
+            \ 'w' : ['Gwrite'                 , 'write']             ,
+            \ 'p' : ['Git push'               , 'push']              
+\ }
+
+nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
+vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
+call which_key#register('<Space>', 'g:which_key_map')
 
 " \ **************************************************************************************** \
 " \ Plugin specific binds
@@ -101,23 +197,23 @@ noremap <leader>ff :Files<cr>
 noremap <leader>ft :BTags<cr>
 
 " ----- LSP ----------------------------------------------------------------------------------
-noremap <leader>cF  :call LanguageClient#textDocument_formatting()<cr>
-noremap <leader>cf  :call LanguageClient#textDocument_rangeFormatting()<cr>
-noremap <leader>cR  :call LanguageClient#textDocument_rename()<cr>
+" noremap <leader>cF  :call LanguageClient#textDocument_formatting()<cr>
+" noremap <leader>cf  :call LanguageClient#textDocument_rangeFormatting()<cr>
+" noremap <leader>cR  :call LanguageClient#textDocument_rename()<cr>
 
-noremap <leader>cd  :call LanguageClient#textDocument_definition()<cr>
-noremap <leader>ct  :call LanguageClient#textDocument_typeDefinition()<cr>
-noremap <leader>ci  :call LanguageClient#textDocument_implementation()<cr>
-noremap <leader>cr  :call LanguageClient#textDocument_references()<cr>
+" noremap <leader>cd  :call LanguageClient#textDocument_definition()<cr>
+" noremap <leader>ct  :call LanguageClient#textDocument_typeDefinition()<cr>
+" noremap <leader>ci  :call LanguageClient#textDocument_implementation()<cr>
+" noremap <leader>cr  :call LanguageClient#textDocument_references()<cr>
 
-noremap <leader>ch  :call LanguageClient#textDocument_hover()<cr>
-noremap <leader>cc  :call LanguageClient_contextMenu()<cr>
+" noremap <leader>ch  :call LanguageClient#textDocument_hover()<cr>
+" noremap <leader>cc  :call LanguageClient_contextMenu()<cr>
 
-noremap <leader>cl  :call LanguageClient#textDocument_documentHighlight()<cr>
-noremap <leader>cL  :call LanguageClient#clearDocumentHighlight()<cr>
+" noremap <leader>cl  :call LanguageClient#textDocument_documentHighlight()<cr>
+" noremap <leader>cL  :call LanguageClient#clearDocumentHighlight()<cr>
 
-noremap <leader>cs  :call LanguageClient#textDocument_documentSymbol()<cr>
-noremap <leader>cS  :call LanguageClient#workspace_symbol()<cr>
+" noremap <leader>cs  :call LanguageClient#textDocument_documentSymbol()<cr>
+" noremap <leader>cS  :call LanguageClient#workspace_symbol()<cr>
 
 
 " \ **************************************************************************************** \

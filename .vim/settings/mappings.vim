@@ -29,7 +29,7 @@ noremap <F12> :ShowSpaces 1<CR>
 noremap <S-F12> m`:TrimSpaces<CR>``
 
 " Toggle search result highlighting
-" nnoremap <silent><expr> <Leader>h (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n"
+nnoremap <silent><expr> <Leader>hh (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n"
 
 " Fat finger's save
 nnoremap :W :w
@@ -63,8 +63,8 @@ noremap <C-w>A :qa<cr>
 noremap <C-w>q :q<cr>
 
 " Use <leader>L|H to move panes between tabs
-" nmap <leader>L :call MoveToNextTab()<CR>
-" nmap <leader>H :call MoveToPrevTab()<CR>
+noremap <silent><leader>tml :call MoveToNextTab()<CR>
+noremap <silent><leader>tmh :call MoveToPrevTab()<CR>
 
 " Split line, the move to beginning of new line
 noremap <leader>n i<Enter><Esc>
@@ -74,8 +74,8 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 " whereas in normal mode J K moves between tabs
-nnoremap K gt
-nnoremap J gT
+nnoremap <silent><leader>tk gt
+nnoremap <silent><leader>tj gT
 
 
 
@@ -92,10 +92,10 @@ inoremap " ""<Esc>i
 inoremap ' ''<Esc>i
 
 " Add ; to the end of the line
-" noremap <leader>l A;<Esc>
+noremap <leader>ll A;<Esc>
 
 " Add , to the end of the line
-" noremap <leader>m A,<Esc>
+noremap <leader>lh A,<Esc>
 
 " _( map to close within brackets/quotes selected text
 vnoremap _[ <Esc>`>a]<Esc>`<i[<Esc>

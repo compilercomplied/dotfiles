@@ -132,13 +132,33 @@ hi Search ctermfg=black ctermbg=lightmagenta
 " \ **************************************************************************************** \
 " \ Settings source files
 " \ **************************************************************************************** \
+function! SourceDirectory(file)
+  for s:fpath in split(globpath(a:file, '*.vim'), '\n')
+    exe 'source' s:fpath
+  endfor
+endfunction
+
 
 source ~/.vim/settings/statusline.vim
-source ~/.vim/settings/functions.vim
+call SourceDirectory("~/.vim/settings/functions")
 source ~/.vim/settings/mappings.vim
 
 if (editor_mode == "rich") 
-    source ~/.vim/settings/rich.vim
+
+    call SourceDirectory("~/.vim/settings/rich")
+
+    " --- Sources ----------------------------------------------------------------------------
+    autocmd BufNewFile,BufRead *.py     source ~/.vim/sources/py.vim
+    autocmd BufNewFile,BufRead *.md     source ~/.vim/sources/md.vim
+    " autocmd BufNewFile,BufRead *.cpp    source ~/.vim/sources/cpp.vim
+    " autocmd BufNewFile,BufRead *.c      source ~/.vim/sources/c.vim
+    " autocmd BufNewFile,BufRead *.tex    source ~/.vim/sources/tex.vim
+
+
+    " --- Templates --------------------------------------------------------------------------
+    " au BufNewFile *.py r ~/.vim/templates/temp.py
+    au BufNewFile *.sh r ~/.vim/templates/temp.sh
+    au BufNewFile *.tex r ~/.vim/templates/temp.tex
 
 elseif (editor_mode == "idea")
     source ~/.vim/settings/idea.vim

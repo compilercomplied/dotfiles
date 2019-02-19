@@ -24,6 +24,15 @@ let g:echodoc#type = 'signature'
 
 " ----- rainbow ------------------------------------------------------------------------------
 let g:rainbow_active = 1
+let g:rainbow_conf = {
+            \ 'ctermfgs': [
+                \ 'blue',
+                \ 'green',
+                \ 'yellow',
+                \ 'cyan',
+                \ 'magenta',
+            \ ],
+\}
 
 " ----- pulse --------------------------------------------------------------------------------
 let g:vim_search_pulse_duration = 100

@@ -3,9 +3,13 @@ nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 set timeoutlen=300
 let g:which_key_map = {}
 
-let g:which_key_map.h = { 
-            \ 'name' : '+highlight' ,
-            \ 'h' : 'toggle',
+" let g:which_key_map.h = { 
+"             \ 'name' : '+highlight' ,
+"             \ 'h' : 'toggle',
+\ }
+let g:which_key_map.f = { 
+            \ 'name' : '+files' ,
+            \ 'f' : 'file-explorer',
 \ }
 let g:which_key_map.t = { 
             \ 'name' : '+tabs' ,

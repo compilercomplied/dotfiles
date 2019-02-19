@@ -16,7 +16,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'               " Surrounds edit. Good for HTML/XML editing.
 Plug 'tpope/vim-commentary'             " Comments+text objects.
 Plug 'junegunn/vim-easy-align'          " Aligning
-Plug 'lilydjwg/colorizer'               " Friendlier HTML colour codes
+Plug 'ap/vim-css-color'                 " Friendlier HTML colour codes
+Plug 'luochen1990/rainbow'              " Diff parentheses
 Plug 'RRethy/vim-illuminate'            " Highlight match under cursor in same buffer
 Plug 'inside/vim-search-pulse'          " Pulse for each n N search move
 
@@ -48,6 +49,7 @@ Plug 'junegunn/fzf', {
 Plug 'tpope/vim-fugitive'               " Git wrapper
 Plug 'tpope/vim-surround'               " Surrounds + motions
 Plug 'liuchengxu/vim-which-key'         " Keybinds hint
+Plug 'scrooloose/nerdtree'              " File explorer
 
 " ----- Languages ----------------------------------------------------------------------------
 "  Python
@@ -68,6 +70,7 @@ Plug 'posva/vim-vue'                    " Vue components
 
 " ----- Appearance ---------------------------------------------------------------------------
 " Plug 'morhetz/gruvbox'
+Plug 'ryanoasis/vim-devicons'
 Plug 'altercation/vim-colors-solarized'
 Plug 'endel/vim-github-colorscheme'
 

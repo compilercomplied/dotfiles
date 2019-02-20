@@ -3,13 +3,19 @@ nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 set timeoutlen=300
 let g:which_key_map = {}
 
-" let g:which_key_map.h = { 
-"             \ 'name' : '+highlight' ,
-"             \ 'h' : 'toggle',
+let g:which_key_map.h = { 
+            \ 'name' : '+highlight' ,
+            \ 'h' : 'toggle',
 \ }
 let g:which_key_map.f = { 
             \ 'name' : '+files' ,
-            \ 'f' : 'file-explorer',
+            \ 'e' : 'file-explorer',
+            \ 'E' : 'focus-file-explorer',
+            \ 'f' : 'fuzzy-search',
+            \ 'q' : 'close-file',
+            \ 'Q' : 'quit',
+            \ 'm' : 'reload-vimrc',
+            \ 's' : 'save-all',
 \ }
 let g:which_key_map.t = { 
             \ 'name' : '+tabs' ,
@@ -22,16 +28,17 @@ let g:which_key_map.t = {
             \ 'l' : 'prev-tab',
 \ }
 let g:which_key_map.l = { 
-            \ 'name' : '+lines',
+            \ 'name' : '+line',
             \ 'l' : 'append-semicolon',
             \ 'j' : 'split-line',
             \ 'h' : 'append-comma',
 \ }
 let g:which_key_map.c = {
-            \ 'name' : '+lsp',
+            \ 'name' : '+code',
             \ 'r' : 'references',
             \ 'R' : 'rename',
             \ 'c' : 'context-menu',
+            \ 'b' : 'toggle-tagbar',
             \ 'h' : 'hover',
             \ 'F' : 'formatting',
             \ 'f' : 'range-formatting',

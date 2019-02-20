@@ -54,9 +54,9 @@ let g:solarized_termcolors=16
 let g:solarized_termtrans=1
 
 " --- Tagbar ---------------------------------------------------------------------------------
-noremap <F3> :TagbarToggle<CR>
+noremap <leader>cb :TagbarToggle<CR>
 
 " ----- FZF ----------------------------------------------------------------------------------
-noremap <leader>fb :Buffers<cr>
+noremap <leader>bb :Buffers<cr>
 noremap <leader>ff :Files<cr>
-noremap <leader>ft :BTags<cr>
+" noremap <leader>ft :BTags<cr>

@@ -14,8 +14,8 @@ call plug#begin('~/.vim/plugged')
 
 " ----- Editing ------------------------------------------------------------------------------
 Plug 'tpope/vim-surround'               " Surrounds edit. Good for HTML/XML editing.
-Plug 'tpope/vim-commentary'             " Comments+text objects.
-Plug 'junegunn/vim-easy-align'          " Aligning
+Plug 'machakann/vim-sandwich'           " Comments+text objects.
+Plug 'tommcdo/vim-lion'                 " Aligning
 Plug 'ap/vim-css-color'                 " Friendlier HTML colour codes
 Plug 'luochen1990/rainbow'              " Diff parentheses
 Plug 'RRethy/vim-illuminate'            " Highlight match under cursor in same buffer
@@ -62,7 +62,7 @@ Plug 'rust-lang/rust.vim'               " General goodies
 
 " Web
 " Plug 'mattn/emmet-vim'                  " https://emmet.io like
-Plug 'elzr/vim-json'                    " Better JSON
+" Plug 'elzr/vim-json'                    " Better JSON
 
 " Wabbascript *dabs*
 Plug 'leafgarland/typescript-vim'       " Typescript syntax

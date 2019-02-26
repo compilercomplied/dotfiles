@@ -13,8 +13,9 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 
 " ----- Editing ------------------------------------------------------------------------------
-Plug 'tpope/vim-surround'               " Surrounds edit. Good for HTML/XML editing.
+" Plug 'tpope/vim-surround'               " Surrounds edit. Good for HTML/XML editing.
 Plug 'machakann/vim-sandwich'           " Comments+text objects.
+Plug 'tpope/vim-commentary'             " Comments.
 Plug 'tommcdo/vim-lion'                 " Aligning
 Plug 'ap/vim-css-color'                 " Friendlier HTML colour codes
 Plug 'luochen1990/rainbow'              " Diff parentheses
@@ -47,7 +48,6 @@ Plug 'junegunn/fzf', {
 
 " ----- Functionality wrappers ---------------------------------------------------------------
 Plug 'tpope/vim-fugitive'               " Git wrapper
-Plug 'tpope/vim-surround'               " Surrounds + motions
 Plug 'liuchengxu/vim-which-key'         " Keybinds hint
 Plug 'scrooloose/nerdtree'              " File explorer
 

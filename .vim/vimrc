@@ -13,7 +13,6 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 
 " ----- Editing ------------------------------------------------------------------------------
-" Plug 'tpope/vim-surround'               " Surrounds edit. Good for HTML/XML editing.
 Plug 'machakann/vim-sandwich'           " Comments+text objects.
 Plug 'tpope/vim-commentary'             " Comments.
 Plug 'tommcdo/vim-lion'                 " Aligning
@@ -61,7 +60,6 @@ Plug 'jmcantrell/vim-virtualenv'        " Virtual envs
 Plug 'rust-lang/rust.vim'               " General goodies
 
 " Web
-" Plug 'mattn/emmet-vim'                  " https://emmet.io like
 " Plug 'elzr/vim-json'                    " Better JSON
 
 " Wabbascript *dabs*
@@ -70,9 +68,9 @@ Plug 'posva/vim-vue'                    " Vue components
 
 " ----- Appearance ---------------------------------------------------------------------------
 " Plug 'morhetz/gruvbox'
+" Plug 'endel/vim-github-colorscheme'
 Plug 'ryanoasis/vim-devicons'
 Plug 'altercation/vim-colors-solarized'
-Plug 'endel/vim-github-colorscheme'
 
 " Initialize plugin system
 call plug#end()

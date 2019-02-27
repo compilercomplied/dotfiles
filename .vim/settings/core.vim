@@ -109,11 +109,6 @@ let did_install_default_menus=1 " Don't load gvim menu stuff
 
 set t_Co=256
 
-if &diff
-    colorscheme github
-endif
-
-
 " Mode aware cursors
 " set gcr+=o:hor50-Cursor
 " set gcr+=n:Cursor

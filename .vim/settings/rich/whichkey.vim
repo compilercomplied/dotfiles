@@ -7,6 +7,8 @@ let g:which_key_map.h = {
             \ 'name' : '+highlight' ,
             \ 'h' : 'toggle',
 \ }
+let g:which_key_map.p = 'paste'
+
 let g:which_key_map.f = { 
             \ 'name' : '+files' ,
             \ 'e' : 'file-explorer',

@@ -96,6 +96,9 @@ inoremap { {}<Esc>i
 inoremap " ""<Esc>i
 inoremap ' ''<Esc>i
 
+" paste from system in normal mode
+nnoremap <leader>p "*p
+
 " Add ; to the end of the line
 noremap <leader>ll A;<Esc>
 

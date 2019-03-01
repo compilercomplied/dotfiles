@@ -98,6 +98,8 @@ inoremap ' ''<Esc>i
 
 " paste from system in normal mode
 nnoremap <leader>p "*p
+" yank from system in visual mode
+vnoremap <leader>p "*y
 
 " Add ; to the end of the line
 noremap <leader>ll A;<Esc>

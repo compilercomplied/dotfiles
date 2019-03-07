@@ -5,6 +5,7 @@
     "suggest.noselect": false,
     "suggest.snippetIndicator": " ►",
     "suggest.enablePreview": true,
+    "suggest.echodocSupport": true,
 
     "tsserver.enable": true,
 

@@ -1,0 +1,14 @@
+{
+    "codeLens.enable": false,
+
+    "suggest.detailField": "preview",
+    "suggest.noselect": false,
+    "suggest.snippetIndicator": " ►",
+    "suggest.enablePreview": true,
+
+    "tsserver.enable": true,
+
+    "pyls.enable": true,
+    "pyls.commandPath": ""    // Remember you can use microsoft's python LSP instead
+    
+}

@@ -22,37 +22,37 @@ Plug 'RRethy/vim-illuminate'            " Highlight match under cursor in same b
 Plug 'inside/vim-search-pulse'          " Pulse for each n N search move
 
 " ----- Code ---------------------------------------------------------------------------------
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }                                 " LSP
+" Plug 'autozimu/LanguageClient-neovim', {
+"     \ 'branch': 'next',
+"     \ 'do': 'bash install.sh',
+"     \ }                                 " LSP
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': 'yarn install'}       
 
-Plug 'Shougo/deoplete.nvim', {
-	\ 'do': ':UpdateRemotePlugins'
-	\ }                                 " Async language agnostic completion
+" Plug 'Shougo/deoplete.nvim', {
+" 	\ 'do': ':UpdateRemotePlugins'
+" 	\ }                                 " Async language agnostic completion
 
-Plug 'Shougo/echodoc.vim'               " Show function signatures
+" Plug 'Shougo/echodoc.vim'               " Show function signatures
 Plug 'xolox/vim-easytags'               " Gen ctags
 Plug 'xolox/vim-misc'                   " Dependency to easy-tags
 Plug 'majutsushi/tagbar'                " Browse ctag
 Plug 'w0rp/ale'                         " Linting
 Plug 'pseewald/vim-anyfold'             " Language agnostic folding
 
-" ----- File navigation ----------------------------------------------------------------------
+" ----- Functionality wrappers ---------------------------------------------------------------
+Plug 'tpope/vim-fugitive'               " Git wrapper
+Plug 'liuchengxu/vim-which-key'         " Keybinds hint
+Plug 'scrooloose/nerdtree'              " File explorer
+
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', {
             \ 'dir': '~/.fzf',
             \ 'do': './install --all'
             \ }                         " Fuzzy find
 
-" ----- Functionality wrappers ---------------------------------------------------------------
-Plug 'tpope/vim-fugitive'               " Git wrapper
-Plug 'liuchengxu/vim-which-key'         " Keybinds hint
-Plug 'scrooloose/nerdtree'              " File explorer
-
 " ----- Languages ----------------------------------------------------------------------------
 "  Python
-Plug 'davidhalter/jedi-vim'             " Code completion
+" Plug 'davidhalter/jedi-vim'             " Code completion
 Plug 'tmhedberg/SimpylFold'             " Folding
 Plug 'jmcantrell/vim-virtualenv'        " Virtual envs
 
@@ -64,7 +64,7 @@ Plug 'rust-lang/rust.vim'               " General goodies
 
 " Wabbascript *dabs*
 Plug 'leafgarland/typescript-vim'       " Typescript syntax
-Plug 'posva/vim-vue'                    " Vue components
+Plug 'posva/vim-vue'                    " Vue components syntax
 
 " ----- Appearance ---------------------------------------------------------------------------
 " Plug 'morhetz/gruvbox'

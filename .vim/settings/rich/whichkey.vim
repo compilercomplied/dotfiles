@@ -7,6 +7,12 @@ let g:which_key_map.h = {
             \ 'name' : '+highlight' ,
             \ 'h' : 'toggle',
 \ }
+let g:which_key_map.k = { 
+            \ 'name' : '+coc' ,
+            \ 'd' : 'diagnostics',
+            \ 'e' : 'extensions',
+            \ 'c' : 'commands',
+\ }
 let g:which_key_map.p = 'paste'
 
 let g:which_key_map.f = { 
@@ -37,6 +43,7 @@ let g:which_key_map.l = {
 \ }
 let g:which_key_map.c = {
             \ 'name' : '+code',
+            \ 'a' : 'code-action',
             \ 'r' : 'references',
             \ 'R' : 'rename',
             \ 'c' : 'context-menu',

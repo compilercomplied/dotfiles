@@ -1,22 +1,22 @@
 
 " ----- deoplete -----------------------------------------------------------------------------
-set completeopt+=noinsert
-set completeopt+=noselect
-let g:deoplete#enable_at_startup=1
-let g:deoplete#enable_smart_case=1
+" set completeopt+=noinsert
+" set completeopt+=noselect
+" let g:deoplete#enable_at_startup=1
+" let g:deoplete#enable_smart_case=1
 
-" let g:deoplete#is_debug_enabled="True"
-" call deoplete#enable_logging("DEBUG", ".deoplete.log")
-call deoplete#custom#source(
-            \ 'LanguageClient',
-            \ 'min_pattern_length',
-            \ 2
-\ )
+" " let g:deoplete#is_debug_enabled="True"
+" " call deoplete#enable_logging("DEBUG", ".deoplete.log")
+" call deoplete#custom#source(
+"             \ 'LanguageClient',
+"             \ 'min_pattern_length',
+"             \ 2
+" \ )
 
-call deoplete#custom#option({
-    \ 'auto_complete_delay': 200,
-    \ 'smart_case': v:true,
-\ })
+" call deoplete#custom#option({
+"     \ 'auto_complete_delay': 200,
+"     \ 'smart_case': v:true,
+" \ })
 
 " ----- echodoc ------------------------------------------------------------------------------
 let g:echodoc#enable_at_startup = 1

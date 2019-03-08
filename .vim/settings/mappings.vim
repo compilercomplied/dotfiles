@@ -12,6 +12,7 @@ nnoremap <Leader>v :tabedit $MYVIMRC<cr>
 " Easy tab/untab
 nnoremap <Tab> >>
 nnoremap <S-Tab> << 
+inoremap <S-Tab> <Esc><<i
 
 " overload undo
 inoremap <C-U> <C-G>u<C-U>

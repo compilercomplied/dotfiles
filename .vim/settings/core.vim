@@ -104,15 +104,10 @@ let did_install_default_menus=1 " Don't load gvim menu stuff
 
 
 " \ **************************************************************************************** \
-" \ Appearance
+" \ Appearance and syntax
 " \ **************************************************************************************** \
 
 set t_Co=256
-
-if &diff
-    colorscheme github
-endif
-
 
 " Mode aware cursors
 " set gcr+=o:hor50-Cursor
@@ -122,12 +117,14 @@ endif
 " set gcr+=c:CommandCursor
 " set gcr+=v-ve:VisualCursor
 
+" these are overriden by solarized theme
 " Diff colours
 hi DiffText ctermfg=darkred ctermbg=lightgrey
-
 " Other colours
 hi Search ctermfg=black ctermbg=lightmagenta
 
+" Include jsonc in json syntax highlight
+autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " \ **************************************************************************************** \
 " \ Settings source files

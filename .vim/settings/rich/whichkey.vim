@@ -12,6 +12,7 @@ let g:which_key_map.k = {
             \ 'd' : 'diagnostics',
             \ 'e' : 'extensions',
             \ 'c' : 'commands',
+            \ 'o' : 'outline',
 \ }
 let g:which_key_map.p = 'paste'
 

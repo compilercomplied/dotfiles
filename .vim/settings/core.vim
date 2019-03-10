@@ -38,10 +38,10 @@ set mouse=                      " Mouse can be enabled for different modes.
 " ----- Editor -------------------------------------------------------------------------------
 syntax enable                   " syntax highlight
 
-set tabstop=4                   " show existing tab with 4 spaces width
-set softtabstop=4               " number of spaces tab counts for while editing
-set shiftwidth=4                " when indenting with '>', use 4 spaces width
-set expandtab                   " on pressing tab, insert 4 spaces
+set tabstop=2                   " show existing tab with $value spaces width
+set softtabstop=2               " number of spaces tab counts for while editing
+set shiftwidth=2                " when indenting with '>', use $value spaces width
+set expandtab                   " on pressing tab, insert spaces
 set autoindent                  " copy indent from current line
 
 set number                      " show line numbers

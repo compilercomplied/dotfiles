@@ -10,6 +10,13 @@
     "tsserver.enable": true,
 
     "pyls.enable": true,
-    "pyls.commandPath": ""    // Remember you can use microsoft's python LSP instead
+    "pyls.commandPath": "",    // Remember you can use microsoft's python LSP instead
+
+    "rust.trace.server": "verbose",
+    "rust-client.disableRustup": true,
+    "rust.rustfmt_path": "rls",
+    "rust.build_on_save": true,
+    "rust-client.channel": "stable",
+    "rust.unstable_features": true
     
 }

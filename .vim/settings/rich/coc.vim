@@ -22,6 +22,7 @@ nmap <silent><leader>cr <Plug>(coc-references)
 
 nnoremap <silent><space>cs  :<C-u>CocList -I symbols<cr>
 nnoremap <silent><leader>ch :call <SID>show_documentation()<CR>
+nmap <leader>cR <Plug>(coc-rename)
 
 nnoremap <silent><space>kd  :<C-u>CocList diagnostics<cr>
 nnoremap <silent><space>ke  :<C-u>CocList extensions<cr>

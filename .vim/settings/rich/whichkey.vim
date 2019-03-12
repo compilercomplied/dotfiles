@@ -84,7 +84,7 @@ let g:which_key_map['w'] = {
             \ 'w' : ['<C-W>w'     , 'other-window']          ,
             \ 'W' : ['<C-W>W'     , 'other-window-reverse']  ,
             \ 's' : ['<C-W>s'     , 'split-window-below']    ,
-            \ 'v' : ['<C-W>v'     , 'split-window-below']    ,
+            \ 'v' : ['<C-W>v'     , 'split-window-right']    ,
             \ 'h' : ['<C-W>h'     , 'window-left']           ,
             \ 'j' : ['<C-W>j'     , 'window-below']          ,
             \ 'l' : ['<C-W>l'     , 'window-right']          ,

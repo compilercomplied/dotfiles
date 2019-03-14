@@ -9,7 +9,7 @@
     "suggest.detailField": "preview",
     "suggest.autoTrigger": "always",
     "suggest.triggerAfterInsertEnter": true,
-    "suggest.maxCompleteItemCount": 20,
+    "suggest.maxCompleteItemCount": 50,
     "suggest.fixInsertedWord": true,
     "suggest.snippetIndicator": " ►",
     "suggest.reloadPumOnInsertChar": true,

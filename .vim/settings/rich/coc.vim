@@ -5,6 +5,7 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <silent><expr> <c-space> coc#refresh()
 
 nmap <silent><leader>cgd <Plug>(coc-definition)
 nmap <silent><leader>cgt <Plug>(coc-type-definition)

@@ -1,19 +1,10 @@
 
-" ----- servers ------------------------------------------------------------------------------
-" let g:LanguageClient_serverCommands = {
-"     \ 'python':     ['tcp://127.0.0.1:9009'],
-"     \ 'javascript': ['tcp://127.0.0.1:2089'],
-"     \ 'typescript': ['tcp://127.0.0.1:2089'],
-"     \ 'java':       ['/usr/local/bin/jdtls'],
-"     \ 'rust':       ['rustup', 'run', 'nightly', 'rls']
-"     \ }
-
-
 " ----- binds---------------------------------------------------------------------------------
-
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 nmap <silent><leader>cgd <Plug>(coc-definition)
 nmap <silent><leader>cgt <Plug>(coc-type-definition)

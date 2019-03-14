@@ -1,9 +1,18 @@
 {
-    "codeLens.enable": false,
 
-    "suggest.detailField": "preview",
+    "coc.preferences.triggerSignatureHelp": true,
+
+    "codeLens.enable": true,
+    "codeLens.separator": "‣",
+
     "suggest.noselect": false,
+    "suggest.detailField": "preview",
+    "suggest.autoTrigger": "always",
+    "suggest.triggerAfterInsertEnter": true,
+    "suggest.maxCompleteItemCount": 20,
+    "suggest.fixInsertedWord": true,
     "suggest.snippetIndicator": " ►",
+    "suggest.reloadPumOnInsertChar": true,
     "suggest.enablePreview": true,
     "suggest.echodocSupport": true,
 
@@ -13,8 +22,8 @@
     "pyls.commandPath": "",    // Remember you can use microsoft's python LSP instead
 
     "rust.trace.server": "verbose",
-    "rust-client.disableRustup": true,
-    "rust.rustfmt_path": "rls",
+    "rust-client.disableRustup": false,
+    "rust-client.updateOnStartup": true,
     "rust.build_on_save": true,
     "rust-client.channel": "stable",
     "rust.unstable_features": true

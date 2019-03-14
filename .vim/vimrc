@@ -36,7 +36,7 @@ Plug 'Shougo/echodoc.vim'               " Show function signatures
 Plug 'xolox/vim-easytags'               " Gen ctags
 Plug 'xolox/vim-misc'                   " Dependency to easy-tags
 Plug 'majutsushi/tagbar'                " Browse ctag
-Plug 'w0rp/ale'                         " Linting
+" Plug 'w0rp/ale'                         " Linting
 Plug 'pseewald/vim-anyfold'             " Language agnostic folding
 
 " ----- Functionality wrappers ---------------------------------------------------------------

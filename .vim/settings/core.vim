@@ -33,6 +33,7 @@ endif
 
 " ----- Input --------------------------------------------------------------------------------
 set mouse=                      " Mouse can be enabled for different modes.
+set clipboard=unnamed           " Use system clipboard
 
 
 " ----- Editor -------------------------------------------------------------------------------

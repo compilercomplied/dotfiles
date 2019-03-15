@@ -137,9 +137,9 @@ function! SourceDirectory(file)
 endfunction
 
 
-source ~/.vim/settings/statusline.vim
 call SourceDirectory("~/.vim/settings/functions")
 source ~/.vim/settings/mappings.vim
+source ~/.vim/settings/statusline.vim
 
 if (editor_mode == "rich") 
 

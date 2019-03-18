@@ -1,7 +1,7 @@
 
 
 nnoremap <leader>fe :NERDTreeToggle<cr>
-nnoremap <leader>fE :NERDTreeFocus<cr>
+nnoremap <leader>fE :NERDTreeFind<cr>
 
 " Open by default if no files are specified
 autocmd StdinReadPre * let s:std_in=1

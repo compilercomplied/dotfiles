@@ -60,3 +60,13 @@ noremap <leader>cb :TagbarToggle<CR>
 noremap <leader>bb :Buffers<cr>
 noremap <leader>ff :Files<cr>
 " noremap <leader>ft :BTags<cr>
+
+" ----- vim-markdown -------------------------------------------------------------------------
+let g:markdown_fenced_languages = [
+      \ 'css',
+      \ 'rust',
+      \ 'python',
+      \ 'javascript',
+      \ 'js=javascript',
+      \ 'typescript'
+      \ ]

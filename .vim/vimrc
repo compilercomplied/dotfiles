@@ -43,6 +43,7 @@ Plug 'pseewald/vim-anyfold'             " Language agnostic folding
 Plug 'tpope/vim-fugitive'               " Git wrapper
 Plug 'liuchengxu/vim-which-key'         " Keybinds hint
 Plug 'scrooloose/nerdtree'              " File explorer
+Plug 'tpope/vim-markdown'               " Markdown support
 
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', {
@@ -58,9 +59,6 @@ Plug 'jmcantrell/vim-virtualenv'        " Virtual envs
 
 " Rust
 Plug 'rust-lang/rust.vim'               " General goodies
-
-" Web
-" Plug 'elzr/vim-json'                    " Better JSON
 
 " Wabbascript *dabs*
 Plug 'leafgarland/typescript-vim'       " Typescript syntax

@@ -19,7 +19,7 @@ let g:which_key_map.p = 'paste'
 let g:which_key_map.f = { 
             \ 'name' : '+files' ,
             \ 'e' : 'file-explorer',
-            \ 'E' : 'focus-file-explorer',
+            \ 'E' : 'find-file-in-explorer',
             \ 'f' : 'fuzzy-search',
             \ 'q' : 'close-file',
             \ 'Q' : 'quit',
@@ -29,7 +29,7 @@ let g:which_key_map.f = {
 let g:which_key_map.t = { 
             \ 'name' : '+tabs' ,
             \ 'm' : {
-                \ 'name': '+goto',
+                \ 'name': '+move',
                 \ 'h' : 'next-tab',
                 \ 'l' : 'prev-tab',
             \ },

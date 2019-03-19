@@ -20,7 +20,7 @@
 
 " ----- echodoc ------------------------------------------------------------------------------
 let g:echodoc#enable_at_startup = 1
-let g:echodoc#type = 'signature'
+" let g:echodoc#type = 'signature'
 
 " ----- rainbow ------------------------------------------------------------------------------
 let g:rainbow_active = 1
@@ -36,6 +36,11 @@ let g:rainbow_conf = {
 
 " ----- pulse --------------------------------------------------------------------------------
 let g:vim_search_pulse_duration = 100
+
+" ----- indentLines --------------------------------------------------------------------------
+let g:indentLine_enabled = 1
+let g:indentLine_char_list = ['┆']
+nnoremap <leader>ci :IndentLinesToggle<cr>
 
 " ----- easytags -----------------------------------------------------------------------------
 let g:easytags_async = 1
@@ -59,6 +64,7 @@ noremap <leader>cb :TagbarToggle<CR>
 " ----- FZF ----------------------------------------------------------------------------------
 noremap <leader>bb :Buffers<cr>
 noremap <leader>ff :Files<cr>
+noremap <leader>w? :Windows<cr>
 " noremap <leader>ft :BTags<cr>
 
 " ----- vim-markdown -------------------------------------------------------------------------

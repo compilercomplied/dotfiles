@@ -62,7 +62,6 @@ tnoremap kj     <C-\><C-n>
 tnoremap jk     <C-\><C-n>
 
 " Quickly close editor
-noremap <C-w>A :qa<cr>
 nnoremap <leader>fQ :qa<cr>
 " Close tab using c-w menu
 noremap <C-w>q :q<cr>
@@ -115,3 +114,38 @@ vnoremap _( <Esc>`>a)<Esc>`<i(<Esc>
 vnoremap _" <Esc>`>a"<Esc>`<i"<Esc>
 vnoremap _' <Esc>`>a'<Esc>`<i'<Esc>
 vnoremap _` <Esc>`>a`<Esc>`<i`<Esc>
+
+" \ **************************************************************************************** \
+" \ Buffers
+" \ **************************************************************************************** \
+nnoremap <leader>bd :bdelete<cr>
+nnoremap <leader>bf :bfirst<cr>
+nnoremap <leader>bl :blast<cr>
+nnoremap <leader>bn :bnext<cr>
+nnoremap <leader>bp :bprevious<cr>
+
+" \ **************************************************************************************** \
+" \ Windows
+" \ **************************************************************************************** \
+nnoremap <C-W>ñk :resize -5<cr>
+nnoremap <C-W>ñj :resize +5<cr>
+
+nnoremap <leader>ww <C-W>w
+nnoremap <leader>wW <C-W>W
+nnoremap <leader>ws <C-W>s
+nnoremap <leader>wv <C-W>v
+nnoremap <leader>wh <C-W>h
+nnoremap <leader>wj <C-W>j
+nnoremap <leader>wk <C-W>k
+nnoremap <leader>wl <C-W>l
+nnoremap <leader>w= <C-W>=
+nnoremap <leader>wq <C-W>q
+nnoremap <leader>wQ :qa<cr>
+nnoremap <leader>wxh <C-W>5<
+nnoremap <leader>wxj <C-W>ñj
+nnoremap <leader>wxk <C-W>ñk
+nnoremap <leader>wxl <C-W>5>
+nnoremap <leader>wmh <C-W>H
+nnoremap <leader>wmj <C-W>J
+nnoremap <leader>wmk <C-W>K
+nnoremap <leader>wml <C-W>L

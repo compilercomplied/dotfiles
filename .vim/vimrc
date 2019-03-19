@@ -20,6 +20,7 @@ Plug 'ap/vim-css-color'                 " Friendlier HTML colour codes
 Plug 'luochen1990/rainbow'              " Diff parentheses
 Plug 'RRethy/vim-illuminate'            " Highlight match under cursor in same buffer
 Plug 'inside/vim-search-pulse'          " Pulse for each n N search move
+Plug 'Yggdroot/indentLine'              " Display indentation for spaces
 
 " ----- Code ---------------------------------------------------------------------------------
 " Plug 'autozimu/LanguageClient-neovim', {

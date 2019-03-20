@@ -122,6 +122,7 @@ nnoremap <leader>bd :bdelete<cr>
 nnoremap <leader>bf :bfirst<cr>
 nnoremap <leader>bl :blast<cr>
 nnoremap <leader>bn :bnext<cr>
+nnoremap <leader>b# :b#<cr>
 nnoremap <leader>bp :bprevious<cr>
 
 " \ **************************************************************************************** \

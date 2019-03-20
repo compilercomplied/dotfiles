@@ -72,6 +72,7 @@ let g:which_key_map.b = {
             \ 'f' : 'first-buffer',
             \ 'l' : 'last-buffer',
             \ 'n' : 'next-buffer',
+            \ '#' : 'last-used-buffer',
             \ 'p' : 'previous-buffer',
             \ 'b' : 'buffers',
 \ }

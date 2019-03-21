@@ -1,5 +1,4 @@
+[ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
 exec i3
 
-xrdb $HOME/.Xresources
-
-bash $HOME/.bashrc
+source $HOME/.bashrc

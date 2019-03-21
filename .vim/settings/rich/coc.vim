@@ -12,7 +12,8 @@ nmap <silent><leader>cgt <Plug>(coc-type-definition)
 nmap <silent><leader>cgi <Plug>(coc-implementation)
 nmap <silent><leader>cr <Plug>(coc-references)
 
-nnoremap <silent><space>cs  :<C-u>CocList -I symbols<cr>
+nnoremap <silent><space>cS  :<C-u>CocList -I symbols<cr> " Workspace symbols
+nnoremap <silent> <space>cs  :<C-u>CocList outline<cr> " Document symbols
 nnoremap <silent><leader>ch :call <SID>show_documentation()<CR>
 nmap <leader>cR <Plug>(coc-rename)
 nmap <leader>ca <Plug>(coc-codeaction)

@@ -39,7 +39,12 @@ let g:vim_search_pulse_duration = 100
 
 " ----- indentLines --------------------------------------------------------------------------
 let g:indentLine_enabled = 1
-let g:indentLine_char_list = ['┆']
+let g:indentLine_char_list = ['|', '┆']
+let g:indentLine_enabled = 1
+let g:indentLine_bufTypeExclude = ['help', 'terminal']
+let g:indentLine_fileType =  []
+let g:indentLine_fileTypeExclude = ['md', 'vim', 'json']
+let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*', 'LICENSE']
 nnoremap <leader>ci :IndentLinesToggle<cr>
 
 " ----- easytags -----------------------------------------------------------------------------
@@ -76,3 +81,6 @@ let g:markdown_fenced_languages = [
       \ 'js=javascript',
       \ 'typescript'
       \ ]
+
+" ----- vim-devicons -------------------------------------------------------------------------
+let g:webdevicons_conceal_nerdtree_brackets = 1

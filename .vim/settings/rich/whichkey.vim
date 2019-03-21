@@ -14,13 +14,13 @@ let g:which_key_map.k = {
             \ 'c' : 'commands',
             \ 'o' : 'outline',
 \ }
-let g:which_key_map.p = 'paste'
 
 let g:which_key_map.f = { 
             \ 'name' : '+files' ,
             \ 'e' : 'file-explorer',
             \ 'E' : 'find-file-in-explorer',
             \ 'f' : 'fuzzy-search',
+            \ 'h' : 'save-session',
             \ 'q' : 'close-file',
             \ 'Q' : 'quit',
             \ 'm' : 'reload-vimrc',
@@ -74,6 +74,7 @@ let g:which_key_map.b = {
             \ 'n' : 'next-buffer',
             \ '#' : 'last-used-buffer',
             \ 'p' : 'previous-buffer',
+            \ 'x' : 'purge-other-buffers',
             \ 'b' : 'buffers',
 \ }
 

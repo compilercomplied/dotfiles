@@ -6,8 +6,8 @@ let mapleader = "\<space>"
 
 " source $MYVIMRC reloads the saved $MYVIMRC
 nnoremap <Leader>fm :source $MYVIMRC<cr>
-" opens $MYVIMRC for editing
-nnoremap <Leader>v :tabedit $MYVIMRC<cr>
+
+nnoremap <Leader>fh :mksession! session.vim<cr>
 
 " Easy tab/untab
 nnoremap <Tab> >>
@@ -122,8 +122,10 @@ nnoremap <leader>bd :bdelete<cr>
 nnoremap <leader>bf :bfirst<cr>
 nnoremap <leader>bl :blast<cr>
 nnoremap <leader>bn :bnext<cr>
-nnoremap <leader>b# :b#<cr>
 nnoremap <leader>bp :bprevious<cr>
+nnoremap <leader>b# :b#<cr>
+nnoremap <leader>bx :%bd\|e#<cr>
+
 
 " \ **************************************************************************************** \
 " \ Windows

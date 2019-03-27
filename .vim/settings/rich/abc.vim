@@ -50,7 +50,7 @@ nnoremap <leader>ci :IndentLinesToggle<cr>
 " ----- easytags -----------------------------------------------------------------------------
 let g:easytags_async = 1
 
-" ----- easytags -----------------------------------------------------------------------------
+" ----- vue ----------------------------------------------------------------------------------
 let g:vue_disable_pre_processors=1  " https://github.com/posva/vim-vue/issues/95
 
 " ----- anyfold ------------------------------------------------------------------------------
@@ -63,8 +63,13 @@ colorscheme solarized
 let g:solarized_termcolors=16
 let g:solarized_termtrans=1
 
-" --- Tagbar ---------------------------------------------------------------------------------
-noremap <leader>cb :TagbarToggle<CR>
+" --- Vista ----------------------------------------------------------------------------------
+noremap <leader>cb :Vista!!<CR>
+noremap <leader>cB :Vista finder<CR>
+let g:vista_close_on_jump = 0
+let g:vista_default_executive = 'coc'
+let g:vista_finder_alternative_executives = ['ctags']
+let g:vista_fzf_preview = ['right:50%']
 
 " ----- FZF ----------------------------------------------------------------------------------
 noremap <leader>bb :Buffers<cr>

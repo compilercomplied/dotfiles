@@ -49,7 +49,7 @@ set number                      " show line numbers
 set relativenumber              " use relative line numbers
 
 set textwidth=0                 " line's 'max char count
-set foldmethod=indent           " indent= lines with equal indent create a fold
+set foldmethod=syntax           " indent= lines with equal indent create a fold
 set foldlevel=95                " folds with a higher level will be closed
 set colorcolumn=95              " color column
 set backspace=indent,eol,start  " backspace behavior in normal mode

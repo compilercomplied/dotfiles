@@ -1,6 +1,8 @@
 
-" ----- binds---------------------------------------------------------------------------------
+" ----- general ------------------------------------------------------------------------------
+autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 
+" ----- binds---------------------------------------------------------------------------------
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 

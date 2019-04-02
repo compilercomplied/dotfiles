@@ -130,7 +130,7 @@ nnoremap <leader>bx :%bd\|e#<cr>
 " \ **************************************************************************************** \
 " \ Windows
 " \ **************************************************************************************** \
-nnoremap <C-W>ñk :resize -5<cr>
+nnoremap <C-W>jk :resize -5<cr>
 nnoremap <C-W>ñj :resize +5<cr>
 
 nnoremap <leader>ww <C-W>w
@@ -145,8 +145,8 @@ nnoremap <leader>w= <C-W>=
 nnoremap <leader>wq <C-W>q
 nnoremap <leader>wQ :qa<cr>
 nnoremap <leader>wxh <C-W>5<
-nnoremap <leader>wxj <C-W>ñj
-nnoremap <leader>wxk <C-W>ñk
+nnoremap <leader>wxj :resize +5<cr>
+nnoremap <leader>wxk :resize -5<cr>
 nnoremap <leader>wxl <C-W>5>
 nnoremap <leader>wmh <C-W>H
 nnoremap <leader>wmj <C-W>J

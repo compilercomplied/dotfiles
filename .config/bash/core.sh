@@ -1,13 +1,18 @@
+#! /usr/bin/env bash
 
-#!/usr/env/bin bash
 
-BASH_CONFIG_DIR=~/.config/bash
+# --- Initialize -----------------------------------------------------------------------------
+BASH_CONFIG_DIR=$HOME/.config/bash
+
+# --- Load modules ---------------------------------------------------------------------------
+# shellcheck source=/dev/null
+for f in $BASH_CONFIG_DIR/utils/*; do source "$f"; done
+# shellcheck source=/dev/null
+for f in $BASH_CONFIG_DIR/aliases/*; do source "$f"; done
+# shellcheck source=/dev/null
+for f in $BASH_CONFIG_DIR/env/*; do source "$f"; done
+
+
+# --- Modify $PATH ---------------------------------------------------------------------------
 RUST_CARGO_BINDIR=$HOME/.cargo/bin
 export PATH=$PATH:$RUST_CARGO_BINDIR
-
-. $BASH_CONFIG_DIR/utils/bash_prompt.sh
-. $BASH_CONFIG_DIR/utils/functions.sh
-. $BASH_CONFIG_DIR/aliases/apps.sh
-. $BASH_CONFIG_DIR/aliases/environment.sh
-. $BASH_CONFIG_DIR/aliases/system_utils.sh
-. $BASH_CONFIG_DIR/aliases/utilities.sh

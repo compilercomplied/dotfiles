@@ -15,12 +15,8 @@ bindsym Ctrl+Shift+q exec mpc volume -2
 bindsym Ctrl+Shift+e exec mpc volume +2
 
 # apps
-bindsym Ctrl+$mod+s exec /mnt/data/Apps/./SoulseekQt
 bindsym Ctrl+$mod+r exec pkill -USR1 redshift
-bindsym Ctrl+$mod+e exec XDG_CURRENT_DESKTOP=kde dolphin
 bindsym $mod+x [urgent=latest] focus
-
-bindsym Ctrl+$mod+j exec sh /mnt/data/Apps/Idea/bin/idea.sh
 
 # media keys
 bindsym $mod+KP_Multiply exec pactl set-sink-volume 0 +10%
@@ -34,14 +30,12 @@ bindcode 99 exec scrot
 bindsym $mod+u exec updates
 
 # start a terminal
-#bindsym $mod+Return exec konsole 
-#bindsym $mod+Return exec st
 bindsym $mod+Return exec rxvt-unicode
-#bindsym $mod+Return exec urxvtc
 
 # launchers 
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+Shift+d exec --no-startup-id dmenu_run
+bindsym $mod+o status
 
 
 
@@ -107,7 +101,7 @@ for_window [class="(?i)plasma-desktop"] floating enable
 for_window [class="(?i)klipper"] floating enable 
 
 assign [class="Firefox"] $tag2
-#assign [class="Telegram"] $tag5
+assign [class="Telegram Desktop"] $tag5
 #assign [class="discord"] $tag5
 #assign [name="irc"] $tag4
 
@@ -124,7 +118,7 @@ floating_modifier $mod
 # kill focused window
 bindsym $mod+Shift+q kill
 
-#change focus
+# change focus
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -168,23 +162,11 @@ bindsym $mod+space focus mode_toggle
 
 ##############
 # Workspaces #
-#############
+##############
 
 workspace_auto_back_and_forth yes
 bindsym $mod+z workspace back_and_forth
 bindsym $mod+Shift+z move container to workspace back_and_forth; workspace back_and_forth
-
-# name the workspaces
-# set $tag1 "I"
-# set $tag2 "II"
-# set $tag3 "III"
-# set $tag4 "IV"
-# set $tag5 "V"
-# set $tag6 "VI"
-# set $tag7 "VII"
-# set $tag8 "VIII"
-# set $tag9 "IV"
-# set $tag0 "X"
 
 set $tag1 "1: "
 set $tag2 "2: "
@@ -239,100 +221,99 @@ bindsym $mod+Shift+0 move container to workspace $tag0
 set $sysmenu "system:  [r]eload  r[e]start  [l]ogout  [p]oweroff  re[b]oot"
 bindsym $mod+Delete mode $sysmenu
 mode $sysmenu {
-    bindsym r         reload
-    bindsym e         restart
-    bindsym l         exit
-    bindsym p         exec shutdown -P now
-    bindsym b         exec shutdown -r now
-    bindsym Return    mode "default"
-    bindsym Escape    mode "default"
+  bindsym r         reload
+  bindsym e         restart
+  bindsym l         exit
+  bindsym p         exec shutdown -P now
+  bindsym b         exec shutdown -r now
+  bindsym Return    mode "default"
+  bindsym Escape    mode "default"
 }
 
-#set $mode_gaps Gaps: [o]uter, [i]nner
-#set $mode_gaps_outer Outer Gaps: Shift changes globally
-#set $mode_gaps_inner Inner Gaps: Shift changes globally
-#set $mode_gaps_default
-#bindsym $mod+Shift+g mode "$mode_gaps"
-#mode "$mode_gaps" {
-#        bindsym o      mode "$mode_gaps_outer"
-#        bindsym i      mode "$mode_gaps_inner"
-#        bindsym Return mode "default"
-#        bindsym Escape mode "default"
-#}
-#
-#mode "$mode_gaps_inner" {
-#        bindsym plus  gaps inner current plus 5
-#        bindsym minus gaps inner current minus 5
-#        bindsym 0     gaps inner current set 0
-#
-#        bindsym Shift+plus  gaps inner all plus 5
-#        bindsym Shift+minus gaps inner all minus 5
-#        bindsym Shift+0     gaps inner all set 0
-#
-#        bindsym Return mode "default"
-#        bindsym Escape mode "default"
-#}
-#
-#mode "$mode_gaps_outer" {
-#        bindsym plus  gaps outer current plus 5
-#        bindsym minus gaps outer current minus 5
-#        bindsym 0     gaps outer current set 0
-#
-#        bindsym Shift+plus  gaps outer all plus 5
-#        bindsym Shift+minus gaps outer all minus 5
-#        bindsym Shift+0     gaps outer all set 0
-#
-#        bindsym Return mode "default"
-#        bindsym Escape mode "default"
-#}
+# set $mode_gaps Gaps: [o]uter, [i]nner
+# set $mode_gaps_outer Outer Gaps: Shift changes globally
+# set $mode_gaps_inner Inner Gaps: Shift changes globally
+# set $mode_gaps_default
+# bindsym $mod+Shift+g mode "$mode_gaps"
+# mode "$mode_gaps" {
+#         bindsym o      mode "$mode_gaps_outer"
+#         bindsym i      mode "$mode_gaps_inner"
+#         bindsym Return mode "default"
+#         bindsym Escape mode "default"
+# }
+
+# mode "$mode_gaps_inner" {
+#         bindsym plus  gaps inner current plus 5
+#         bindsym minus gaps inner current minus 5
+#         bindsym 0     gaps inner current set 0
+
+#         bindsym Shift+plus  gaps inner all plus 5
+#         bindsym Shift+minus gaps inner all minus 5
+#         bindsym Shift+0     gaps inner all set 0
+
+#         bindsym Return mode "default"
+#         bindsym Escape mode "default"
+# }
+
+# mode "$mode_gaps_outer" {
+#         bindsym plus  gaps outer current plus 5
+#         bindsym minus gaps outer current minus 5
+#         bindsym 0     gaps outer current set 0
+
+#         bindsym Shift+plus  gaps outer all plus 5
+#         bindsym Shift+minus gaps outer all minus 5
+#         bindsym Shift+0     gaps outer all set 0
+
+#         bindsym Return mode "default"
+#         bindsym Escape mode "default"
+# }
 
 set $resize resize
 bindsym $mod+r mode $resize
 mode "$resize" {
-        bindsym $left       resize shrink width 10 px or 10 ppt
-        bindsym $down       resize grow height 10 px or 10 ppt
-        bindsym $up         resize shrink height 10 px or 10 ppt
-        bindsym $right      resize grow width 10 px or 10 ppt
-        # same bindings, but for the arrow keys
-        bindsym Left        resize shrink width 10 px or 10 ppt
-        bindsym Down        resize grow height 10 px or 10 ppt
-        bindsym Up          resize shrink height 10 px or 10 ppt
-        bindsym Right       resize grow width 10 px or 10 ppt
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+  bindsym $left       resize shrink width 10 px or 10 ppt
+  bindsym $down       resize grow height 10 px or 10 ppt
+  bindsym $up         resize shrink height 10 px or 10 ppt
+  bindsym $right      resize grow width 10 px or 10 ppt
+  # same bindings, but for the arrow keys
+  bindsym Left        resize shrink width 10 px or 10 ppt
+  bindsym Down        resize grow height 10 px or 10 ppt
+  bindsym Up          resize shrink height 10 px or 10 ppt
+  bindsym Right       resize grow width 10 px or 10 ppt
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 
 
 bindsym $mod+n mode "focused"
 mode "focused" {
+  # hardcoded focus keybindings
+  bindsym b [class="(?i)firefox"] focus
+  bindsym w [class="(?i)terminal" title="weechat"] focus
+  bindsym m [class="(?i)thunderbird"] focus
 
-                # hardcoded focus keybindings
-                bindsym b [class="(?i)firefox"] focus
-                bindsym w [class="(?i)terminal" title="weechat"] focus
-                bindsym m [class="(?i)thunderbird"] focus
+  # keybindings for marking and jumping to clients
+  bindsym a exec i3-input -F 'mark %s' -P 'Mark name: '
+  bindsym g exec i3-input -F '[con_mark=%s] focus' -P 'Go to mark: '
 
-                # keybindings for marking and jumping to clients
-                bindsym a exec i3-input -F 'mark %s' -P 'Mark name: '
-                bindsym g exec i3-input -F '[con_mark=%s] focus' -P 'Go to mark: '
+  # Assign marks to keys 1-5
+  bindsym Shift+1 mark mark1
+  bindsym Shift+2 mark mark2
+  bindsym Shift+3 mark mark3
+  bindsym Shift+4 mark mark4
+  bindsym Shift+5 mark mark5
 
-                # Assign marks to keys 1-5
-                bindsym Shift+1 mark mark1
-                bindsym Shift+2 mark mark2
-                bindsym Shift+3 mark mark3
-                bindsym Shift+4 mark mark4
-                bindsym Shift+5 mark mark5
+  # Jump to clients marked 1-5
+  bindsym 1 [con_mark="mark1"] focus
+  bindsym 2 [con_mark="mark2"] focus
+  bindsym 3 [con_mark="mark3"] focus
+  bindsym 4 [con_mark="mark4"] focus
+  bindsym 5 [con_mark="mark5"] focus
 
-                # Jump to clients marked 1-5
-                bindsym 1 [con_mark="mark1"] focus
-                bindsym 2 [con_mark="mark2"] focus
-                bindsym 3 [con_mark="mark3"] focus
-                bindsym 4 [con_mark="mark4"] focus
-                bindsym 5 [con_mark="mark5"] focus
-
-                # Exit to the default mode
-                bindsym Return mode "default"
-                bindsym Escape mode "default"
+  # Exit to the default mode
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 
 
@@ -366,9 +347,9 @@ exec --no-startup-id $HOME/.config/i3/launchpoly.sh
 # gaps #
 ########
 
-#gaps inner 8
-#gaps outer 10 
-#smart_borders on
+# gaps inner 8
+# gaps outer 10 
+# smart_borders on
 
 
 
@@ -378,10 +359,7 @@ exec --no-startup-id $HOME/.config/i3/launchpoly.sh
 
 exec compton --config ~/.config/compton.conf
 exec --no-startup-id redshift -c ~/.config/redshift.conf
-#exec xrdb ~/.config/themes/Xres/default
 exec --no-startup-id udiskie
-#exec --no-startup-id /opt/urserver/urserver-start
-#exec --no-startup-id kdeconnect-cli -l
 
 # Notifications
 exec killall -q notify-osd
@@ -393,28 +371,5 @@ exec --no-startup-id feh --bg-fill \
 ~/.wallpapers/light-solarized.png
 
 # Setting up workspaces
-#exec --no-startup-id sleep 5;
-#exec --no-startup-id i3-msg 'workspace $tag5; append_layout ~/.config/i3/workspaces/work5.json'
-#exec --no-startup-id i3-msg 'workspace $tag5; exec /mnt/data/Apps/Telegram/./Telegram'
-
-#exec sleep 2;
-#exec --no-startup-id i3-msg 'workspace $tag4; exec st -t irc'
-
 exec sleep 2;
-#exec --no-startup-id i3-msg 'workspace $tag3; exec konsole'
-#exec --no-startup-id i3-msg 'workspace $tag3; append_layout ~/.config/i3/workspaces/work3.json'
-#exec --no-startup-id i3-msg 'workspace $tag3; exec st -t musicplayer -e ncmpcpp'
-#exec --no-startup-id i3-msg 'workspace $tag3; exec st -t filebrowser -e ranger'
-#exec --no-startup-id i3-msg 'workspace $tag3; exec st -t terminal'
-
-#exec sleep 2;
 exec --no-startup-id i3-msg 'workspace $tag2; exec firefox'
-
-
-# quick terminal
-#exec --no-startup-id konsole -p tabtitle="dropdown" --profile dropdown
-# Old attempt to launch a named tmux session alongside
-#exec --no-startup-id sleep 5; st -t dropdown -g 238x40 #-e tmux -f ~/.config/tmux/tmux.conf new-session -s dropdown
-#for_window [title="dropdown"] floating enable
-#for_window [title="dropdown"] move scratchpad; [title="dropdown"] scratchpad show; move position 0px 24px; move scratchpad
-#bindsym $mod+t [title="dropdown"] scratchpad show

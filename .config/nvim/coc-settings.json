@@ -21,9 +21,10 @@
     "pyls.enable": true,
     "pyls.commandPath": "",    // Remember you can use microsoft's python LSP instead
 
-    "rust.trace.server": "verbose",
     "rust-client.disableRustup": false,
     "rust-client.updateOnStartup": true,
+    "rust.all_targets": false,
+    "rust.jobs": 2,
     "rust.build_on_save": true,
     "rust-client.channel": "stable",
     "rust.unstable_features": true

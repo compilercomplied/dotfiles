@@ -13,6 +13,8 @@ for f in $BASH_CONFIG_DIR/aliases/*; do source "$f"; done
 for f in $BASH_CONFIG_DIR/env/*; do source "$f"; done
 
 
-# --- Modify $PATH ---------------------------------------------------------------------------
+# --- ENV ------------------------------------------------------------------------------------
 RUST_CARGO_BINDIR=$HOME/.cargo/bin
 export PATH=$PATH:$RUST_CARGO_BINDIR
+
+export EDITOR=vim

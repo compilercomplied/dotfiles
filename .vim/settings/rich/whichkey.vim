@@ -121,6 +121,7 @@ let g:which_key_map.g = {
             \ 'r' : ['Gread'                  , 'read']              ,
             \ 's' : ['Gstatus'                , 'status']            ,
             \ 'w' : ['Gwrite'                 , 'write']             ,
+            \ 'm' : ['GitMessenger'           , 'msg']               ,
             \ 'p' : ['Git push'               , 'push']              
 \ }
 

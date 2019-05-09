@@ -57,15 +57,16 @@ Plug 'junegunn/fzf', {
 " ----- Languages ----------------------------------------------------------------------------
 "  Python
 " Plug 'davidhalter/jedi-vim'             " Code completion
-Plug 'tmhedberg/SimpylFold'             " Folding
+" Plug 'tmhedberg/SimpylFold'             " Folding
 Plug 'jmcantrell/vim-virtualenv'        " Virtual envs
 
 " Rust
 Plug 'rust-lang/rust.vim'               " General goodies
 
 " Wabbascript *dabs*
-Plug 'leafgarland/typescript-vim'       " Typescript syntax
-Plug 'posva/vim-vue'                    " Vue components syntax
+Plug 'leafgarland/typescript-vim'      " General goodies 
+Plug 'mattn/emmet-vim'                 " Improved HTML handling
+" Plug 'posva/vim-vue'                    " Vue components syntax
 
 " ----- Appearance ---------------------------------------------------------------------------
 Plug 'altercation/vim-colors-solarized'

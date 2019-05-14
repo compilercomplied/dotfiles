@@ -14,6 +14,10 @@ nmap <silent><leader>cgt <Plug>(coc-type-definition)
 nmap <silent><leader>cgi <Plug>(coc-implementation)
 nmap <silent><leader>cr <Plug>(coc-references)
 
+command! -nargs=0 Format :call CocAction('format')
+nmap <silent><leader>cf  <Plug>(coc-format-selected)
+nmap <silent><leader>cF  :Format<cr>
+
 nnoremap <silent><space>cS  :<C-u>CocList -I symbols<cr> " Workspace symbols
 nnoremap <silent> <space>cs  :<C-u>CocList outline<cr> " Document symbols
 nnoremap <silent><leader>ch :call <SID>show_documentation()<CR>

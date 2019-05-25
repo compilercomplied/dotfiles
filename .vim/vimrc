@@ -23,10 +23,6 @@ Plug 'inside/vim-search-pulse'          " Pulse for each n N search move
 Plug 'Yggdroot/indentLine'              " Display indentation for spaces
 
 " ----- Code ---------------------------------------------------------------------------------
-" Plug 'autozimu/LanguageClient-neovim', {
-"     \ 'branch': 'next',
-"     \ 'do': 'bash install.sh',
-"     \ }                                 " LSP
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': 'yarn install'}       
 
 " Plug 'Shougo/deoplete.nvim', {

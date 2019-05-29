@@ -42,6 +42,21 @@ let g:which_key_map.l = {
             \ 'j' : 'split-line',
             \ 'h' : 'append-comma',
 \ }
+let g:which_key_map.g = {
+            \ 'name' : '+git/vsc' ,
+            \ 'b' : ['Gblame'                 , 'blame']             ,
+            \ 'c' : ['BCommits'               , 'commits-for-current-buffer'] ,
+            \ 'C' : ['Gcommit'                , 'commit']            ,
+            \ 'd' : ['Gdiff'                  , 'diff']              ,
+            \ 'e' : ['Gedit'                  , 'edit']              ,
+            \ 'l' : ['Glog'                   , 'log']               ,
+            \ 'r' : ['Gread'                  , 'read']              ,
+            \ 's' : ['Gstatus'                , 'status']            ,
+            \ 'w' : ['Gwrite'                 , 'write']             ,
+            \ 'm' : ['GitMessenger'           , 'msg']               ,
+            \ 'p' : ['Git push'               , 'push']              
+\ }
+
 let g:which_key_map.c = {
             \ 'name' : '+code',
             \ 'a' : 'code-action',
@@ -66,6 +81,14 @@ let g:which_key_map.c = {
             \ },
 \ }
 
+let g:which_key_map.p = {
+            \ 'name' : '+Plugins',
+            \ 'i' : [ 'PlugInstall', 'install' ],
+            \ 'u' : [ 'PlugUpdate' , 'update'  ],
+            \ 'c' : [ 'PlugClean'  , 'clean'   ],
+            \ 'U' : [ 'PlugUpgrade', 'upgrade' ],
+            \ 's' : [ 'PlugStatus' , 'status'  ],
+\ }
 let g:which_key_map.b = {
             \ 'name' : '+buffer' ,
             \ 'd' : 'delete-buffer',
@@ -110,20 +133,6 @@ let g:which_key_map.w = {
             \ },
 \ }
 
-let g:which_key_map.g = {
-            \ 'name' : '+git/vsc' ,
-            \ 'b' : ['Gblame'                 , 'blame']             ,
-            \ 'c' : ['BCommits'               , 'commits-for-current-buffer'] ,
-            \ 'C' : ['Gcommit'                , 'commit']            ,
-            \ 'd' : ['Gdiff'                  , 'diff']              ,
-            \ 'e' : ['Gedit'                  , 'edit']              ,
-            \ 'l' : ['Glog'                   , 'log']               ,
-            \ 'r' : ['Gread'                  , 'read']              ,
-            \ 's' : ['Gstatus'                , 'status']            ,
-            \ 'w' : ['Gwrite'                 , 'write']             ,
-            \ 'm' : ['GitMessenger'           , 'msg']               ,
-            \ 'p' : ['Git push'               , 'push']              
-\ }
 
 
 nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>

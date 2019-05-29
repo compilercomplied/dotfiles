@@ -1,8 +1,9 @@
-#####################
-# Desktop i3 config #
-#####################
 
+
+# --- Global modifiers -----------------------------------------------------------------------
 set $mod Mod4
+set $terminal rxvt-unicode
+
 
 # --- Keybindings ----------------------------------------------------------------------------
 
@@ -16,103 +17,21 @@ bindsym Ctrl+Shift+e exec mpc volume +2
 
 # apps
 bindsym Ctrl+$mod+r exec pkill -USR1 redshift
-bindsym $mod+x [urgent=latest] focus
-
-# media keys
-bindsym $mod+KP_Multiply exec pactl set-sink-volume 0 +10%
-bindsym $mod+KP_Divide exec pactl set-sink-volume 0 -10%
-
-bindcode 99 exec scrot
-#bindsym Print exec scrot 
-#bindsym Shift+Print exec scrot -s 
-#bindsym Shift+Ctrl+Print exec scrot -u
-
-bindsym $mod+u exec updates
+bindcode $mod+p exec scrot
+bindsym $mod+Shift+p exec scrot -s
 
 # start a terminal
-bindsym $mod+Return exec rxvt-unicode
+bindsym $mod+Return exec $terminal
 
 # launchers 
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+Shift+d exec --no-startup-id dmenu_run
-bindsym $mod+o status
+
+# system info
+bindsym $mod+o bash "$HOME/.scripts/status"
 
 
-
-# --- Colour bindings ------------------------------------------------------------------------ 
-
-###SOLARDARK###
-#set $colora	#dc322f
-#set darkc1     #002b36
-#set $clrtxt	#ffffff
-#set $drktxt	#ffffff
-#set $mainco	#268bd2
-#set $scndco	#b58900
-#set $maindk	#586e75
-#set $scnddk	#073642
-#set $bckgrn	#002b36
-
-###SOLARLIGHT###
-set $colora	#dc322f
-set $darkc1	#fdf6e3
-set $clrtxt	#ffffff
-set $drktxt	#ffffff
-set $mainco	#268bd2
-set $scndco	#b58900
-set $maindk	#586e75
-set $scnddk	#073642
-set $bckgrn	#fdf6e3
-
-###GRUVBOX###
-#set $colora	#cc241d
-#set darkc1     #282828
-#set $clrtxt	#ebdbb2
-#set $drktxt	#3c3836
-#set $mainco	#ebdbb2
-#set $scndco	#98971a
-#set $maindk	#3c3836
-#set $scnddk	#504945
-#set $bckgrn	#282828
-
-# CONSTANTS
-# pastelred
-#set $colora #C23b22
-# black1
-#set $darkc1 #100D0D
-
-
-##############
-# Appearance #
-##############
-
-# General
-font pango: DejaVuSansMono Nerd 12
-new_window pixel 4
-hide_edge_borders none
-
-# Windows
-for_window [class="Anki"] floating enable
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="Preferences"] floating enable 
-for_window [window_role="help-browser"] floating enable 
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="About"] floating enable 
-for_window [class="(?i)plasma-desktop"] floating enable 
-for_window [class="(?i)klipper"] floating enable 
-
-assign [class="Firefox"] $tag2
-assign [class="Telegram Desktop"] $tag5
-#assign [class="discord"] $tag5
-#assign [name="irc"] $tag4
-
-# class                 border  backgr. text    indicator
-client.focused          $mainco $mainco $drktxt $maindk
-client.focused_inactive $scndco $scnddk $clrtxt $scnddk
-client.unfocused        $scnddk $scnddk $clrtxt $maindk 
-client.urgent           $colora $colora #FFFFFF #900000
-client.placeholder      #000000 #0c0c0c $mainco $maindk
-
-# Movement / focus
+# --- WM Keybindings -------------------------------------------------------------------------
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 # kill focused window
@@ -159,10 +78,46 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 
+# --- Colour bindings ------------------------------------------------------------------------ 
+set $colora	#dc322f
+set $darkc1	#fdf6e3
+set $clrtxt	#ffffff
+set $drktxt	#ffffff
+set $mainco	#268bd2
+set $scndco	#b58900
+set $maindk	#586e75
+set $scnddk	#073642
+set $bckgrn	#fdf6e3
 
-##############
-# Workspaces #
-##############
+
+# --- Appearance ----------------------------------------------------------------------------- 
+
+# General
+font pango: DejaVuSansMono Nerd 12
+new_window pixel 4
+hide_edge_borders none
+
+# Windows
+for_window [class="Anki"] floating enable
+
+for_window [window_role="Preferences"] floating enable 
+
+for_window [window_role="help-browser"] floating enable 
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="About"] floating enable 
+
+# class                 border  backgr. text    indicator
+client.focused          $mainco $mainco $drktxt $maindk
+client.focused_inactive $scndco $scnddk $clrtxt $scnddk
+client.unfocused        $scnddk $scnddk $clrtxt $maindk 
+client.urgent           $colora $colora #FFFFFF #900000
+client.placeholder      #000000 #0c0c0c $mainco $maindk
+
+
+# --- Workspaces -----------------------------------------------------------------------------
+
+assign [class="Firefox"] $tag2
 
 workspace_auto_back_and_forth yes
 bindsym $mod+z workspace back_and_forth
@@ -178,7 +133,6 @@ set $tag7 "7: "
 set $tag8 "8: "
 set $tag9 "9: "
 set $tag0 "10: "
-
 
 # switch to workspace
 bindsym $mod+1 workspace $tag1

@@ -23,10 +23,6 @@ Plug 'inside/vim-search-pulse'          " Pulse for each n N search move
 Plug 'Yggdroot/indentLine'              " Display indentation for spaces
 
 " ----- Code ---------------------------------------------------------------------------------
-" Plug 'autozimu/LanguageClient-neovim', {
-"     \ 'branch': 'next',
-"     \ 'do': 'bash install.sh',
-"     \ }                                 " LSP
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': 'yarn install'}       
 
 " Plug 'Shougo/deoplete.nvim', {
@@ -37,7 +33,6 @@ Plug 'Shougo/echodoc.vim'               " Show function signatures
 Plug 'xolox/vim-easytags'               " Gen ctags
 Plug 'xolox/vim-misc'                   " Dependency to easy-tags
 Plug 'liuchengxu/vista.vim'             " Browse LSP symbols
-" Plug 'majutsushi/tagbar'                " Browse ctag
 Plug 'w0rp/ale'                         " Linting
 Plug 'pseewald/vim-anyfold'             " Language agnostic folding
 
@@ -48,7 +43,7 @@ Plug 'liuchengxu/vim-which-key'         " Keybinds hint
 Plug 'scrooloose/nerdtree'              " File explorer
 Plug 'tpope/vim-markdown'               " Markdown support
 
-Plug 'junegunn/fzf.vim'
+
 Plug 'junegunn/fzf', {
             \ 'dir': '~/.fzf',
             \ 'do': './install --all'
@@ -56,12 +51,11 @@ Plug 'junegunn/fzf', {
 
 " ----- Languages ----------------------------------------------------------------------------
 "  Python
-" Plug 'davidhalter/jedi-vim'             " Code completion
-" Plug 'tmhedberg/SimpylFold'             " Folding
+Plug 'davidhalter/jedi-vim'             " Code completion
 Plug 'jmcantrell/vim-virtualenv'        " Virtual envs
-
+"
 " Rust
-Plug 'rust-lang/rust.vim'               " General goodies
+" Plug 'rust-lang/rust.vim'               " General goodies
 
 " Wabbascript *dabs*
 Plug 'leafgarland/typescript-vim'       " General goodies 
@@ -72,7 +66,7 @@ Plug 'cakebaker/scss-syntax.vim'        " SCSS  syntax
 " ----- Appearance ---------------------------------------------------------------------------
 Plug 'altercation/vim-colors-solarized'
 Plug 'ryanoasis/vim-devicons'
-" Plug 'morhetz/gruvbox'
+" Plug 'gruvbox-community/gruvbox'
 " Plug 'endel/vim-github-colorscheme'
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'

@@ -27,7 +27,10 @@ bindsym $mod+Return exec $terminal
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+Shift+d exec --no-startup-id dmenu_run
 
-# system info
+# system
+bindsym $mod+Up exec pactl set-sink-volume 0 +10%
+bindsym $mod+Down exec pactl set-sink-volume 0 -10%
+
 bindsym $mod+o bash "$HOME/.scripts/status"
 
 

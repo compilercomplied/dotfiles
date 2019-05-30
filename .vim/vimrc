@@ -44,10 +44,11 @@ Plug 'scrooloose/nerdtree'              " File explorer
 Plug 'tpope/vim-markdown'               " Markdown support
 
 
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', {
             \ 'dir': '~/.fzf',
             \ 'do': './install --all'
-            \ }                         " Fuzzy find
+            \ }                         " Fuzzy find (you need both you wanker)
 
 " ----- Languages ----------------------------------------------------------------------------
 "  Python

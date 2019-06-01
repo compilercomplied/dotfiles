@@ -16,8 +16,9 @@ bindsym Ctrl+Shift+e exec mpc volume +2
 
 # apps
 bindsym Ctrl+$mod+r exec pkill -USR1 redshift
-bindcode $mod+p exec scrot
-bindsym $mod+Shift+p exec scrot -s
+
+bindsym $mod+p exec scrot '%Y%m%d_%H%M%S.png' -e 'mv $f $HOME/.screenshots' && notify-send 'screnshot' 'taken. in ~/.screenshots'
+bindsym $mod+Shift+p exec scrot -u
 
 # start a terminal
 bindsym $mod+Return exec $terminal

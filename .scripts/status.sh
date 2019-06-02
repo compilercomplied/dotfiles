@@ -26,7 +26,5 @@ BATTERY_MSG=$(echo -e "\\nbattery:\\t$BATTERY_LOAD $BATTERY_ICON")
 DATETIME=$(echo -e "\\n$DATE\\n$TIME")
 MESSAGE=$SYSTEM_HEADER$BATTERY_MSG$INFO_HEADER$DATETIME
 
-# debug
-# echo "$MESSAGE"
 
 notify-send --app-name "status.sh" --urgency low "system &amp; info" "$MESSAGE"

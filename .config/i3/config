@@ -1,11 +1,35 @@
 
 
 # --- Global modifiers -----------------------------------------------------------------------
+
 set $mod Mod4
 set $terminal rxvt-unicode
 
+# workspaces
+set $workspace_tag1 "1: "
+set $workspace_tag2 "2: "
+set $workspace_tag3 "3: "
+set $workspace_tag4 "4: "
+set $workspace_tag5 "5: "
+set $workspace_tag6 "6: "
+set $workspace_tag7 "7: "
+set $workspace_tag8 "8: "
+set $workspace_tag9 "9: "
+set $workspace_tag0 "10: "
+
+# colour bindings
+set $colora	#dc322f
+set $darkc1	#fdf6e3
+set $clrtxt	#ffffff
+set $drktxt	#ffffff
+set $mainco	#268bd2
+set $scndco	#b58900
+set $maindk	#586e75
+set $scnddk	#073642
+set $bckgrn	#fdf6e3
 
 # --- Keybindings ----------------------------------------------------------------------------
+
 # music
 bindsym Ctrl+Shift+b exec mpc toggle
 bindsym Ctrl+Shift+a exec mpc prev
@@ -17,8 +41,9 @@ bindsym Ctrl+Shift+e exec mpc volume +2
 # apps
 bindsym Ctrl+$mod+r exec pkill -USR1 redshift
 
-bindsym $mod+p exec scrot '%Y%m%d_%H%M%S.png' -e 'mv $f $HOME/.screenshots' && notify-send 'screnshot' 'taken. in ~/.screenshots'
-bindsym $mod+Shift+p exec scrot -u
+# print screen
+bindsym $mod+p exec scrot '%Y%m%d_%H%M%S.png' -e 'mv $f $HOME/.screenshots/' && notify-send 'screnshot' 'taken. in ~/.screenshots'
+bindsym $mod+Shift+p exec scrot -u '%Y%m%d_%H%M%S.png' -e 'mv $f $HOME/.screenshots/' && notify-send 'screnshot' 'taken. in ~/.screenshots'
 
 # start a terminal
 bindsym $mod+Return exec $terminal
@@ -31,7 +56,7 @@ bindsym $mod+Shift+d exec --no-startup-id dmenu_run
 bindsym $mod+Up exec pactl set-sink-volume 0 +10%
 bindsym $mod+Down exec pactl set-sink-volume 0 -10%
 
-bindsym $mod+o exec "bash $HOME/.scripts/status"
+bindsym $mod+o exec /home/sine/.scripts/status.sh
 
 
 # --- WM Keybindings -------------------------------------------------------------------------
@@ -72,34 +97,23 @@ bindsym $mod+space focus mode_toggle
 
 
 # --- Workspaces -----------------------------------------------------------------------------
-assign [class="Firefox"] $tag2
+assign [class="Firefox"] $workspace_tag2
 
 workspace_auto_back_and_forth yes
 bindsym $mod+z workspace back_and_forth
 bindsym $mod+Shift+z move container to workspace back_and_forth; workspace back_and_forth
 
-set $tag1 "1: "
-set $tag2 "2: "
-set $tag3 "3: "
-set $tag4 "4: "
-set $tag5 "5: "
-set $tag6 "6: "
-set $tag7 "7: "
-set $tag8 "8: "
-set $tag9 "9: "
-set $tag0 "10: "
-
 # switch to workspace
-bindsym $mod+1 workspace $tag1
-bindsym $mod+2 workspace $tag2
-bindsym $mod+3 workspace $tag3
-bindsym $mod+4 workspace $tag4
-bindsym $mod+5 workspace $tag5
-bindsym $mod+6 workspace $tag6
-bindsym $mod+7 workspace $tag7
-bindsym $mod+8 workspace $tag8
-bindsym $mod+9 workspace $tag9
-bindsym $mod+0 workspace $tag0
+bindsym $mod+1 workspace $workspace_tag1
+bindsym $mod+2 workspace $workspace_tag2
+bindsym $mod+3 workspace $workspace_tag3
+bindsym $mod+4 workspace $workspace_tag4
+bindsym $mod+5 workspace $workspace_tag5
+bindsym $mod+6 workspace $workspace_tag6
+bindsym $mod+7 workspace $workspace_tag7
+bindsym $mod+8 workspace $workspace_tag8
+bindsym $mod+9 workspace $workspace_tag9
+bindsym $mod+0 workspace $workspace_tag0
 
 # switch to workspace left/right
 bindsym Mod4+Control+Right workspace next
@@ -110,28 +124,16 @@ bindsym Mod4+Shift+Control+Left move container to workspace prev
 bindsym Mod4+Shift+Control+Right move container to  workspace next
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $tag1
-bindsym $mod+Shift+2 move container to workspace $tag2
-bindsym $mod+Shift+3 move container to workspace $tag3
-bindsym $mod+Shift+4 move container to workspace $tag4
-bindsym $mod+Shift+5 move container to workspace $tag5
-bindsym $mod+Shift+6 move container to workspace $tag6
-bindsym $mod+Shift+7 move container to workspace $tag7
-bindsym $mod+Shift+8 move container to workspace $tag8
-bindsym $mod+Shift+9 move container to workspace $tag9
-bindsym $mod+Shift+0 move container to workspace $tag0
-
-
-# --- Colour bindings ------------------------------------------------------------------------ 
-set $colora	#dc322f
-set $darkc1	#fdf6e3
-set $clrtxt	#ffffff
-set $drktxt	#ffffff
-set $mainco	#268bd2
-set $scndco	#b58900
-set $maindk	#586e75
-set $scnddk	#073642
-set $bckgrn	#fdf6e3
+bindsym $mod+Shift+1 move container to workspace $workspace_tag1
+bindsym $mod+Shift+2 move container to workspace $workspace_tag2
+bindsym $mod+Shift+3 move container to workspace $workspace_tag3
+bindsym $mod+Shift+4 move container to workspace $workspace_tag4
+bindsym $mod+Shift+5 move container to workspace $workspace_tag5
+bindsym $mod+Shift+6 move container to workspace $workspace_tag6
+bindsym $mod+Shift+7 move container to workspace $workspace_tag7
+bindsym $mod+Shift+8 move container to workspace $workspace_tag8
+bindsym $mod+Shift+9 move container to workspace $workspace_tag9
+bindsym $mod+Shift+0 move container to workspace $workspace_tag0
 
 
 # --- Appearance ----------------------------------------------------------------------------- 
@@ -302,4 +304,4 @@ exec --no-startup-id feh --bg-fill \
 
 # Setting up workspaces
 exec sleep 2;
-exec --no-startup-id i3-msg 'workspace $tag2; exec firefox'
+exec --no-startup-id i3-msg 'workspace $workspace_tag2; exec firefox'

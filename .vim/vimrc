@@ -25,10 +25,6 @@ Plug 'Yggdroot/indentLine'              " Display indentation for spaces
 " ----- Code ---------------------------------------------------------------------------------
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': 'yarn install'}       
 
-" Plug 'Shougo/deoplete.nvim', {
-" 	\ 'do': ':UpdateRemotePlugins'
-" 	\ }                                 " Async language agnostic completion
-
 Plug 'Shougo/echodoc.vim'               " Show function signatures
 Plug 'xolox/vim-easytags'               " Gen ctags
 Plug 'xolox/vim-misc'                   " Dependency to easy-tags
@@ -54,14 +50,14 @@ Plug 'junegunn/fzf', {
 "  Python
 Plug 'davidhalter/jedi-vim'             " Code completion
 Plug 'jmcantrell/vim-virtualenv'        " Virtual envs
-"
+
 " Rust
 " Plug 'rust-lang/rust.vim'               " General goodies
 
 " Wabbascript *dabs*
 Plug 'leafgarland/typescript-vim'       " General goodies 
-Plug 'mattn/emmet-vim'                  " Improved HTML handling
-Plug 'cakebaker/scss-syntax.vim'        " SCSS  syntax
+" Plug 'mattn/emmet-vim'                  " Improved HTML handling
+" Plug 'cakebaker/scss-syntax.vim'        " SCSS  syntax
 " Plug 'posva/vim-vue'                    " Vue components syntax
 
 " ----- Appearance ---------------------------------------------------------------------------
@@ -69,8 +65,6 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'ryanoasis/vim-devicons'
 " Plug 'gruvbox-community/gruvbox'
 " Plug 'endel/vim-github-colorscheme'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
 
 " Initialize plugin system
 call plug#end()

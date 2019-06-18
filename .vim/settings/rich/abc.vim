@@ -5,8 +5,8 @@
 " let g:deoplete#enable_at_startup=1
 " let g:deoplete#enable_smart_case=1
 
-" " let g:deoplete#is_debug_enabled="True"
-" " call deoplete#enable_logging("DEBUG", ".deoplete.log")
+" let g:deoplete#is_debug_enabled="True"
+" call deoplete#enable_logging('DEBUG', '.deoplete.log')
 " call deoplete#custom#source(
 "             \ 'LanguageClient',
 "             \ 'min_pattern_length',
@@ -17,6 +17,15 @@
 "     \ 'auto_complete_delay': 200,
 "     \ 'smart_case': v:true,
 " \ })
+
+" ----- jedi-vim -----------------------------------------------------------------------------
+let g:jedi#goto_command = ""
+let g:jedi#goto_assignments_command = ""
+let g:jedi#goto_definitions_command = ""
+let g:jedi#documentation_command = ""
+let g:jedi#usages_command = ""
+let g:jedi#completions_command = ""
+let g:jedi#rename_command = ""
 
 " ----- echodoc ------------------------------------------------------------------------------
 let g:echodoc#enable_at_startup = 1
@@ -68,7 +77,7 @@ noremap <leader>cb :Vista!!<CR>
 noremap <leader>cB :Vista finder<CR>
 let g:vista_close_on_jump = 0
 let g:vista_default_executive = 'coc'
-let g:vista_finder_alternative_executives = ['ctags']
+let g:vista_finder_alternative_executives = ['ctags', 'jedi']
 let g:vista_fzf_preview = ['right:50%']
 
 " ----- FZF ----------------------------------------------------------------------------------

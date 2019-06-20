@@ -1,4 +1,4 @@
-#!/usr/env/bin bash
+#! /usr/env/bin bash
 
 # Homogenize decompressing needs
 function extract {
@@ -8,7 +8,7 @@ function extract {
     echo "       extract <path/file_name_1.ext> [path/file_name_2.ext] [path/file_name_3.ext]"
     return 1
  else
-    for n in $@
+    for n in "$@"
     do
       if [ -f "$n" ] ; then
           case "${n%,}" in
@@ -39,32 +39,32 @@ fi
 
 # Make folder and cd into it
 function mkcd() {
-	mkdir -p $1;
-	cd $1
+	mkdir -p "$1";
+	cd "$1" || exit
 }
 
 # Find what is using a particular port
 # USAGE: $ whoisport 80
 function whoisport (){
         port=$1
-        pidInfo=$(fuser $port/tcp 2> /dev/null)
-        pid=$(echo $pidInfo | cut -d':' -f2)
-        ls -l /proc/$pid/exe
+        pidInfo=$(fuser "$port"/tcp 2> /dev/null)
+        pid=$(echo "$pidInfo" | cut -d':' -f2)
+        ls -l /proc/"$pid"/exe
 }
 
 # Display formated system info
 myinfo () {
   printf "CPU: "
-  cat /proc/cpuinfo | grep "model name" | head -1 | awk '{ for (i = 4; i <= NF; i++) printf "%s ", $i }'
-  printf "\n"
+  grep "model name" < /proc/cpuinfo | head -1 | awk '{ for (i = 4; i <= NF; i++) printf "%s ", $i }'
+  printf "\\n"
 
-  cat /etc/issue | awk '{ printf "OS: %s %s %s %s | " , $1 , $2 , $3 , $4 }'
+  awk '{ printf "OS: %s %s %s %s | " , $1 , $2 , $3 , $4 }' < /etc/issue
   uname -a | awk '{ printf "Kernel: %s " , $3 }'
   uname -m | awk '{ printf "%s | " , $1 }'
   kded4 --version | grep "KDE Development Platform" | awk '{ printf "KDE: %s", $4 }'
-  printf "\n"
+  printf "\\n"
   uptime | awk '{ printf "Uptime: %s %s %s", $3, $4, $5 }' | sed 's/,//g'
-  printf "\n"
+  printf "\\n"
   cputemp | head -1 | awk '{ printf "%s %s %s\n", $1, $2, $3 }'
   cputemp | tail -1 | awk '{ printf "%s %s %s\n", $1, $2, $3 }'
   #cputemp | awk '{ printf "%s %s", $1 $2 }'
@@ -73,5 +73,5 @@ myinfo () {
 
 # Easily pipe grep to fzf to search inside files
 function frep() {
-    grep --line-buffered --color=never -r "" $1 | fzf -e
+    grep --line-buffered --color=never -r "" "$1" | fzf -e
 }

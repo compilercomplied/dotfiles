@@ -23,7 +23,7 @@ Plug 'inside/vim-search-pulse'          " Pulse for each n N search move
 Plug 'Yggdroot/indentLine'              " Display indentation for spaces
 
 " ----- Code ---------------------------------------------------------------------------------
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': 'yarn install'}       
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install'}       
 
 Plug 'Shougo/echodoc.vim'               " Show function signatures
 Plug 'xolox/vim-easytags'               " Gen ctags

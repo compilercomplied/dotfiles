@@ -23,7 +23,7 @@ Plug 'inside/vim-search-pulse'          " Pulse for each n N search move
 Plug 'Yggdroot/indentLine'              " Display indentation for spaces
 
 " ----- Code ---------------------------------------------------------------------------------
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': 'yarn install'}       
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install'}       
 
 Plug 'Shougo/echodoc.vim'               " Show function signatures
 Plug 'xolox/vim-easytags'               " Gen ctags
@@ -60,11 +60,15 @@ Plug 'leafgarland/typescript-vim'       " General goodies
 " Plug 'cakebaker/scss-syntax.vim'        " SCSS  syntax
 " Plug 'posva/vim-vue'                    " Vue components syntax
 
+" ----- Tidal env ----------------------------------------------------------------------------
+Plug 'supercollider/scvim'              " Supercollider
+
 " ----- Appearance ---------------------------------------------------------------------------
 Plug 'altercation/vim-colors-solarized'
 Plug 'ryanoasis/vim-devicons'
 " Plug 'gruvbox-community/gruvbox'
 " Plug 'endel/vim-github-colorscheme'
+
 
 " Initialize plugin system
 call plug#end()

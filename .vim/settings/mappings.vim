@@ -42,6 +42,9 @@ nnoremap <leader>fs :wa<cr>
 inoremap kj <esc>
 inoremap jk <esc>
 
+" easy macro access
+nnoremap º @q
+
 
 
 " \ **************************************************************************************** \

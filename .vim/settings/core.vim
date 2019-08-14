@@ -33,7 +33,7 @@ endif
 
 " ----- Input --------------------------------------------------------------------------------
 set mouse=                      " Mouse can be enabled for different modes.
-set clipboard=unnamed           " Use system clipboard
+set clipboard+=unnamedplus      " Use system clipboard (nvim)
 xnoremap p "_dP                 " Don't overwrite register on paste
 
 " ----- Editor -------------------------------------------------------------------------------

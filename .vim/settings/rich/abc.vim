@@ -98,3 +98,7 @@ let g:markdown_fenced_languages = [
 
 " ----- vim-devicons -------------------------------------------------------------------------
 let g:webdevicons_conceal_nerdtree_brackets = 1
+
+" ----- supercollider ------------------------------------------------------------------------
+let g:scnvim_no_mappings = 1            " Use custom mappings instead.
+let g:scnvim_postwin_orientation = 'h'  " h/v

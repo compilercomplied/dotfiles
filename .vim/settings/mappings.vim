@@ -20,17 +20,8 @@ inoremap <C-U> <C-G>u<C-U>
 " easier help navigation
 nnoremap <CR> <C-]>
 
-" maps F2 to netrw
-noremap <F2> :call ToggleVExplorer()<cr>
-
-" Show unwanted spaces
-noremap <F12> :ShowSpaces 1<CR>
-
-" Remove unwanted spaces
-noremap <S-F12> m`:TrimSpaces<CR>``
-
 " Toggle search result highlighting
-nnoremap <silent><expr> <Leader>hh (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n"
+nnoremap <silent><expr><Leader>hh (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n"
 
 " Fat finger's save
 nnoremap :W :w
@@ -44,6 +35,13 @@ inoremap jk <esc>
 
 " easy macro access
 nnoremap º @q
+
+" paste overload
+" noremap <Leader>y "*y
+" noremap <Leader>p "*p
+" noremap <Leader>Y "+y
+" noremap <Leader>P "+p
+
 
 
 

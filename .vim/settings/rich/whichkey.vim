@@ -27,7 +27,7 @@ let g:which_key_map.s = {
       \ 'w' : ['<Plug>(scnvim-postwindow-toggle)' , 'toggle post window'  ],
       \ 'x' : ['SCNvimStop'                       , 'stop server'         ],
       \ 'n' : ['SCNvimStart'                      , 'start server'        ],
-      \ 'h' : ['SCNvimRecompile'                  , 'recompile lib'       ]
+      \ 'r' : ['SCNvimRecompile'                  , 'recompile lib'       ]
 \ }
 let g:which_key_map.h = { 
       \ 'name' : '+highlight' ,

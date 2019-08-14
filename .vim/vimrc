@@ -61,8 +61,8 @@ Plug 'leafgarland/typescript-vim'       " General goodies
 " Plug 'posva/vim-vue'                    " Vue components syntax
 
 " ----- Tidal env ----------------------------------------------------------------------------
-Plug 'supercollider/scvim'              " Supercollider
-
+" Plug 'supercollider/scvim'              " Supercollider
+Plug 'davidgranstrom/scnvim', { 'do': ':UpdateRemotePlugins' }
 " ----- Appearance ---------------------------------------------------------------------------
 Plug 'altercation/vim-colors-solarized'
 Plug 'ryanoasis/vim-devicons'

@@ -30,7 +30,12 @@ for f in "$SHELL_CONFIG_DIR"/env/*; do . "$f"; done
 
 
 # --- ENV ------------------------------------------------------------------------------------
-RUST_CARGO_BINDIR=$HOME/.cargo/bin
-export PATH=$PATH:$RUST_CARGO_BINDIR
 
+RUST_CARGO_BINDIR=$HOME/.cargo/bin
+
+# Env vars
+export FZF_DEFAULT_COMMAND='rg --files'
 export EDITOR=vim
+
+# Append to path
+export PATH=$PATH:$RUST_CARGO_BINDIR

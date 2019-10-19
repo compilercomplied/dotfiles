@@ -12,7 +12,7 @@ inoremap <silent><expr> <c-space> coc#refresh()
 nmap <silent><leader>cgd <Plug>(coc-definition)
 nmap <silent><leader>cgt <Plug>(coc-type-definition)
 nmap <silent><leader>cgi <Plug>(coc-implementation)
-nmap <silent><leader>cr <Plug>(coc-references)
+nmap <silent><leader>cgr <Plug>(coc-references)
 
 command! -nargs=0 Format :call CocAction('format')
 nmap <silent><leader>cf  <Plug>(coc-format-selected)
@@ -29,6 +29,7 @@ nnoremap <silent><space>kd  :<C-u>CocList diagnostics<cr>
 nnoremap <silent><space>ke  :<C-u>CocList extensions<cr>
 nnoremap <silent><space>kc  :<C-u>CocList commands<cr>
 nnoremap <silent><space>ko  :<C-u>CocList outline<cr>
+nnoremap <silent><space>km  :<C-u>CocList marketplace<cr>
 
 " ----- functions ----------------------------------------------------------------------------
 function! s:show_documentation()

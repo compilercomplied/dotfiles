@@ -39,6 +39,7 @@ let g:which_key_map.k = {
       \ 'e' : 'extensions',
       \ 'c' : 'commands',
       \ 'o' : 'outline',
+      \ 'm' : 'marketplace',
 \ }
 let g:which_key_map.f = { 
       \ 'name' : '+files' ,
@@ -84,7 +85,6 @@ let g:which_key_map.g = {
 let g:which_key_map.c = {
       \ 'name' : '+code',
       \ 'a' : 'code-action',
-      \ 'r' : 'references',
       \ 'R' : 'rename',
       \ 'c' : 'context-menu',
       \ 'b' : 'toggle-tagbar',
@@ -102,6 +102,7 @@ let g:which_key_map.c = {
           \ 'd' : 'definition',
           \ 't' : 'type-definition',
           \ 'i' : 'implementation',
+          \ 'r' : 'references',
       \ },
 \ }
 let g:which_key_map.p = {

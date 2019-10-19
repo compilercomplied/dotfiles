@@ -130,6 +130,7 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 " \ **************************************************************************************** \
 " \ Settings source files
 " \ **************************************************************************************** \
+
 function! SourceDirectory(file)
   for s:fpath in split(globpath(a:file, '*.vim'), '\n')
     exe 'source' s:fpath
@@ -141,7 +142,9 @@ call SourceDirectory("~/.vim/settings/functions")
 source ~/.vim/settings/mappings.vim
 source ~/.vim/settings/statusline.vim
 
-if (editor_mode == "rich") 
+if (editor_mode == "vs") 
+    source ~/.vim/settings/visualstudio.vim
+elseif (editor_mode == "rich")
 
     call SourceDirectory("~/.vim/settings/rich")
 

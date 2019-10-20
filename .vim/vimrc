@@ -31,6 +31,7 @@ Plug 'xolox/vim-misc'                   " Dependency to easy-tags
 Plug 'liuchengxu/vista.vim'             " Browse LSP symbols
 Plug 'w0rp/ale'                         " Linting
 Plug 'pseewald/vim-anyfold'             " Language agnostic folding
+Plug 'itspriddle/vim-shellcheck'        " Bash
 
 " ----- Functionality wrappers ---------------------------------------------------------------
 Plug 'tpope/vim-fugitive'               " Git wrapper

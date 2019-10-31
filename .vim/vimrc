@@ -38,8 +38,6 @@ Plug 'tpope/vim-fugitive'               " Git wrapper
 Plug 'rhysd/git-messenger.vim'          " Reveal the commit messages under the cursor
 Plug 'liuchengxu/vim-which-key'         " Keybinds hint
 Plug 'scrooloose/nerdtree'              " File explorer
-" Plug 'tpope/vim-markdown'               " Markdown support
-
 
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', {
@@ -52,8 +50,10 @@ Plug 'junegunn/fzf', {
 Plug 'davidhalter/jedi-vim'             " Code completion
 Plug 'jmcantrell/vim-virtualenv'        " Virtual envs
 
+
 " Rust
-" Plug 'rust-lang/rust.vim'               " General goodies
+Plug 'rust-lang/rust.vim'               " General goodies
+Plug 'racer-rust/vim-racer'           " Intellisense engine
 
 " Wabbascript *dabs*
 Plug 'leafgarland/typescript-vim'       " General goodies 

@@ -53,7 +53,7 @@ Plug 'jmcantrell/vim-virtualenv'        " Virtual envs
 
 " Rust
 Plug 'rust-lang/rust.vim'               " General goodies
-Plug 'racer-rust/vim-racer'           " Intellisense engine
+Plug 'racer-rust/vim-racer'             " Intellisense engine
 
 " Wabbascript *dabs*
 Plug 'leafgarland/typescript-vim'       " General goodies 

@@ -88,7 +88,6 @@ let g:netrw_list_hide= '.*\.swp$,.*\.d.ts$,.*\.pyc$,.*\.js.map$'
 
 " close preview window on leaving the insert mode
 " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-"
 
 
 " ----- Languages ----------------------------------------------------------------------------
@@ -109,14 +108,6 @@ let did_install_default_menus=1 " Don't load gvim menu stuff
 " \ **************************************************************************************** \
 
 set t_Co=256
-
-" Mode aware cursors
-" set gcr+=o:hor50-Cursor
-" set gcr+=n:Cursor
-" set gcr+=i-ci-sm:InsertCursor
-" set gcr+=r-cr:ReplaceCursor-hor20
-" set gcr+=c:CommandCursor
-" set gcr+=v-ve:VisualCursor
 
 " these are overriden by solarized theme
 " Diff colours
@@ -151,6 +142,8 @@ elseif (editor_mode == "rich")
     " --- Sources ----------------------------------------------------------------------------
     autocmd BufNewFile,BufRead *.py     source ~/.vim/sources/py.vim
     autocmd BufNewFile,BufRead *.md     source ~/.vim/sources/md.vim
+    autocmd BufNewFile,BufRead *.rs     source ~/.vim/sources/rust.vim
+    autocmd BufNewFile,BufRead *.toml   source ~/.vim/sources/rust.vim
     " autocmd BufNewFile,BufRead *.cpp    source ~/.vim/sources/cpp.vim
     " autocmd BufNewFile,BufRead *.c      source ~/.vim/sources/c.vim
     " autocmd BufNewFile,BufRead *.tex    source ~/.vim/sources/tex.vim

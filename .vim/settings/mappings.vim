@@ -6,6 +6,7 @@ let mapleader = "\<space>"
 
 " source $MYVIMRC reloads the saved $MYVIMRC
 nnoremap <Leader>fm :source $MYVIMRC<cr>
+nnoremap <Leader>em :source $MYVIMRC<cr>
 
 nnoremap <Leader>fh :mksession! session.vim<cr>
 
@@ -41,6 +42,8 @@ nnoremap º @q
 " noremap <Leader>p "*p
 " noremap <Leader>Y "+y
 " noremap <Leader>P "+p
+
+nnoremap <Leader>eb :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
 
 

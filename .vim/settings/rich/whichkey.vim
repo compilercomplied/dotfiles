@@ -9,6 +9,28 @@ nnoremap <C-W>ñk :resize -5<cr>
 nnoremap <C-W>ñj :resize +5<cr>
 
 " --- mappings ------------------------------------------------------------------------------
+
+let g:which_key_map.r = {
+      \ 'name' : '+build-tools',
+      \ 'r' : 'run',
+      \ 'b' : 'build',
+\ }
+
+let g:which_key_map.t = {
+      \ 'name' : '+tests',
+      \ 'a' : 'run-all',
+      \ 't' : 'run-current',
+      \ 'l' : 'run-last',
+      \ 'd' : 'debug-current',
+      \ 'L' : 'debug-last',
+\ }
+
+let g:which_key_map.e = {
+      \ 'name' : '+editor',
+      \ 'm' : 'reload-vimrc',
+      \ 'b' : 'toggle-bg'
+\ }
+
 let g:which_key_map.d = {
       \ 'name': '+document',
       \ 'f' : {
@@ -49,7 +71,6 @@ let g:which_key_map.f = {
       \ 'h' : 'save-session',
       \ 'q' : 'close-file',
       \ 'Q' : 'quit',
-      \ 'm' : 'reload-vimrc',
       \ 's' : 'save-all',
 \ }
 let g:which_key_map.t = { 

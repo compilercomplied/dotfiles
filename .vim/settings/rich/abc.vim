@@ -18,6 +18,9 @@
 "     \ 'smart_case': v:true,
 " \ })
 
+" ----- rust ---------------------------------------------------------------------------------
+let g:rust_recommended_style = 0
+
 " ----- jedi-vim -----------------------------------------------------------------------------
 let g:jedi#goto_command = ""
 let g:jedi#goto_assignments_command = ""

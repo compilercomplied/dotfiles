@@ -12,6 +12,7 @@ nnoremap <leader>rb :vsc Build.RebuildSolution<cr>
 
 nnoremap <leader>ta :vsc TestExplorer.RunAllTests<cr>
 nnoremap <leader>td :vsc TestExplorer.DebugLastRun<cr>
+nnoremap <leader>tt :vsc TestExplorer.RepeatLastRun<cr>
 nnoremap <leader>tr :vsc TestExplorer.RunSelectedTests<cr>
 nnoremap <leader>tR :vsc TestExplorer.RunFailedTests<cr>
 nnoremap <leader>tu :vsc EditorContextMenus.CodeWindow.RunTests<cr>

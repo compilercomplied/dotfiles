@@ -92,8 +92,8 @@ let g:netrw_list_hide= '.*\.swp$,.*\.d.ts$,.*\.pyc$,.*\.js.map$'
 
 " ----- Languages ----------------------------------------------------------------------------
 let g:pymode_python     = 'python3' " python 3 as default
-let g:python_host_prog  = '/usr/bin/python2'
-let g:python3_host_prog = '/usr/bin/python3'
+let g:python_host_prog  = '/usr/bin/env python2'
+let g:python3_host_prog = '/usr/bin/env python3'
 
 
 " ----- Performance --------------------------------------------------------------------------

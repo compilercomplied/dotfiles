@@ -101,6 +101,8 @@ set lazyredraw                  " avoid redrawing when executing macros and othe
 set synmaxcol=200               " Don't highlight anything longer than 200 chars
 let did_install_default_menus=1 " Don't load gvim menu stuff
 " let loaded_matchparen=1         " Don't hightlight matching parents
+" kitty background's bug
+let &t_ut=''
 
 
 " \ **************************************************************************************** \

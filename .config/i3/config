@@ -3,7 +3,7 @@
 # --- Global modifiers -----------------------------------------------------------------------
 
 set $mod Mod4
-set $terminal urxvt
+set $terminal kitty
 
 # workspaces
 set $workspace_tag1 "1: "

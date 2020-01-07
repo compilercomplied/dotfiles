@@ -55,6 +55,9 @@ Plug 'jmcantrell/vim-virtualenv'        " Virtual envs
 Plug 'rust-lang/rust.vim'               " General goodies
 Plug 'racer-rust/vim-racer'             " Intellisense engine
 
+" Nix
+Plug 'spwhitt/vim-nix'                  " Syntax
+
 " Wabbascript *dabs*
 Plug 'leafgarland/typescript-vim'       " General goodies 
 " Plug 'mattn/emmet-vim'                  " Improved HTML handling

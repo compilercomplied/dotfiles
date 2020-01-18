@@ -40,3 +40,5 @@ user_pref("browser.aboutConfig.showWarning", false);
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features" , false);
 
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
+
+user_pref("browser.messaging-system.whatsNewPanel.enabled", false);

@@ -124,6 +124,7 @@ let g:which_key_map.c = {
           \ 't' : 'type-definition',
           \ 'i' : 'implementation',
           \ 'r' : 'references',
+          \ 'h' : 'inspect-docs',
       \ },
 \ }
 let g:which_key_map.p = {

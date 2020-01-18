@@ -1,5 +1,10 @@
 
 " ----- general ------------------------------------------------------------------------------
+let g:coc_global_extensions= [ 
+  \'coc-marketplace',
+  \'coc-rls',
+  \'coc-omnisharp',  
+\]
 autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 
 " ----- binds---------------------------------------------------------------------------------

@@ -145,6 +145,7 @@ elseif (editor_mode == "rich")
     autocmd BufNewFile,BufRead *.py     source ~/.vim/sources/py.vim
     autocmd BufNewFile,BufRead *.md     source ~/.vim/sources/md.vim
     autocmd BufNewFile,BufRead *.rs     source ~/.vim/sources/rust.vim
+    autocmd BufNewFile,BufRead *.cs     source ~/.vim/sources/cs.vim
     autocmd BufNewFile,BufRead *.toml   source ~/.vim/sources/rust.vim
     " autocmd BufNewFile,BufRead *.cpp    source ~/.vim/sources/cpp.vim
     " autocmd BufNewFile,BufRead *.c      source ~/.vim/sources/c.vim

@@ -5,6 +5,7 @@ nnoremap <leader>cgh :OmniSharpDocumentation<cr>
 nnoremap <leader>ca :OmniSharpGetCodeActions<cr>
 nnoremap <leader>cgr :OmniSharpFindUsages<cr>
 
+nnoremap <leader>cR :OmniSharpRename<cr>
 nnoremap <leader>cF :OmniSharpCodeFormat<cr>
 nnoremap <leader>rb :!dotnet build<cr>
 nnoremap <leader>rr :!dotnet run<cr>

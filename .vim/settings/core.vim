@@ -153,9 +153,10 @@ elseif (editor_mode == "rich")
 
 
     " --- Templates --------------------------------------------------------------------------
-    " au BufNewFile *.py r ~/.vim/templates/temp.py
-    au BufNewFile *.sh r ~/.vim/templates/temp.sh
-    au BufNewFile *.tex r ~/.vim/templates/temp.tex
+    augroup templates
+      autocmd BufNewFile *.* silent! execute '0r $HOME/.vim/templates/template.'.expand("<afile>:e")
+      autocmd BufNewFile * %substitute#\[:VIM_EVAL:\]\(.\{-\}\)\[:END_EVAL:\]#\=eval(submatch(1))#ge
+    augroup END
 
 elseif (editor_mode == "idea")
     source ~/.vim/settings/idea.vim

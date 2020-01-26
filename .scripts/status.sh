@@ -27,4 +27,4 @@ DATETIME=$(echo -e "\\n$DATE\\n$TIME")
 MESSAGE=$SYSTEM_HEADER$BATTERY_MSG$INFO_HEADER$DATETIME
 
 
-notify-send --app-name "status.sh" --urgency low "system &amp; info" "$MESSAGE"
+notify-send --app-name "status.sh" --urgency low "system & info" "$MESSAGE"

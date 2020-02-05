@@ -11,8 +11,8 @@ set listchars=eol:¬,tab:▷\ ,        " map eol and tab to special chars
 set autoindent nosmartindent        " auto/smart indent
 set smarttab                        " :help 'smarttab'
 set expandtab                       " expand tabs to spaces
-set shiftwidth=4                    " :help 'shiftwidth'
-set softtabstop=4                   " :help 'softtabstop'
+set shiftwidth=2                    " :help 'shiftwidth'
+set softtabstop=2                   " :help 'softtabstop'
 
 
 " \ **************************************************************************************** \

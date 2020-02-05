@@ -2,11 +2,11 @@
 
 DATE=$(date '+%a, %e of %b')
 TIME=$(date '+%k:%M')
-BATTERY_LOAD=$(sudo tlp-stat -b | grep Charge | grep -P -o "[0-9]+.[0-9]?")
+BATTERY_LOAD=$(tlp-stat -b | grep Charge | grep -P -o "[0-9]+.[0-9]?")
 BATTERY_LOAD+="%"
 
 
-BATTERY_STATUS=$(sudo tlp-stat -b | grep "status" | sed 's/.*= //')
+BATTERY_STATUS=$(tlp-stat -b | grep "status" | sed 's/.*= //')
 BATTERY_ICON=""
 
 if [ "$BATTERY_STATUS" == "Charging" ]

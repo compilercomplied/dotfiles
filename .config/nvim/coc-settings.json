@@ -18,8 +18,8 @@
 
     "tsserver.enable": true,
 
-    "pyls.enable": true,
-    "pyls.commandPath": "",    // Remember you can use microsoft's python LSP instead
+    "python.jediEnabled": true,
+    "python.pythonPath": "./env/python",
 
     "rust-client.disableRustup": false,
     "rust-client.updateOnStartup": true,

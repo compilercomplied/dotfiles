@@ -34,7 +34,7 @@ for f in "$SHELL_CONFIG_DIR"/env/*; do . "$f"; done
 RUST_CARGO_BINDIR=$HOME/.cargo/bin
 
 # Env vars
-export FZF_DEFAULT_COMMAND='rg --files'
+export FZF_DEFAULT_COMMAND='rg --glob "!.git/*" --glob "!.node_modules/*"'
 export EDITOR=vim
 
 # Append to path

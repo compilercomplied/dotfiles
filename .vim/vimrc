@@ -38,12 +38,15 @@ Plug 'tpope/vim-fugitive'               " Git wrapper
 Plug 'rhysd/git-messenger.vim'          " Reveal the commit messages under the cursor
 Plug 'liuchengxu/vim-which-key'         " Keybinds hint
 Plug 'scrooloose/nerdtree'              " File explorer
+Plug 'liuchengxu/vim-clap', { 
+  \ 'do': ':Clap install-binary' 
+  \ }                                   " Floating window powerup.
 
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', {
-            \ 'dir': '~/.fzf',
-            \ 'do': './install --all'
-            \ }                         " Fuzzy find (you need both you wanker)
+  \ 'dir': '~/.fzf',
+  \ 'do': './install --all'
+  \ }                                   " Fuzzy find (you need both you wanker)
 
 " ----- Languages ----------------------------------------------------------------------------
 "  Python

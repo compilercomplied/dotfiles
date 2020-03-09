@@ -4,7 +4,8 @@ nnoremap <leader>cgd :vsc Edit.GoToDefinition<cr>
 nnoremap <leader>cgt :vsc Edit.GoToTypeDefinition<cr>
 nnoremap <leader>cgr :vsc Edit.FindAllReferences<cr>
 nnoremap <leader>cgp :vsc Edit.PeekDefinition<cr>
-nnoremap <leader>cga :vsc EditorContextMenus.CodeWindow.QuickActionsForPosition<cr>
+
+nnoremap <leader>ca :vsc EditorContextMenus.CodeWindow.QuickActionsForPosition<cr>
 
 nnoremap <leader>cR :vsc Refactor.Rename<cr>
 

@@ -42,3 +42,4 @@ user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features" ,
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
 
 user_pref("browser.messaging-system.whatsNewPanel.enabled", false);
+user_pref("browser.messaging-system.whatsnewpanel.enabled", false);
